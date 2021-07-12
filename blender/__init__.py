@@ -19,4 +19,5 @@ def register():
 
 
 def unregister():
-   
+    from . import addon
+    addon.unregister()

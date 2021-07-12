@@ -7,4 +7,16 @@ bl_info = {
     'location': 'Taichi Elements Window',
     'warning': 'Work in progress',
     'support': 'COMMUNITY',
-    'wiki_url': 'https://taichi-elements.readthedocs.io/en/late
+    'wiki_url': 'https://taichi-elements.readthedocs.io/en/latest/',
+    'tracker_url': 'https://github.com/taichi-dev/taichi_elements/issues',
+    'category': 'Physics'
+}
+
+
+def register():
+    from . import addon
+    addon.register()
+
+
+def unregister():
+   

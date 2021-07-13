@@ -27,4 +27,10 @@ def register():
     scn_type.elements_frame_end = bpy.props.IntProperty()
 
     for addon_module in addon_modules:
-   
+        addon_module.register()
+
+    bpy.types.NODE_HT_header.append(operators.op_draw_func)
+
+
+def unregister():
+    bpy.types.NODE_HT_header.remove(operators.op_d

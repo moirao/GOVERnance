@@ -22,4 +22,9 @@ def register():
     scn_type = bpy.types.Scene
 
     scn_type.elements_nodes = {}
- 
+    scn_type.elements_sockets = {}
+    scn_type.elements_frame_start = bpy.props.IntProperty()
+    scn_type.elements_frame_end = bpy.props.IntProperty()
+
+    for addon_module in addon_modules:
+   

@@ -33,4 +33,12 @@ def register():
 
 
 def unregister():
-    bpy.types.NODE_HT_header.remove(operators.op_d
+    bpy.types.NODE_HT_header.remove(operators.op_draw_func)
+
+    for addon_module in reversed(addon_modules):
+        addon_module.unregister()
+
+    scn_type = bpy.types.Scene
+
+    del scn_type.elements_nodes
+    del scn_type.element

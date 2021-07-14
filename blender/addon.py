@@ -41,4 +41,6 @@ def unregister():
     scn_type = bpy.types.Scene
 
     del scn_type.elements_nodes
-    del scn_type.element
+    del scn_type.elements_sockets
+    del scn_type.elements_frame_end
+    del scn_type.elements_frame_start

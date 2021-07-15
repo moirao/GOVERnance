@@ -34,4 +34,11 @@ def get_categories():
         for node_id in ids:
             items.append(nodeitems_utils.NodeItem(node_id))
         category_id = name.lower().replace(' ', '_')
-  
+        category = ElementsNodeCategory(category_id, name, items=items)
+        categories.append(category)
+
+    return categories
+
+
+def register():
+    categories = get_c

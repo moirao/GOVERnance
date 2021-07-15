@@ -11,4 +11,11 @@ class ElementsNodeCategory(nodeitems_utils.NodeCategory):
 
 # get categories data
 def get_categs_data():
-    # nod
+    # node categories data
+    data = {}
+
+    for node in nodes.node_classes:
+        data.setdefault(node.category, []).append(node.bl_idname)
+
+    # key - category name, values - node identifier
+    da

@@ -28,4 +28,10 @@ def get_categories():
     # node categories
     categories = []
 
-    for name, ids in data.items()
+    for name, ids in data.items():
+        # category items
+        items = []
+        for node_id in ids:
+            items.append(nodeitems_utils.NodeItem(node_id))
+        category_id = name.lower().replace(' ', '_')
+  

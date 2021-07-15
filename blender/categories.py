@@ -18,4 +18,14 @@ def get_categs_data():
         data.setdefault(node.category, []).append(node.bl_idname)
 
     # key - category name, values - node identifier
-    da
+    data['Layout'] = ['NodeFrame', 'NodeReroute']
+
+    return data
+
+
+def get_categories():
+    data = get_categs_data()
+    # node categories
+    categories = []
+
+    for name, ids in data.items()

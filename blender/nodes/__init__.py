@@ -17,4 +17,10 @@ node_classes = []
 glabal_variables = globals().copy()
 for variable_name, variable_object in glabal_variables.items():
     if hasattr(variable_object, '__mro__'):
-        object_mro = i
+        object_mro = inspect.getmro(variable_object)
+        if BaseNode in object_mro and variable_object != BaseNode:
+            node_classes.append(variable_object)
+
+
+def register():
+   

@@ -23,4 +23,10 @@ for variable_name, variable_object in glabal_variables.items():
 
 
 def register():
-   
+    for node_class in node_classes:
+        bpy.utils.register_class(node_class)
+
+
+def unregister():
+    for node_class in reversed(node_classes):
+        bpy.utils.unreg

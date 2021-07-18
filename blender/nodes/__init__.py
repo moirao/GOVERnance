@@ -29,4 +29,4 @@ def register():
 
 def unregister():
     for node_class in reversed(node_classes):
-        bpy.utils.unreg
+        bpy.utils.unregister_class(node_class)

@@ -181,3 +181,53 @@ class BaseNode(bpy.types.Node):
                         if hasattr(self, 'required_nodes'):
                             socket_nodes = self.required_nodes.get(
                                 input_socket.name, None
+                            )
+                            # linked node
+                            node = link.from_node
+                            # linked node id name
+                            node_id = node.bl_idname
+                            if node_id == 'NodeReroute':
+                                # reroute from node
+                                re_node = get_reroute_input(node)
+                                if re_node is None:
+                                    return
+                                else:
+                                    node_id = re_node.bl_idname
+                            if not node_id in socket_nodes:
+                                bpy.context.space_data.node_tree.links.remove(link)
+                    else:
+                        from_socket = link.from_socket
+                        if from_socket.bl_idname != input_socket.bl_idname:
+                            bpy.context.space_data.node_tree.links.remove(link)
+
+
+class ElementsDynamicSocketsNode():
+    def add_linked_socket(self, links):
+        empty_input_socket = self.inputs.new('elements_struct_socket',
+                                             'Element')
+        empty_input_socket.text = self.text
+        node_tree = bpy.context.space_data.node_tree
+        if len(links):
+            node_tree.links.new(links[0].from_socket, empty_input_socket)
+
+    def add_empty_socket(self):
+        empty_input_socket = self.inputs.new('elements_add_socket', 'Add')
+        empty_input_socket.text = self.text_empty
+
+    def init(self, context):
+        self.add_empty_socket()
+        output_socket = self.outputs.new('elements_struct_socket',
+                                         'Set Elements')
+        output_socket.text = 'Elements'
+
+    def update(self):
+        for input_socket in self.inputs:
+            if input_socket.bl_idname == 'elements_struct_socket':
+                if not input_socket.is_linked:
+                    self.inputs.remove(input_socket)
+        for input_socket in self.inputs:
+            if input_socket.bl_idname == 'elements_add_socket':
+                if input_socket.is_linked:
+                    self.add_linked_socket(input_socket.links)
+                    self.inputs.remove(input_socket)
+                    self.add_empty_socket()

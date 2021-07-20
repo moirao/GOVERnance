@@ -15,4 +15,13 @@ def get_out_value(socket):
     # scene
     scn = bpy.context.scene
     key = '{0}.{1}'.format(node.name, out.name)
-    # resul
+    # result
+    res = []
+
+    for col in in_col:
+        a = 1.0 + cntr
+        b = brg - cntr * 0.5
+        r = max(a * col[0] + b, 0.0)
+        g = max(a * col[1] + b, 0.0)
+        b = max(a * col[2] + b, 0.0)
+   

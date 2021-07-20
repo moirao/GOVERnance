@@ -24,4 +24,12 @@ def get_out_value(socket):
         r = max(a * col[0] + b, 0.0)
         g = max(a * col[1] + b, 0.0)
         b = max(a * col[2] + b, 0.0)
-   
+        res.append((r, g, b))
+
+    scn.elements_sockets[key] = res
+
+
+class ElementsBrightContrastNode(base.BaseNode):
+    bl_idname = 'elements_bright_contrast_node'
+    bl_label = 'Bright/Contrast'
+

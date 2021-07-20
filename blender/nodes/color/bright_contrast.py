@@ -33,3 +33,11 @@ class ElementsBrightContrastNode(base.BaseNode):
     bl_idname = 'elements_bright_contrast_node'
     bl_label = 'Bright/Contrast'
 
+    category = base.COLOR
+    get_value = {'Color': get_out_value, }
+
+    def init(self, context):
+        self.width = 170.0
+
+        out = self.outputs.new('elements_color_socket', 'Color')
+        ou

@@ -1,0 +1,8 @@
+import bpy
+
+from .. import base
+
+
+def mix_rgb(c1, c2, mode):
+    if mode == 'ADD':
+        res = (c1[0] + c2[0], c1[1] + c2[1

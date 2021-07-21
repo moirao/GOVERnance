@@ -46,4 +46,8 @@ class ElementsBrightContrastNode(base.BaseNode):
         col = self.inputs.new('elements_color_socket', 'Color')
         col.text = 'Color'
 
-        bright = self.inputs.new('elemen
+        bright = self.inputs.new('elements_float_socket', 'Bright')
+        bright.text = 'Bright'
+
+        contrast = self.inputs.new('elements_float_socket', 'Contrast')
+        contrast.text = 'Contrast'

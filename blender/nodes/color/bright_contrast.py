@@ -40,4 +40,10 @@ class ElementsBrightContrastNode(base.BaseNode):
         self.width = 170.0
 
         out = self.outputs.new('elements_color_socket', 'Color')
-        ou
+        out.text = 'Color'
+        out.hide_value = True
+
+        col = self.inputs.new('elements_color_socket', 'Color')
+        col.text = 'Color'
+
+        bright = self.inputs.new('elemen

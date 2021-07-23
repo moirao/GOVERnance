@@ -30,4 +30,11 @@ def get_out_value(socket):
     mode = node.mode
     # scene
     scn = bpy.context.scene
-    key = '{0}.{1}'.form
+    key = '{0}.{1}'.format(node.name, out.name)
+    # result
+    res = []
+
+    if len(col1) == len(col2):
+        for c1, c2 in zip(col1, col2):
+            # result value
+            r_val = mix_r

@@ -24,4 +24,10 @@ def mix_rgb(c1, c2, mode):
 def get_out_value(socket):
     node = socket.node
     out = node.outputs['Color']
- 
+    # input colors
+    col1 = node.inputs['Color1'].get_value()
+    col2 = node.inputs['Color2'].get_value()
+    mode = node.mode
+    # scene
+    scn = bpy.context.scene
+    key = '{0}.{1}'.form

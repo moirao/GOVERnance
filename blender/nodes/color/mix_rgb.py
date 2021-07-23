@@ -15,4 +15,13 @@ def mix_rgb(c1, c2, mode):
         if c2[0] != 0.0:
             res[0] = c1[0] / c2[0]
         if c2[1] != 0.0:
-            res[1
+            res[1] = c1[1] / c2[1]
+        if c2[2] != 0.0:
+            res[2] = c1[2] / c2[2]
+    return res
+
+
+def get_out_value(socket):
+    node = socket.node
+    out = node.outputs['Color']
+ 

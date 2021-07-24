@@ -37,4 +37,10 @@ def get_out_value(socket):
     if len(col1) == len(col2):
         for c1, c2 in zip(col1, col2):
             # result value
-            r_val = mix_r
+            r_val = mix_rgb(c1, c2, mode)
+            res.append(r_val)
+    elif len(col1) == 1 and len(col2) > 1:
+        c1 = col1[0]
+        for c2 in col2:
+            # result value
+   

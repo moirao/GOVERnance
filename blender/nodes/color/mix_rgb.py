@@ -56,4 +56,11 @@ def get_out_value(socket):
 
 
 class ElementsMixRGBNode(base.BaseNode):
-    bl_idname = 'el
+    bl_idname = 'elements_mix_rgb_node'
+    bl_label = 'Mix RGB'
+
+    category = base.COLOR
+    get_value = {'Color': get_out_value, }
+    items = (
+        ('ADD', 'Add', ''),
+        ('MULTIPLY', 

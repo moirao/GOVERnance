@@ -49,4 +49,11 @@ def get_out_value(socket):
         c2 = col2[0]
         for c1 in col1:
             # result value
-   
+            r_val = mix_rgb(c1, c2, mode)
+            res.append(r_val)
+
+    scn.elements_sockets[key] = res
+
+
+class ElementsMixRGBNode(base.BaseNode):
+    bl_idname = 'el

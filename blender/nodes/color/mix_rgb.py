@@ -63,4 +63,10 @@ class ElementsMixRGBNode(base.BaseNode):
     get_value = {'Color': get_out_value, }
     items = (
         ('ADD', 'Add', ''),
-        ('MULTIPLY', 
+        ('MULTIPLY', 'Multiply', ''),
+        ('SUBTRACT', 'Subtract', ''),
+        ('DIVIDE', 'Divide', '')
+    )
+    mode: bpy.props.EnumProperty(name='Mode', items=items)
+
+    def init(self, context):

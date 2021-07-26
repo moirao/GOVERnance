@@ -76,4 +76,10 @@ class ElementsMixRGBNode(base.BaseNode):
         out.text = 'Color'
         out.hide_value = True
 
-        col1 = self.inputs.new('e
+        col1 = self.inputs.new('elements_color_socket', 'Color1')
+        col1.text = 'Color1'
+
+        col2 = self.inputs.new('elements_color_socket', 'Color2')
+        col2.text = 'Color2'
+
+    def draw_buttons(self, context, layou

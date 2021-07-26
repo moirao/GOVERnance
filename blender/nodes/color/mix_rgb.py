@@ -82,4 +82,5 @@ class ElementsMixRGBNode(base.BaseNode):
         col2 = self.inputs.new('elements_color_socket', 'Color2')
         col2.text = 'Color2'
 
-    def draw_buttons(self, context, layou
+    def draw_buttons(self, context, layout):
+        layout.prop(self, 'mode', text='')

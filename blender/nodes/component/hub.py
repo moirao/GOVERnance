@@ -7,4 +7,9 @@ class ElementsHubNode(base.BaseNode):
 
     required_nodes = {
         'Forces': [
-            'elements_gr
+            'elements_gravity_node', 'elements_make_list_node',
+            'elements_merge_node'
+        ],
+        'Emitters': [
+            'elements_emitter_node', 'elements_make_list_node',
+         

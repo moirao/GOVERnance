@@ -12,4 +12,8 @@ class ElementsHubNode(base.BaseNode):
         ],
         'Emitters': [
             'elements_emitter_node', 'elements_make_list_node',
-         
+            'elements_merge_node', 'elements_inflow_node'
+        ],
+        'Colliders': [
+            'elements_ground_node', 'elements_make_list_node',
+            'elements_merge_node

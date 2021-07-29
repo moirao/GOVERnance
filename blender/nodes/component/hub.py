@@ -16,4 +16,12 @@ class ElementsHubNode(base.BaseNode):
         ],
         'Colliders': [
             'elements_ground_node', 'elements_make_list_node',
-            'elements_merge_node
+            'elements_merge_node'
+        ],
+    }
+
+    category = base.COMPONENT
+
+    def init(self, context):
+        hub = self.outputs.new('elements_struct_socket', 'Hub Data')
+        

@@ -9,4 +9,12 @@ class ElementsInflowNode(base.BaseNode):
 
     required_nodes = {
         'Source Object': [
-            
+            'elements_source_object_node',
+        ],
+        'Material': [
+            'elements_material_node',
+        ]
+    }
+    typ: bpy.props.StringProperty(default='INFLOW')
+
+  

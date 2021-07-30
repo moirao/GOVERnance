@@ -24,4 +24,10 @@ class ElementsHubNode(base.BaseNode):
 
     def init(self, context):
         hub = self.outputs.new('elements_struct_socket', 'Hub Data')
+        hub.text = 'Hub Data'
+
+        forces = self.inputs.new('elements_struct_socket', 'Forces')
+        forces.text = 'Forces'
+
+        emitters = self.inputs.new('elements_struct_socket', 'Emitters')
         

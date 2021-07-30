@@ -30,4 +30,7 @@ class ElementsHubNode(base.BaseNode):
         forces.text = 'Forces'
 
         emitters = self.inputs.new('elements_struct_socket', 'Emitters')
-        
+        emitters.text = 'Emitters'
+
+        colliders = self.inputs.new('elements_struct_socket', 'Colliders')
+        colliders.text = 'Colliders'

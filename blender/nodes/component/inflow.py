@@ -17,4 +17,10 @@ class ElementsInflowNode(base.BaseNode):
     }
     typ: bpy.props.StringProperty(default='INFLOW')
 
-  
+    category = base.COMPONENT
+
+    def init(self, context):
+        self.width = 200.0
+
+        out = self.outputs.new('elements_struct_socket', 'Inflow')
+        out.text 

@@ -23,4 +23,10 @@ class ElementsInflowNode(base.BaseNode):
         self.width = 200.0
 
         out = self.outputs.new('elements_struct_socket', 'Inflow')
-        out.text 
+        out.text = 'Inflow'
+
+        enable = self.inputs.new('elements_float_socket', 'Enable')
+        enable.text = 'Enable'
+        enable.default = 1.0
+
+        src_geom = self.inputs.new('elements_st

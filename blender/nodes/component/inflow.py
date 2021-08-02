@@ -29,4 +29,8 @@ class ElementsInflowNode(base.BaseNode):
         enable.text = 'Enable'
         enable.default = 1.0
 
-        src_geom = self.inputs.new('elements_st
+        src_geom = self.inputs.new('elements_struct_socket', 'Source Object')
+        src_geom.text = 'Source Object'
+
+        mat = self.inputs.new('elements_struct_socket', 'Material')
+        mat.text = 'Ma

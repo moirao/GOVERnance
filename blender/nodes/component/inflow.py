@@ -33,4 +33,10 @@ class ElementsInflowNode(base.BaseNode):
         src_geom.text = 'Source Object'
 
         mat = self.inputs.new('elements_struct_socket', 'Material')
-        mat.text = 'Ma
+        mat.text = 'Material'
+
+        color = self.inputs.new('elements_color_socket', 'Color')
+        color.text = 'Color'
+
+        vel = self.inputs.new('elements_vector_socket', 'Velocity')
+   

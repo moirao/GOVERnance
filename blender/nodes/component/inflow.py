@@ -39,4 +39,4 @@ class ElementsInflowNode(base.BaseNode):
         color.text = 'Color'
 
         vel = self.inputs.new('elements_vector_socket', 'Velocity')
-   
+        vel.text = 'Velocity'

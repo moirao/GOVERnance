@@ -12,4 +12,10 @@ class ElementsMaterialNode(base.BaseNode):
         ('SNOW', 'Snow', ''),
         ('ELASTIC', 'Elastic', ''),
         ('SAND', 'Sand', ''),
-        ('STATIONARY', 'Stationary
+        ('STATIONARY', 'Stationary', '')
+    ]
+    typ: bpy.props.EnumProperty(items=items, default='WATER')
+    category = base.COMPONENT
+
+    def init(self, context):
+        out = self.outputs.new('elements_struct_socket', 

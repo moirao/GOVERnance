@@ -10,4 +10,8 @@ class ElementsMpmSolverNode(base.BaseNode):
     def init(self, context):
         self.width = 180.0
 
-    
+        out = self.outputs.new('elements_struct_socket', 'MPM Solver')
+        out.text = 'Solver'
+
+        res = self.inputs.new('elements_integer_socket', 'Resolution')
+ 

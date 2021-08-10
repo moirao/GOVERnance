@@ -23,4 +23,9 @@ class ElementsColorToVectorNode(base.BaseNode):
     category = base.CONVERTER
     get_value = {'Vector': get_out_value, }
 
-   
+    def init(self, context):
+        out = self.outputs.new('elements_vector_socket', 'Vector')
+        out.text = 'Vector'
+        out.hide_value = True
+
+        col = self.inputs.new('

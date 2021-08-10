@@ -8,4 +8,10 @@ def get_out_value(socket):
     out = node.outputs['Vector']
     col = node.inputs['Color'].get_value()
     # scene
-   
+    scn = bpy.context.scene
+    key = '{0}.{1}'.format(node.name, out.name)
+    res = []
+    for clr in col:
+        res.append((clr[0], clr[1], clr[2]))
+    scn.elements_sockets[key] = res
+

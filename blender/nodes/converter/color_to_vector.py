@@ -15,3 +15,12 @@ def get_out_value(socket):
         res.append((clr[0], clr[1], clr[2]))
     scn.elements_sockets[key] = res
 
+
+class ElementsColorToVectorNode(base.BaseNode):
+    bl_idname = 'elements_color_to_vector_node'
+    bl_label = 'Color to Vector'
+
+    category = base.CONVERTER
+    get_value = {'Vector': get_out_value, }
+
+   

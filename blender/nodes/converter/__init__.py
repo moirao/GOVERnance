@@ -8,4 +8,4 @@ from .combine_xyz import *
 from .combine_rgb import *
 from .separate_hsv import *
 from .separate_rgb import *
-from .separate_xy
+from .separate_xyz import *

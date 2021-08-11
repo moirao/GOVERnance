@@ -28,4 +28,5 @@ class ElementsColorToVectorNode(base.BaseNode):
         out.text = 'Vector'
         out.hide_value = True
 
-        col = self.inputs.new('
+        col = self.inputs.new('elements_color_socket', 'Color')
+        col.text = 'Color'

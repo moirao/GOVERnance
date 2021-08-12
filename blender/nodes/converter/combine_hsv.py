@@ -18,4 +18,11 @@ def get_out_value(socket):
         color.v = v_val
         color.s = s_val
         color.h = h_val
-  
+        res.append(color)
+    scn = bpy.context.scene
+    scn.elements_sockets[key] = res
+
+
+class ElementsCombineHSVNode(base.BaseNode):
+    bl_idname = 'elements_combine_hsv_node'
+    bl_label = 'Com

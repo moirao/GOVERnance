@@ -25,4 +25,11 @@ def get_out_value(socket):
 
 class ElementsCombineHSVNode(base.BaseNode):
     bl_idname = 'elements_combine_hsv_node'
-    bl_label = 'Com
+    bl_label = 'Combine HSV'
+
+    category = base.CONVERTER
+    get_value = {'Color': get_out_value, }
+
+    def create_input(self, name):
+        inpt = self.inputs.new('elements_float_socket', name)
+     

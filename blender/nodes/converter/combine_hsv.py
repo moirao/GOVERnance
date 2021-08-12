@@ -32,4 +32,11 @@ class ElementsCombineHSVNode(base.BaseNode):
 
     def create_input(self, name):
         inpt = self.inputs.new('elements_float_socket', name)
-     
+        inpt.text = name
+
+    def init(self, context):
+        self.width = 170.0
+
+        out = self.outputs.new('elements_color_socket', 'Color')
+        out.text = 'Color'
+ 

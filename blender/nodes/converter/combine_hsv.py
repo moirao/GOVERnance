@@ -39,4 +39,9 @@ class ElementsCombineHSVNode(base.BaseNode):
 
         out = self.outputs.new('elements_color_socket', 'Color')
         out.text = 'Color'
- 
+        out.hide_value = True
+
+        # h, s, v components of color
+        self.create_input('H')
+        self.create_input('S')
+        self.create_input('V')

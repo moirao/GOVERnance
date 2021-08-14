@@ -8,4 +8,9 @@ def get_out_value(socket):
     node = socket.node
     out = node.outputs['Color']
     node = socket.node
-    r = node.inputs[
+    r = node.inputs['R'].get_value()
+    g = node.inputs['G'].get_value()
+    b = node.inputs['B'].get_value()
+    key = '{0}.{1}'.format(node.name, out.name)
+    res = []
+    for r_val, g_val, b_val in zip

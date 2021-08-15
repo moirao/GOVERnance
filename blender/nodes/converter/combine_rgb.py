@@ -20,4 +20,11 @@ def get_out_value(socket):
     scn.elements_sockets[key] = res
 
 
-class ElementsCo
+class ElementsCombineRGBNode(base.BaseNode):
+    bl_idname = 'elements_combine_rgb_node'
+    bl_label = 'Combine RGB'
+
+    category = base.CONVERTER
+    get_value = {'Color': get_out_value, }
+
+    def create_input(self, name

@@ -27,4 +27,11 @@ class ElementsCombineRGBNode(base.BaseNode):
     category = base.CONVERTER
     get_value = {'Color': get_out_value, }
 
-    def create_input(self, name
+    def create_input(self, name):
+        inpt = self.inputs.new('elements_float_socket', name)
+        inpt.text = name
+
+    def init(self, context):
+        self.width = 170.0
+
+        out = self.ou

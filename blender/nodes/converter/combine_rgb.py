@@ -34,4 +34,9 @@ class ElementsCombineRGBNode(base.BaseNode):
     def init(self, context):
         self.width = 170.0
 
-        out = self.ou
+        out = self.outputs.new('elements_color_socket', 'Color')
+        out.text = 'Color'
+        out.hide_value = True
+
+        # r, g, b components of color
+        self.create_inpu

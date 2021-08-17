@@ -85,3 +85,9 @@ class ElementsFloatMathNode(base.BaseNode):
 
         val_1 = self.inputs.new('elements_float_socket', 'Float 1')
         val_1.text = 'Float 1'
+
+        val_2 = self.inputs.new('elements_float_socket', 'Float 2')
+        val_2.text = 'Float 2'
+
+    def draw_buttons(self, context, layout):
+        layout.prop(self, 'mode')

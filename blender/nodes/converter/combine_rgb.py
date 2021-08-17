@@ -39,4 +39,6 @@ class ElementsCombineRGBNode(base.BaseNode):
         out.hide_value = True
 
         # r, g, b components of color
-        self.create_inpu
+        self.create_input('R')
+        self.create_input('G')
+        self.create_input('B')

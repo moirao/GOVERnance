@@ -13,4 +13,12 @@ def get_out_value(socket):
     res = []
     for int_input in integer:
         res.append(float(int_input))
+    scn.elements_sockets[key] = res
+
+
+class ElementsIntToFloatNode(base.BaseNode):
+    bl_idname = 'elements_int_to_float_node'
+    bl_label = 'Integer to Float'
+
+    category = base.CONVERTER
  

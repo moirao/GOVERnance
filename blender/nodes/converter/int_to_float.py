@@ -28,4 +28,7 @@ class ElementsIntToFloatNode(base.BaseNode):
 
         out = self.outputs.new('elements_float_socket', 'Float')
         out.text = 'Float'
- 
+        out.hide_value = True
+
+        integer = self.inputs.new('elements_integer_socket', 'Integer')
+        integer.text = 'Integer'

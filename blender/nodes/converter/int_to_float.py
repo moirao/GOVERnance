@@ -21,4 +21,11 @@ class ElementsIntToFloatNode(base.BaseNode):
     bl_label = 'Integer to Float'
 
     category = base.CONVERTER
+    get_value = {'Float': get_out_value, }
+
+    def init(self, context):
+        self.width = 180.0
+
+        out = self.outputs.new('elements_float_socket', 'Float')
+        out.text = 'Float'
  

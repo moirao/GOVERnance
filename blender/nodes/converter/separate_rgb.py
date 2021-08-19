@@ -12,4 +12,10 @@ indices = {
 
 
 def get_out_value(socket, name):
-  
+    node = socket.node
+    colors = node.inputs['Color'].get_value()
+    component = node.outputs[name]
+    res = []
+    index = indices[name]
+    for color in colors:
+        res

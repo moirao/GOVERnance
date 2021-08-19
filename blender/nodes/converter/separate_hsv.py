@@ -42,3 +42,16 @@ class ElementsSeparateHSVNode(base.BaseNode):
     }
 
     def create_output(self, name):
+        output = self.outputs.new('elements_float_socket', name)
+        output.text = name
+        output.hide_value = True
+
+    def init(self, context):
+        # h, s, v outputs
+        self.create_output('H')
+        self.create_output('S')
+        self.create_output('V')
+
+        # input color
+        color_in = self.inputs.new('elements_color_socket', 'Color')
+        color_in.text = ''

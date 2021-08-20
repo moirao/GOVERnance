@@ -18,4 +18,11 @@ def get_out_value(socket, name):
     res = []
     index = indices[name]
     for color in colors:
-        res
+        res.append(color[index])
+    scn = bpy.context.scene
+    key = '{0}.{1}'.format(node.name, component.name)
+    scn.elements_sockets[key] = res
+
+
+def get_out_value_r(socket):
+    get_out

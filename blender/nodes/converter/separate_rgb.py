@@ -25,4 +25,16 @@ def get_out_value(socket, name):
 
 
 def get_out_value_r(socket):
-    get_out
+    get_out_value(socket, 'R')
+
+
+def get_out_value_g(socket):
+    get_out_value(socket, 'G')
+
+
+def get_out_value_b(socket):
+    get_out_value(socket, 'B')
+
+
+class ElementsSeparateRGBNode(base.BaseNode):
+  

@@ -37,4 +37,10 @@ def get_out_value_b(socket):
 
 
 class ElementsSeparateRGBNode(base.BaseNode):
-  
+    bl_idname = 'elements_separate_rgb_node'
+    bl_label = 'Separate RGB'
+
+    category = base.CONVERTER
+    get_value = {
+        'R': get_out_value_r,
+   

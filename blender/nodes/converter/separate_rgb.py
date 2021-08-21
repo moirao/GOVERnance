@@ -43,4 +43,10 @@ class ElementsSeparateRGBNode(base.BaseNode):
     category = base.CONVERTER
     get_value = {
         'R': get_out_value_r,
-   
+        'G': get_out_value_g,
+        'B': get_out_value_b
+    }
+
+    def create_output(self, name):
+        output = self.outputs.new('elements_float_socket', name)
+     

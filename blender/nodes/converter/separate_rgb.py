@@ -49,4 +49,10 @@ class ElementsSeparateRGBNode(base.BaseNode):
 
     def create_output(self, name):
         output = self.outputs.new('elements_float_socket', name)
-     
+        output.text = name
+        output.hide_value = True
+
+    def init(self, context):
+        # r, g, b outputs
+        self.create_output('R')
+        self.create_out

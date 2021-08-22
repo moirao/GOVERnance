@@ -55,4 +55,9 @@ class ElementsSeparateRGBNode(base.BaseNode):
     def init(self, context):
         # r, g, b outputs
         self.create_output('R')
-        self.create_out
+        self.create_output('G')
+        self.create_output('B')
+
+        # input color
+        color_in = self.inputs.new('elements_color_socket', 'Color')
+        color_in.text = ''

@@ -32,4 +32,9 @@ def get_res_value(socket):
     res = []
 
     if len(vals_1) == 1 and len(vals_2) > 1:
-  
+        val_1 = vals_1[0]
+        for val_2 in vals_2:
+            r = get_val(mode, val_1, val_2)
+            res.append(r)
+    elif len(vals_1) > 1 and len(vals_2) == 1:
+        va

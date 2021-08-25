@@ -26,4 +26,10 @@ def get_val(mode, val_1, val_2):
 def get_res_value(socket):
     node = socket.node
     out = node.outputs['Result']
-    va
+    vals_1 = node.inputs['Vector 1'].get_value()
+    vals_2 = node.inputs['Vector 2'].get_value()
+    mode = node.mode
+    res = []
+
+    if len(vals_1) == 1 and len(vals_2) > 1:
+  

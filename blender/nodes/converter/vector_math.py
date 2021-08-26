@@ -37,4 +37,9 @@ def get_res_value(socket):
             r = get_val(mode, val_1, val_2)
             res.append(r)
     elif len(vals_1) > 1 and len(vals_2) == 1:
-        va
+        val_2 = vals_2[0]
+        for val_1 in vals_1:
+            r = get_val(mode, val_1, val_2)
+            res.append(r)
+    elif len(vals_1) > 1 and len(vals_2) > 1:
+        for val_1, val

@@ -48,4 +48,12 @@ def get_res_value(socket):
 
     # scene
     scn = bpy.context.scene
-    key = '{0}.{1}'.format(node.name, out.nam
+    key = '{0}.{1}'.format(node.name, out.name)
+    scn.elements_sockets[key] = res
+
+
+class ElementsVectorMathNode(base.BaseNode):
+    bl_idname = 'elements_vector_math_node'
+    bl_label = 'Vector Math'
+
+    

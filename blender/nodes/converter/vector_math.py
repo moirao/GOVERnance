@@ -42,4 +42,10 @@ def get_res_value(socket):
             r = get_val(mode, val_1, val_2)
             res.append(r)
     elif len(vals_1) > 1 and len(vals_2) > 1:
-        for val_1, val
+        for val_1, val_2 in zip(vals_1, vals_2):
+            r = get_val(mode, val_1, val_2)
+            res.append(r)
+
+    # scene
+    scn = bpy.context.scene
+    key = '{0}.{1}'.format(node.name, out.nam

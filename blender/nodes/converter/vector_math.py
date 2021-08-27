@@ -56,4 +56,9 @@ class ElementsVectorMathNode(base.BaseNode):
     bl_idname = 'elements_vector_math_node'
     bl_label = 'Vector Math'
 
-    
+    category = base.CONVERTER
+    get_value = {'Result': get_res_value, }
+    items = [
+        ('ADD', 'Add', ''),
+        ('SUBTRACT', 'Subtract', ''),
+        ('MULTIPLY', 'Multiply', ''),

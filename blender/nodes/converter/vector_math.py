@@ -62,3 +62,11 @@ class ElementsVectorMathNode(base.BaseNode):
         ('ADD', 'Add', ''),
         ('SUBTRACT', 'Subtract', ''),
         ('MULTIPLY', 'Multiply', ''),
+        ('DIVIDE', 'Divide', '')
+    ]
+    mode: bpy.props.EnumProperty(items=items, name='Mode')
+
+    def init(self, context):
+        self.width = 200.0
+
+        out = self.outputs.new('elements_ve

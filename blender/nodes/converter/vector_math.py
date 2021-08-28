@@ -69,4 +69,9 @@ class ElementsVectorMathNode(base.BaseNode):
     def init(self, context):
         self.width = 200.0
 
-        out = self.outputs.new('elements_ve
+        out = self.outputs.new('elements_vector_socket', 'Result')
+        out.text = 'Result'
+        out.hide_value = True
+
+        val_1 = self.inputs.new('elements_vector_socket', 'Vector 1')
+        val_1.text = 'Vector 

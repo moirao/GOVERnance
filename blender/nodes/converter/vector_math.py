@@ -74,4 +74,10 @@ class ElementsVectorMathNode(base.BaseNode):
         out.hide_value = True
 
         val_1 = self.inputs.new('elements_vector_socket', 'Vector 1')
-        val_1.text = 'Vector 
+        val_1.text = 'Vector 1'
+
+        val_2 = self.inputs.new('elements_vector_socket', 'Vector 2')
+        val_2.text = 'Vector 2'
+
+    def draw_buttons(self, context, layout):
+        layout.prop(self, 'mode', text='')

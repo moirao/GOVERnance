@@ -8,4 +8,7 @@ class ElementsFolderNode(base.BaseNode):
     category = base.INPUT
 
     def init(self, context):
-        self.width = 250
+        self.width = 250.0
+
+        out = self.outputs.new('elements_folder_socket', 'Folder')
+        out.text = ''

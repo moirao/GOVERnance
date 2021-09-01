@@ -17,4 +17,4 @@ class ElementsSourceObjectNode(base.BaseNode):
         out.text = 'Object'
 
     def draw_buttons(self, context, layout):
-        layout.prop_search(self, 'obj_name', bpy.data, 'objects', text=''
+        layout.prop_search(self, 'obj_name', bpy.data, 'objects', text='')

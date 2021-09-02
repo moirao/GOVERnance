@@ -11,4 +11,17 @@ def get_euler(socket):
     get_res(socket, 'Rotation Euler')
 
 
-def get_scale(sock
+def get_scale(socket):
+    get_res(socket, 'Scale')
+
+
+def get_dir(socket):
+    get_res(socket, 'Direction')
+
+
+def get_res(socket, mode):
+    node = socket.node
+    out = node.outputs[mode]
+    # scene
+    scn = bpy.context.scene
+ 

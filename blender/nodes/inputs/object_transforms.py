@@ -24,4 +24,9 @@ def get_res(socket, mode):
     out = node.outputs[mode]
     # scene
     scn = bpy.context.scene
- 
+    key = '{0}.{1}'.format(node.name, out.name)
+    # input obj
+    obj = node.inputs['Obj'].get_value()
+    obj, _ = scn.elements_nodes[obj]
+    obj_name = obj.obj_name
+    obj = bpy.d

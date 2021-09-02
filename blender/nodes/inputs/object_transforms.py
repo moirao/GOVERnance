@@ -29,4 +29,12 @@ def get_res(socket, mode):
     obj = node.inputs['Obj'].get_value()
     obj, _ = scn.elements_nodes[obj]
     obj_name = obj.obj_name
-    obj = bpy.d
+    obj = bpy.data.objects.get(obj_name)
+    # result
+    res = []
+    if obj:
+        # r - result
+        if mode == 'Location':
+            r = obj.location
+        elif mode == 'Rotation Euler':
+ 

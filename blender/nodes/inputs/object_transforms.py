@@ -41,4 +41,10 @@ def get_res(socket, mode):
         elif mode == 'Scale':
             r = obj.scale
         elif mode == 'Direction':
-            matrix = obj.rotation_euler.to_
+            matrix = obj.rotation_euler.to_matrix().to_3x3()
+            r = (matrix[0][2], matrix[1][2], matrix[2][2])
+        res.append((r[0], r[1], r[2]))
+    scn.elements_sockets[key] = res
+
+
+class ElementsObjectTransformsNo

@@ -37,4 +37,8 @@ def get_res(socket, mode):
         if mode == 'Location':
             r = obj.location
         elif mode == 'Rotation Euler':
- 
+            r = obj.rotation_euler
+        elif mode == 'Scale':
+            r = obj.scale
+        elif mode == 'Direction':
+            matrix = obj.rotation_euler.to_

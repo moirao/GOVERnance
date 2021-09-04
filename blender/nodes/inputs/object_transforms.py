@@ -47,4 +47,10 @@ def get_res(socket, mode):
     scn.elements_sockets[key] = res
 
 
-class ElementsObjectTransformsNo
+class ElementsObjectTransformsNode(base.BaseNode):
+    bl_idname = 'elements_object_transforms_node'
+    bl_label = 'Object Transforms'
+
+    required_nodes = {
+        'Obj': [
+            'elements_sourc

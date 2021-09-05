@@ -70,4 +70,10 @@ class ElementsObjectTransformsNode(base.BaseNode):
         self.width = 180.0
 
         obj = self.inputs.new('elements_struct_socket', 'Obj')
-        obj.text = 'Object
+        obj.text = 'Object'
+
+        loc = self.outputs.new('elements_vector_socket', 'Location')
+        loc.text = 'Location'
+        loc.hide_value = True
+
+        euler = sel

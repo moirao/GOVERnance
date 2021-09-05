@@ -53,4 +53,14 @@ class ElementsObjectTransformsNode(base.BaseNode):
 
     required_nodes = {
         'Obj': [
-            'elements_sourc
+            'elements_source_object_node',
+        ],
+    }
+
+    category = base.INPUT
+
+    get_value = {
+        'Location': get_loc,
+        'Rotation Euler': get_euler,
+        'Scale': get_scale,
+  

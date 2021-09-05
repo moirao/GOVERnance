@@ -63,4 +63,11 @@ class ElementsObjectTransformsNode(base.BaseNode):
         'Location': get_loc,
         'Rotation Euler': get_euler,
         'Scale': get_scale,
-  
+        'Direction': get_dir
+    }
+
+    def init(self, context):
+        self.width = 180.0
+
+        obj = self.inputs.new('elements_struct_socket', 'Obj')
+        obj.text = 'Object

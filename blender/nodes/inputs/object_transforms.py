@@ -80,4 +80,9 @@ class ElementsObjectTransformsNode(base.BaseNode):
         euler.text = 'Rotation Euler'
         euler.hide_value = True
 
-        scale = self.outputs.new('e
+        scale = self.outputs.new('elements_vector_socket', 'Scale')
+        scale.text = 'Scale'
+        scale.hide_value = True
+
+        direct = self.outputs.new('elements_vector_socket', 'Direction')
+      

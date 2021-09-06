@@ -85,4 +85,5 @@ class ElementsObjectTransformsNode(base.BaseNode):
         scale.hide_value = True
 
         direct = self.outputs.new('elements_vector_socket', 'Direction')
-      
+        direct.text = 'Direction'
+        direct.hide_value = True

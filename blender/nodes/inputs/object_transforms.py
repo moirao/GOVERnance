@@ -76,4 +76,8 @@ class ElementsObjectTransformsNode(base.BaseNode):
         loc.text = 'Location'
         loc.hide_value = True
 
-        euler = sel
+        euler = self.outputs.new('elements_vector_socket', 'Rotation Euler')
+        euler.text = 'Rotation Euler'
+        euler.hide_value = True
+
+        scale = self.outputs.new('e

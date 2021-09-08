@@ -18,4 +18,4 @@ class ElementsTextureNode(base.BaseNode):
         out.hide_value = True
 
     def draw_buttons(self, context, layout):
-        layout.prop_s
+        layout.prop_search(self, 'tex_name', bpy.data, 'textures', text='')

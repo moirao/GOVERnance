@@ -31,4 +31,11 @@ def get_fps_value(socket):
     node = socket.node
     out = node.outputs['FPS']
     scn = bpy.context.scene
-    key = '{0}.{1}'.format(node.n
+    key = '{0}.{1}'.format(node.name, out.name)
+    scn.elements_sockets[key] = [scn.render.fps, ]
+
+
+class ElementsTimeInfoNode(base.BaseNode):
+    bl_idname = 'elements_time_info_node'
+    bl_label = 'Time Info'
+

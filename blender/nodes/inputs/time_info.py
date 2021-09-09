@@ -24,4 +24,11 @@ def get_f_cur_value(socket):
     out = node.outputs['Frame Current']
     scn = bpy.context.scene
     key = '{0}.{1}'.format(node.name, out.name)
-    scn.elements_sockets[key] = [scn.fr
+    scn.elements_sockets[key] = [scn.frame_current, ]
+
+
+def get_fps_value(socket):
+    node = socket.node
+    out = node.outputs['FPS']
+    scn = bpy.context.scene
+    key = '{0}.{1}'.format(node.n

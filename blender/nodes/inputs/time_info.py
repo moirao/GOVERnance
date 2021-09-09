@@ -19,4 +19,9 @@ def get_f_en_value(socket):
     scn.elements_sockets[key] = [scn.frame_end, ]
 
 
-def get_f_cur_v
+def get_f_cur_value(socket):
+    node = socket.node
+    out = node.outputs['Frame Current']
+    scn = bpy.context.scene
+    key = '{0}.{1}'.format(node.name, out.name)
+    scn.elements_sockets[key] = [scn.fr

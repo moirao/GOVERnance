@@ -50,4 +50,10 @@ class ElementsTimeInfoNode(base.BaseNode):
     def init(self, context):
         f_st = self.outputs.new('elements_integer_socket', 'Frame Start')
         f_st.text = 'Frame Start'
-        f_s
+        f_st.hide_value = True
+
+        f_en = self.outputs.new('elements_integer_socket', 'Frame End')
+        f_en.text = 'Frame End'
+        f_en.hide_value = True
+
+        f_cur = self.outputs

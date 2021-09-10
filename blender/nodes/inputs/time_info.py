@@ -56,4 +56,9 @@ class ElementsTimeInfoNode(base.BaseNode):
         f_en.text = 'Frame End'
         f_en.hide_value = True
 
-        f_cur = self.outputs
+        f_cur = self.outputs.new('elements_integer_socket', 'Frame Current')
+        f_cur.text = 'Frame Current'
+        f_cur.hide_value = True
+
+        fps = self.outputs.new('elements_integer_socket', 'FPS')
+        fps.tex

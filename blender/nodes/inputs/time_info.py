@@ -44,4 +44,10 @@ class ElementsTimeInfoNode(base.BaseNode):
         'Frame Start': get_f_st_value,
         'Frame End': get_f_en_value,
         'Frame Current': get_f_cur_value,
-        'FPS
+        'FPS': get_fps_value
+    }
+
+    def init(self, context):
+        f_st = self.outputs.new('elements_integer_socket', 'Frame Start')
+        f_st.text = 'Frame Start'
+        f_s

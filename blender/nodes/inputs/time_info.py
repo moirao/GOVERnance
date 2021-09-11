@@ -61,4 +61,5 @@ class ElementsTimeInfoNode(base.BaseNode):
         f_cur.hide_value = True
 
         fps = self.outputs.new('elements_integer_socket', 'FPS')
-        fps.tex
+        fps.text = 'FPS'
+        fps.hide_value = True

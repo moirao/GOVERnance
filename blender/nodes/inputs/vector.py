@@ -7,4 +7,6 @@ class ElementsVectorNode(base.BaseNode):
 
     category = base.INPUT
 
-    def 
+    def init(self, context):
+        out = self.outputs.new('elements_vector_socket', 'Vector')
+        out.text = ''

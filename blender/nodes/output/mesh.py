@@ -14,4 +14,9 @@ def get_pos_value(socket):
     vels_key = '{0}.{1}'.format(node.name, vels.name)
     scn.elements_sockets[vels_key] = vels.get_value()
 
-    cols = node.inputs
+    cols = node.inputs['Color']
+    cols_key = '{0}.{1}'.format(node.name, cols.name)
+    scn.elements_sockets[cols_key] = cols.get_value()
+
+    emit = node.inputs['Emitters']
+    emit_key = '{0}.{1}'.format(node.n

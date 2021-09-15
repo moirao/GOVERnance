@@ -19,4 +19,10 @@ def get_pos_value(socket):
     scn.elements_sockets[cols_key] = cols.get_value()
 
     emit = node.inputs['Emitters']
-    emit_key = '{0}.{1}'.format(node.n
+    emit_key = '{0}.{1}'.format(node.name, emit.name)
+    scn.elements_sockets[emit_key] = emit.get_value()
+
+
+class ElementsMeshNode(base.BaseNode):
+    bl_idname = 'elements_mesh_node'
+    bl_label = 'Me

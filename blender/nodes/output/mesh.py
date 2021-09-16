@@ -25,4 +25,18 @@ def get_pos_value(socket):
 
 class ElementsMeshNode(base.BaseNode):
     bl_idname = 'elements_mesh_node'
-    bl_label = 'Me
+    bl_label = 'Mesh'
+
+    category = base.OUTPUT
+
+    get_value = {
+        'Position': get_pos_value,
+    }
+
+    required_nodes = {
+        'Particles Object': [
+            'elements_source_object_node',
+        ],
+    }
+
+  

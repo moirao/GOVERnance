@@ -39,4 +39,10 @@ class ElementsMeshNode(base.BaseNode):
         ],
     }
 
-  
+    def init(self, context):
+        self.width = 180.0
+
+        obj = self.inputs.new('elements_struct_socket', 'Mesh Object')
+        obj.text = 'Mesh Object'
+
+     

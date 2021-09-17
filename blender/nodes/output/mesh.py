@@ -45,4 +45,8 @@ class ElementsMeshNode(base.BaseNode):
         obj = self.inputs.new('elements_struct_socket', 'Mesh Object')
         obj.text = 'Mesh Object'
 
-     
+        verts = self.inputs.new('elements_vector_socket', 'Vertices')
+        verts.text = 'Vertices'
+        verts.hide_value = True
+
+        verts = self.inputs.new('elemen

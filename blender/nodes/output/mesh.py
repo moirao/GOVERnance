@@ -49,4 +49,10 @@ class ElementsMeshNode(base.BaseNode):
         verts.text = 'Vertices'
         verts.hide_value = True
 
-        verts = self.inputs.new('elemen
+        verts = self.inputs.new('elements_vector_socket', 'Velocity')
+        verts.text = 'Velocity'
+        verts.hide_value = True
+
+        verts = self.inputs.new('elements_integer_socket', 'Color')
+        verts.text = 'Color'
+  

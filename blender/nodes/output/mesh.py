@@ -55,4 +55,8 @@ class ElementsMeshNode(base.BaseNode):
 
         verts = self.inputs.new('elements_integer_socket', 'Color')
         verts.text = 'Color'
-  
+        verts.hide_value = True
+
+        emitters = self.inputs.new('elements_integer_socket', 'Emitters')
+        emitters.text = 'Emitters'
+        emitters.hide_value =

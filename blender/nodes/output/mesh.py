@@ -59,4 +59,4 @@ class ElementsMeshNode(base.BaseNode):
 
         emitters = self.inputs.new('elements_integer_socket', 'Emitters')
         emitters.text = 'Emitters'
-        emitters.hide_value =
+        emitters.hide_value = True

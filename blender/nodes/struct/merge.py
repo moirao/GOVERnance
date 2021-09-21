@@ -8,4 +8,5 @@ class ElementsMergeNode(base.ElementsDynamicSocketsNode, base.BaseNode):
     bl_label = 'Merge'
 
     text: bpy.props.StringProperty(default='List')
-    text_empty: b
+    text_empty: bpy.props.StringProperty(default='Merge Lists')
+    category = base.STRUCT

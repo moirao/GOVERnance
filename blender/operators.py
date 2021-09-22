@@ -29,4 +29,9 @@ def get_cache_folder(operator, sim_node):
     # particles socket
     par_s = sim_node.outputs['Simulation Data']
     cache_nodes = []
-    has_cache_node
+    has_cache_node = False
+    if par_s.is_linked:
+        for link in par_s.links:
+            # disk cache node
+            disk = link.to_node
+            if disk.bl_idname == nodes.ElementsCacheNode.bl

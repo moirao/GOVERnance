@@ -34,4 +34,10 @@ def get_cache_folder(operator, sim_node):
         for link in par_s.links:
             # disk cache node
             disk = link.to_node
-            if disk.bl_idname == nodes.ElementsCacheNode.bl
+            if disk.bl_idname == nodes.ElementsCacheNode.bl_idname:
+                cache_nodes.append(disk)
+    if not len(cache_nodes):
+        operator.is_finishing = True
+        operator.report(
+            {'WARNING'},
+            'Node tree do

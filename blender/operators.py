@@ -64,4 +64,7 @@ def get_tree_obj(node_tree):
     tree = types.Tree()
 
     for node in node_tree.nodes:
-        if n
+        if node.bl_idname == 'elements_simulation_node':
+            tree.sim_nds[node.name] = node
+        elif node.bl_idname in IMPORT_NODES:
+            if node.bl_idname == 'elements_particles_mesh_node':

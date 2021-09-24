@@ -46,4 +46,10 @@ def get_cache_folder(operator, sim_node):
     elif len(cache_nodes) > 1:
         operator.is_finishing = True
         operator.report(
-            {'WARNING'
+            {'WARNING'},
+            'Node tree must not contain more than 1 "Cache" node.'
+        )
+        return None, has_cache_node
+    else:
+        cache_node = cache_nodes[0]
+        has_cache_

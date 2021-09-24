@@ -52,4 +52,10 @@ def get_cache_folder(operator, sim_node):
         return None, has_cache_node
     else:
         cache_node = cache_nodes[0]
-        has_cache_
+        has_cache_node = True
+        folder_raw = cache_node.inputs['Folder'].get_value()[0]
+        folder = bpy.path.abspath(folder_raw)
+        return folder, has_cache_node
+
+
+# get simu

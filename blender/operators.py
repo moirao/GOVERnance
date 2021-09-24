@@ -58,4 +58,10 @@ def get_cache_folder(operator, sim_node):
         return folder, has_cache_node
 
 
-# get simu
+# get simulation nodes tree object
+def get_tree_obj(node_tree):
+    # simulation nodes tree object
+    tree = types.Tree()
+
+    for node in node_tree.nodes:
+        if n

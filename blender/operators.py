@@ -87,4 +87,12 @@ def create_emitter(operator, solv, emitter, vel):
             {'WARNING'},
             'Emmiter not have source object.'
         )
-  
+        return
+
+    obj_name = src_obj.obj_name
+    obj = bpy.data.objects.get(obj_name)
+
+    if not obj:
+        operator.is_finishing = True
+        if not obj_name:
+        

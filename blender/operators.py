@@ -79,4 +79,12 @@ def get_tree_obj(node_tree):
 
 def create_emitter(operator, solv, emitter, vel):
     # source object
-    src_obj = emi
+    src_obj = emitter.source_object
+
+    if not src_obj:
+        operator.is_finishing = True
+        operator.report(
+            {'WARNING'},
+            'Emmiter not have source object.'
+        )
+  

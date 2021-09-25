@@ -72,4 +72,11 @@ def get_tree_obj(node_tree):
             node.get_class()
             tree.imp_nds[node.name] = node, import_type
         elif node.bl_idname == 'elements_cache_node':
- 
+            tree.cache_nds[node.name] = node
+
+    return tree
+
+
+def create_emitter(operator, solv, emitter, vel):
+    # source object
+    src_obj = emi

@@ -95,4 +95,11 @@ def create_emitter(operator, solv, emitter, vel):
     if not obj:
         operator.is_finishing = True
         if not obj_name:
-        
+            operator.report(
+                {'WARNING'},
+                'Emmiter source object not specified.'
+            )
+        else:
+            operator.report(
+                {'WARNING'},
+      

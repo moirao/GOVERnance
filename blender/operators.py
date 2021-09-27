@@ -102,4 +102,9 @@ def create_emitter(operator, solv, emitter, vel):
         else:
             operator.report(
                 {'WARNING'},
-      
+                'Cannot find emmiter source object: "{}".'.format(obj_name)
+            )
+        return
+    if obj.type != 'MESH':
+        operator.is_finishing = True
+        operator.rep

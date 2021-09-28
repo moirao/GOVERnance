@@ -107,4 +107,10 @@ def create_emitter(operator, solv, emitter, vel):
         return
     if obj.type != 'MESH':
         operator.is_finishing = True
-        operator.rep
+        operator.report(
+            {'WARNING'},
+            'Emmiter source object is not mesh: "{}".'.format(obj.name)
+        )
+        return
+    if not emitter.material:
+        operator.is_finishing = True

@@ -114,3 +114,10 @@ def create_emitter(operator, solv, emitter, vel):
         return
     if not emitter.material:
         operator.is_finishing = True
+        operator.report(
+            {'WARNING'},
+            'Emmiter not have material.'
+        )
+        return
+    if not len(obj.data.polygons):
+        operat

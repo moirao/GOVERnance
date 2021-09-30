@@ -120,4 +120,11 @@ def create_emitter(operator, solv, emitter, vel):
         )
         return
     if not len(obj.data.polygons):
-        operat
+        operator.is_finishing = True
+        operator.report(
+            {'WARNING'},
+            'Emmiter source object not have polygons: "{}"'.format(obj.name)
+        )
+        return
+
+    b_mesh = bmesh.new()

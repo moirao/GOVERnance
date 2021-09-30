@@ -134,4 +134,9 @@ def create_emitter(operator, solv, emitter, vel):
     tris = []
 
     for face in b_mesh.faces:
-         # triang
+         # triangle
+        tri = []
+        # v - bmesh vertex
+        for v in face.verts:
+            # final vertex coordinate
+            v_co = obj.matrix_worl

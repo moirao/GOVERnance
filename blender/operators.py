@@ -128,3 +128,10 @@ def create_emitter(operator, solv, emitter, vel):
         return
 
     b_mesh = bmesh.new()
+    b_mesh.from_mesh(obj.data)
+    bmesh.ops.triangulate(b_mesh, faces=b_mesh.faces)
+    # emitter triangles
+    tris = []
+
+    for face in b_mesh.faces:
+         # triang

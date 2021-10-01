@@ -148,4 +148,10 @@ def create_emitter(operator, solv, emitter, vel):
     # material type
     mat = emitter.material.typ
     # taichi material
-    
+    ti_mat = mpm_solver.MPMSolver.materials.get(mat, None)
+
+    if ti_mat is None:
+        assert False, mat
+
+    # emitter particles color
+    red = int(emitter.color[0].r * 255

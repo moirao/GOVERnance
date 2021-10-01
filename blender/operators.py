@@ -154,4 +154,11 @@ def create_emitter(operator, solv, emitter, vel):
         assert False, mat
 
     # emitter particles color
-    red = int(emitter.color[0].r * 255
+    red = int(emitter.color[0].r * 255) << 16
+    green = int(emitter.color[0].g * 255) << 8
+    blue = int(emitter.color[0].b * 255)
+    color = red | green | blue
+    # add emitter
+    solv.add_mesh(
+        triangles=tris,
+        material=ti_

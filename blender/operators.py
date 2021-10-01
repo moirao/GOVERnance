@@ -139,4 +139,13 @@ def create_emitter(operator, solv, emitter, vel):
         # v - bmesh vertex
         for v in face.verts:
             # final vertex coordinate
-            v_co = obj.matrix_worl
+            v_co = obj.matrix_world @ v.co
+            tri.extend(v_co)
+        tris.append(tri)
+
+    b_mesh.clear()
+    tris = np.array(tris, dtype=np.float32)
+    # material type
+    mat = emitter.material.typ
+    # taichi material
+    

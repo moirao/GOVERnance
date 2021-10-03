@@ -170,4 +170,11 @@ def create_emitter(operator, solv, emitter, vel):
 
 
 class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
-    bl_idname = "elem
+    bl_idname = "elements.simulate_particles"
+    bl_label = "Simulate"
+
+    device: bpy.props.EnumProperty(
+        name='Device',
+        default='cpu',
+        items=(
+     

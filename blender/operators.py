@@ -161,4 +161,13 @@ def create_emitter(operator, solv, emitter, vel):
     # add emitter
     solv.add_mesh(
         triangles=tris,
-        material=ti_
+        material=ti_mat,
+        color=color,
+        velocity=vel,
+        emmiter_id=operator.emitter_indices[emitter]
+    )
+    return True
+
+
+class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
+    bl_idname = "elem

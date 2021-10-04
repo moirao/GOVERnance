@@ -177,4 +177,6 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         name='Device',
         default='cpu',
         items=(
-     
+            ('gpu', 'GPU', 'Run on GPU, automatically detect backend'),
+            ('cuda', 'CUDA', 'Run on GPU, with the NVIDIA CUDA backend'),
+            ('opengl', 'OpenGL', '

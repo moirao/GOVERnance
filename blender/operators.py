@@ -179,4 +179,6 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         items=(
             ('gpu', 'GPU', 'Run on GPU, automatically detect backend'),
             ('cuda', 'CUDA', 'Run on GPU, with the NVIDIA CUDA backend'),
-            ('opengl', 'OpenGL', '
+            ('opengl', 'OpenGL', 'Run on GPU, with the OpenGL backend'),
+            ('metal', 'Metal', 'Run on GPU, with the Apple Metal backend, if you are on macOS'),
+            ('cpu', 'CPU', 'Run on CPU (default)')

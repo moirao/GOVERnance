@@ -182,3 +182,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             ('opengl', 'OpenGL', 'Run on GPU, with the OpenGL backend'),
             ('metal', 'Metal', 'Run on GPU, with the Apple Metal backend, if you are on macOS'),
             ('cpu', 'CPU', 'Run on CPU (default)')
+        )
+    )
+    device_memory_fraction: bpy.props.FloatProperty(
+        name='Device Memory',
+        default=50.0,
+        min=10.0,
+        max=100.0,
+        subtype='PERCENTAGE'

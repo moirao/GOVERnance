@@ -190,3 +190,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         min=10.0,
         max=100.0,
         subtype='PERCENTAGE'
+    )
+
+    def __init__(self):
+        self.timer = None
+        self.thread = None
+        self.is_runnig = False
+        self.is_finishing = False
+        self.event_ty

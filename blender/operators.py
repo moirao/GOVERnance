@@ -207,4 +207,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                 vel = emitter.velocity[frame]
             if emitter.typ == 'EMITTER':
                 if emitter.emit_frame[0] == frame:
-                    correct_emmiter = create_emitter
+                    correct_emmiter = create_emitter(self, self.solv, emitter, vel)
+                    if not correct_emmiter:
+                        return self.cancel(bpy.context)
+            elif emitter.typ == 'INFLOW':
+                if 

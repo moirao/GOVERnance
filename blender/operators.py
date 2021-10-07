@@ -211,4 +211,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     if not correct_emmiter:
                         return self.cancel(bpy.context)
             elif emitter.typ == 'INFLOW':
-                if 
+                if type(emitter.enable) == float:
+                    enable = emitter.enable
+                else:
+                    if len(emitter.enable) == 1:
+                        index

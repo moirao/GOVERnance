@@ -197,4 +197,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         self.thread = None
         self.is_runnig = False
         self.is_finishing = False
-        self.event_ty
+        self.event_type = 'DEFAULT'
+
+    def create_emitters(self, frame):
+        for emitter in self.emitters:
+            if len(emitter.velocity) == 1:
+                vel = emitter.velocity[0]
+     

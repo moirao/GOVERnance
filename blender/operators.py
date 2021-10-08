@@ -215,4 +215,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     enable = emitter.enable
                 else:
                     if len(emitter.enable) == 1:
-                        index
+                        index = 0
+                    else:
+                        index = frame
+                    enable = bool(int(round(emitter.enable[index], 0)))
+                if enable:
+      

@@ -223,4 +223,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     correct_emmiter = create_emitter(self, self.solv, emitter, vel)
                     if not correct_emmiter:
                         return self.cancel(bpy.context)
-        r
+        return True
+
+    def save_particles(self, frame, np_x, np_v, np_color, np_material, np_emitters):
+        if not os.path.exists(self.cache_folder):
+            os.m

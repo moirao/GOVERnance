@@ -227,4 +227,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
 
     def save_particles(self, frame, np_x, np_v, np_color, np_material, np_emitters):
         if not os.path.exists(self.cache_folder):
-            os.m
+            os.makedirs(self.cache_folder)
+
+        # file name
+        fname = 'particles_{0:0>6}'.format(frame)
+        # particle file path
+        pars_fpath = os.path.join(self.cache_folder, fname)
+       

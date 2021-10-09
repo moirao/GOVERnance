@@ -233,4 +233,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         fname = 'particles_{0:0>6}'.format(frame)
         # particle file path
         pars_fpath = os.path.join(self.cache_folder, fname)
-       
+        # particles data
+        par_data = {
+            particles_io.POS: np_x,
+            particles_io.VEL: np_v,
+            particles_io.COL: np_color,
+            particles_io.MAT: np_material,
+  

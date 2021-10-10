@@ -251,4 +251,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         if write_obj:
             with open(pars_fpath + '.obj', 'w') as f:
                 for i in range(pars_cnt):
-             
+                    x = np_x[i]
+                    print(f'v {x[0]} {x[1]} {x[2]}', file=f)
+
+    def run_sim(self):
+        # self.frame_end + 1 - this means include the last frame in t

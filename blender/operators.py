@@ -244,4 +244,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         data = particles_io.write_pars(par_data, pars_fpath, fname)
 
         with open(pars_fpath + '.bin', 'wb') as file:
-       
+            file.write(data)
+
+        write_obj = False
+
+        if write_obj:
+            with open(pars_fpath + '.obj', 'w') as f:
+                for i in range(pars_cnt):
+             

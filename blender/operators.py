@@ -264,3 +264,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                 self.cancel(bpy.context)
                 return
             print('Frame: {}'.format(frame))
+
+            is_correct = self.create_emitters(frame)
+            if not is_correct is True:
+                return self.cancel(bpy.context)
+
+            # generate simulation state at

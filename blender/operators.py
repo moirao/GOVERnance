@@ -255,4 +255,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     print(f'v {x[0]} {x[1]} {x[2]}', file=f)
 
     def run_sim(self):
-        # self.frame_end + 1 - this means include the last frame in t
+        # self.frame_end + 1 - this means include the last frame in the range
+        for frame in range(self.frame_start, self.frame_end + 1, 1):
+            if self.event_type == 'ESC':
+                print('STOP SIMULATION')
+                self.th

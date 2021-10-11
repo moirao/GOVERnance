@@ -259,4 +259,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         for frame in range(self.frame_start, self.frame_end + 1, 1):
             if self.event_type == 'ESC':
                 print('STOP SIMULATION')
-                self.th
+                self.thread = None
+                self.is_finishing = True
+                self.cancel(bpy.context)
+                return
+            print('Frame: {}'.format(frame))

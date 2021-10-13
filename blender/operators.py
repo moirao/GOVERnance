@@ -269,4 +269,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             if not is_correct is True:
                 return self.cancel(bpy.context)
 
-            # generate simulation state at
+            # generate simulation state at t = 0
+            # particles
+            pars = self.solv.particle_info()
+            np_x = pars['position']
+            np_v = pars['velocity']
+            np

@@ -278,4 +278,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             np_color = pars['color']
             np_emitters = pars['emitter_ids']
             # and then start time stepping
-           
+            self.solv.step(1 / self.fps)
+            print(np_x)
+
+            self.save_particles(
+                frame,
+                np_x,
+                np_v,
+                np_co

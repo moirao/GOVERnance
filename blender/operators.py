@@ -285,4 +285,13 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                 frame,
                 np_x,
                 np_v,
-                np_co
+                np_color,
+                np_material,
+                np_emitters
+            )
+
+    def init_sim(self):
+        # simulation nodes
+        sim = []
+        for node in self.node_tree.nodes:
+  

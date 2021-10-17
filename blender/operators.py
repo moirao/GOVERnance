@@ -298,4 +298,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                 sim.append(node)
 
         if not len(sim):
-            self.report({'WARNING'}, WARN_NOT_SI
+            self.report({'WARNING'}, WARN_NOT_SIM_NODE)
+            self.is_finishing = True
+            return self.cancel(bpy.context)
+        elif len(sim) > 1:
+            self.report({'WARNING'}, WARN_SIM_NODE)
+           

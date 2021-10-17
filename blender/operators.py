@@ -294,4 +294,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         # simulation nodes
         sim = []
         for node in self.node_tree.nodes:
-  
+            if node.bl_idname == 'elements_simulation_node':
+                sim.append(node)
+
+        if not len(sim):
+            self.report({'WARNING'}, WARN_NOT_SI

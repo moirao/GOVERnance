@@ -303,4 +303,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return self.cancel(bpy.context)
         elif len(sim) > 1:
             self.report({'WARNING'}, WARN_SIM_NODE)
-           
+            self.is_finishing = True
+            return self.cancel(bpy.context)
+        else:
+            inputs = sim[0].inputs
+            self.scene.elements_frame_start = inputs['Frame

@@ -307,4 +307,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return self.cancel(bpy.context)
         else:
             inputs = sim[0].inputs
-            self.scene.elements_frame_start = inputs['Frame
+            self.scene.elements_frame_start = inputs['Frame Start'].get_value()[0]
+            self.scene.elements_frame_end = inputs['Frame End'].get_value()[0]
+
+        self.is_runnig = True
+        self.scene.elements_nodes.clear()
+        tree = get

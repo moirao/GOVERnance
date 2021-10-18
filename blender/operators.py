@@ -312,4 +312,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
 
         self.is_runnig = True
         self.scene.elements_nodes.clear()
-        tree = get
+        tree = get_tree_obj(self.node_tree)
+        # simulation nodes count
+        sim_nodes_cnt = len(tree.sim_nds)
+    
+        if sim_nodes_cnt != 1:
+            if sim_nodes_cnt > 1:
+               

@@ -318,4 +318,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
     
         if sim_nodes_cnt != 1:
             if sim_nodes_cnt > 1:
-               
+                self.report({'WARNING'}, WARN_SIM_NODE)
+                self.is_finishing = True
+                return
+
+        sim = list(tree.sim_nds.values())[0]
+
+        if not sim:
+            retur

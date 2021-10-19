@@ -330,4 +330,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         sim.get_class()
         # simulation class
         cls, _ = self.scene.elements_nodes[sim.name]
-        self.cache_folder, has_cache_node = g
+        self.cache_folder, has_cache_node = get_cache_folder(self, sim)
+        if not has_cache_node:
+            return self.cancel(bpy.context)
+
+        if not self.cache_folder and has_cache_node:
+            self.repor

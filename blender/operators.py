@@ -335,4 +335,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return self.cancel(bpy.context)
 
         if not self.cache_folder and has_cache_node:
-            self.repor
+            self.report({'WARNING'}, 'Cache folder not specified')
+            self.is_finishing = True
+            return self.cancel(bpy.context)
+
+        self.frame_start = cls.frame_start[0]
+      

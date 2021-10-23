@@ -348,4 +348,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         if not cls.solver:
             self.report(
                 {'WARNING'},
-           
+                'Node tree does not have "MPM Solver" node.'
+            )
+            self.is_finishing = True
+            return {'FINISHED'}
+
+        res = cls.solver.resolution[0]
+        size = cl

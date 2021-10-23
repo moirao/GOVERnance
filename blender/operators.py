@@ -340,4 +340,12 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return self.cancel(bpy.context)
 
         self.frame_start = cls.frame_start[0]
-      
+        self.frame_end = cls.frame_end[0]
+        self.fps = cls.fps[0]
+
+        # TODO: list is not implemented
+
+        if not cls.solver:
+            self.report(
+                {'WARNING'},
+           

@@ -354,4 +354,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return {'FINISHED'}
 
         res = cls.solver.resolution[0]
-        size = cl
+        size = cls.solver.size[0]
+        ti.reset()
+        arch = getattr(ti, self.device)
+        mem = self.device_memory_fraction / 100
+        ti.init(arch=arch, device_memory_fract

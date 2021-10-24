@@ -371,4 +371,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
 
         self.emitters = cls.emitters
         if not self.emitters:
-            self.report({'WARNING'}, 'Node tree not 
+            self.report({'WARNING'}, 'Node tree not have emitters.')
+            self.is_finishing = True
+            return self.cancel(bpy.context)
+
+        self.emitter_indices = {}
+        for index, emitter in enumerate(self.emitter

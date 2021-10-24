@@ -364,4 +364,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             (res, res, res),
             size=size,
             unbounded=True,
-            use_emitter_i
+            use_emitter_id=True
+        )
+
+        solv.set_gravity(tuple(cls.gravity[0]))
+
+        self.emitters = cls.emitters
+        if not self.emitters:
+            self.report({'WARNING'}, 'Node tree not 

@@ -358,4 +358,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         ti.reset()
         arch = getattr(ti, self.device)
         mem = self.device_memory_fraction / 100
-        ti.init(arch=arch, device_memory_fract
+        ti.init(arch=arch, device_memory_fraction=mem)
+        print(f"Creating simulation of res {res}, size {size}")
+        solv = mpm_solver.MPMSolver(
+            (res, res, res),
+            size=size,
+            unbounded=True,
+            use_emitter_i

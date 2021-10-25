@@ -376,4 +376,10 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             return self.cancel(bpy.context)
 
         self.emitter_indices = {}
-        for index, emitter in enumerate(self.emitter
+        for index, emitter in enumerate(self.emitters):
+            self.emitter_indices[emitter] = index
+
+        if cls.colliders:
+            for collider in cls.colliders:
+                direct = collider.direction[0]
+             

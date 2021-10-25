@@ -382,4 +382,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         if cls.colliders:
             for collider in cls.colliders:
                 direct = collider.direction[0]
-             
+                if not direct[0] and not direct[1] and not direct[2]:
+                    direct = (0, 0, 1)
+                frict = collider.friction[0]
+                if frict < 0:
+                  

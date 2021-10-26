@@ -391,4 +391,13 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     frict = 1
                 solv.add_surface_collider(
                     tuple(collider.position[0]),
-                
+                    tuple(direct),
+                    surface=collider.surface,
+                    friction=frict
+                )
+
+        self.size = size
+        self.solv = solv
+        self.run_sim()
+
+ 

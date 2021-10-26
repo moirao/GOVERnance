@@ -386,4 +386,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
                     direct = (0, 0, 1)
                 frict = collider.friction[0]
                 if frict < 0:
-                  
+                    frict = 0
+                elif frict > 1:
+                    frict = 1
+                solv.add_surface_collider(
+                    tuple(collider.position[0]),
+                

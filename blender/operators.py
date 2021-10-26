@@ -400,4 +400,9 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         self.solv = solv
         self.run_sim()
 
- 
+    def launch_sim(self):
+        self.thread = threading.Thread(target=self.init_sim, args=())
+        self.thread.start()
+
+    def modal(self, context, event):
+        if event.type == 'ES

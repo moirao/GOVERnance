@@ -405,4 +405,12 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         self.thread.start()
 
     def modal(self, context, event):
-        if event.type == 'ES
+        if event.type == 'ESC':
+            self.event_type = 'ESC'
+
+        if not self.is_runnig:
+            self.launch_sim()
+
+        if self.is_finishing:
+            self.cancel(context)
+            return {'FINISHE

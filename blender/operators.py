@@ -430,4 +430,12 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
             context.window_manager.event_timer_remove(self.timer)
             self.timer = None
         self.thread = None
-        self.i
+        self.is_finishing = True
+
+    def invoke(self, context, event):
+        wm = context.window_manager
+        return wm.invoke_props_dialog(self)
+
+
+# operators draw function
+def op_draw_func(self, con

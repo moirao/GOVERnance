@@ -420,4 +420,7 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
     def execute(self, context):
         self.node_tree = context.space_data.node_tree
         self.scene = context.scene
-        context.window_man
+        context.window_manager.modal_handler_add(self)
+        win = context.window
+        self.timer = context.window_manager.event_timer_add(1.0, window=win)
+        return {'RUNNI

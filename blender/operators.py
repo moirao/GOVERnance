@@ -413,4 +413,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
 
         if self.is_finishing:
             self.cancel(context)
-            return {'FINISHE
+            return {'FINISHED'}
+
+        return {'PASS_THROUGH'}
+
+    def execute(self, context):
+        self.node_tree = context.space_data.node_tree
+        self.scene = context.scene
+        context.window_man

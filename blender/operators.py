@@ -423,4 +423,11 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
         context.window_manager.modal_handler_add(self)
         win = context.window
         self.timer = context.window_manager.event_timer_add(1.0, window=win)
-        return {'RUNNI
+        return {'RUNNING_MODAL'}
+
+    def cancel(self, context):
+        if self.timer:
+            context.window_manager.event_timer_remove(self.timer)
+            self.timer = None
+        self.thread = None
+        self.i

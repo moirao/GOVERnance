@@ -442,4 +442,9 @@ def op_draw_func(self, context):
     if context.space_data.node_tree:
         if context.space_data.node_tree.bl_idname == 'elements_node_tree':
             self.layout.operator('elements.simulate_particles')
-            self.lay
+            self.layout.operator('elements.stable_render_animation')
+
+
+class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
+    bl_idname = 'elements.stable_render_animation'
+    bl_label = 'R

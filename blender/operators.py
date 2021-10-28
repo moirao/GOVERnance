@@ -438,4 +438,8 @@ class ELEMENTS_OT_SimulateParticles(bpy.types.Operator):
 
 
 # operators draw function
-def op_draw_func(self, con
+def op_draw_func(self, context):
+    if context.space_data.node_tree:
+        if context.space_data.node_tree.bl_idname == 'elements_node_tree':
+            self.layout.operator('elements.simulate_particles')
+            self.lay

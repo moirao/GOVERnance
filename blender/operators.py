@@ -447,4 +447,11 @@ def op_draw_func(self, context):
 
 class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
     bl_idname = 'elements.stable_render_animation'
-    bl_label = 'R
+    bl_label = 'Render'
+    bl_description = 'Stable Render Animation'
+
+    @classmethod
+    def poll(cls, context):
+        # space data
+        spc_data = context.space_data
+        if spc_dat

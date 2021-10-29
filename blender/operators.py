@@ -454,4 +454,9 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
     def poll(cls, context):
         # space data
         spc_data = context.space_data
-        if spc_dat
+        if spc_data.node_tree:
+            return spc_data.node_tree.bl_idname == 'elements_node_tree'
+
+    def execute(self, context):
+        scn = context.scene
+        rend = scn.ren

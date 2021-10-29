@@ -465,4 +465,7 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
         out = rend.filepath
 
         for frm in range(scn.frame_start, scn.frame_end + 1):
-           
+            file_name = '{0:0>4}.png'.format(frm)
+            file_path = os.path.join(bpy.path.abspath(out), file_name)
+            if rend.use_overwrite or not os.path.exists(file_path): 
+         

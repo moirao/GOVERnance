@@ -459,4 +459,10 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
 
     def execute(self, context):
         scn = context.scene
-        rend = scn.ren
+        rend = scn.render
+        rend.image_settings.file_format = 'PNG'
+        # output folder
+        out = rend.filepath
+
+        for frm in range(scn.frame_start, scn.frame_end + 1):
+           

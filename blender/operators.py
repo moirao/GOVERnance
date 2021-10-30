@@ -472,4 +472,8 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
                 scn.frame_set(frm)
                 bpy.ops.render.render(animation=False)
                 for image in bpy.data.images:
-                    
+                    if image.type == 'RENDER_RESULT':
+                        image.save_render(file_path, scene=scn)
+                        bpy.data.images.remove(image)
+
+        return {'FINISHED'

@@ -468,4 +468,8 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
             file_name = '{0:0>4}.png'.format(frm)
             file_path = os.path.join(bpy.path.abspath(out), file_name)
             if rend.use_overwrite or not os.path.exists(file_path): 
-         
+                print('Render Frame:', frm)
+                scn.frame_set(frm)
+                bpy.ops.render.render(animation=False)
+                for image in bpy.data.images:
+                    

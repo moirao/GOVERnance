@@ -476,4 +476,15 @@ class ELEMENTS_OT_StableRenderAnimation(bpy.types.Operator):
                         image.save_render(file_path, scene=scn)
                         bpy.data.images.remove(image)
 
-        return {'FINISHED'
+        return {'FINISHED'}
+
+
+operator_classes = [
+    ELEMENTS_OT_SimulateParticles,
+    ELEMENTS_OT_StableRenderAnimation
+]
+
+
+def register():
+    for operator_class in operator_classes:
+      

@@ -14,4 +14,12 @@ PARS_FMT_VER = 1
 POS = 0    # position
 VEL = 1    # velocity
 COL = 2    # color
-MAT 
+MAT = 3    # material id
+EMT = 4    # emitter id
+
+# numpy attributes type
+attr_types = {
+    POS: numpy.float32,
+    VEL: numpy.float32,
+    COL: numpy.int32,
+    EMT: numpy.in

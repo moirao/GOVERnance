@@ -487,4 +487,9 @@ operator_classes = [
 
 def register():
     for operator_class in operator_classes:
-      
+        bpy.utils.register_class(operator_class)
+
+
+def unregister():
+    for operator_class in reversed(operator_classes):
+        bpy.utils.unregister_class(operator_class)

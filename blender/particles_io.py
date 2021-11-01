@@ -22,4 +22,19 @@ attr_types = {
     POS: numpy.float32,
     VEL: numpy.float32,
     COL: numpy.int32,
-    EMT: numpy.in
+    EMT: numpy.int32,
+    MAT: numpy.int32
+}
+
+# attributes names
+attr_names = {
+    POS: 'pos',
+    VEL: 'vel',
+    COL: 'col',
+    MAT: 'mat',
+    EMT: 'emt'
+}
+attr_count = len(attr_names)
+
+
+def write_pars(par_dat

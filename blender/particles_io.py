@@ -49,4 +49,9 @@ def write_pars(par_data, fpath, fname):
 
     for attr_id in range(attr_count):
        fname_str = '{}_{}.bin'.format(fname, attr_names[attr_id])
-       fname_byte = bytes(fname_str, '
+       fname_byte = bytes(fname_str, 'utf-8')
+       length = len(fname_byte)
+       data.extend(struct.pack('I', length))
+       data.extend(struct.pack('{}s'.format(length), fname_byte))
+
+    for attr_id in range(a

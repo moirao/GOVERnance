@@ -37,4 +37,12 @@ attr_names = {
 attr_count = len(attr_names)
 
 
-def write_pars(par_dat
+def write_pars(par_data, fpath, fname):
+    data = bytearray()
+
+    # particles format version
+    data.extend(struct.pack('I', PARS_FMT_VER))
+
+    # particles count
+    pars_cnt = par_data[POS].shape[0]
+   

@@ -45,4 +45,8 @@ def write_pars(par_data, fpath, fname):
 
     # particles count
     pars_cnt = par_data[POS].shape[0]
-   
+    data.extend(struct.pack('I', pars_cnt))
+
+    for attr_id in range(attr_count):
+       fname_str = '{}_{}.bin'.format(fname, attr_names[attr_id])
+       fname_byte = bytes(fname_str, '

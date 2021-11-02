@@ -61,4 +61,12 @@ def write_pars(par_data, fpath, fname):
     return data
 
 
-def read_pars(fil
+def read_pars(file_path, caches, folder):
+    with open(file_path, 'rb') as file:
+        data = file.read()
+
+    # read offset in file
+    offs = 0
+
+    # particles format version
+    ve

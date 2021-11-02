@@ -54,4 +54,11 @@ def write_pars(par_data, fpath, fname):
        data.extend(struct.pack('I', length))
        data.extend(struct.pack('{}s'.format(length), fname_byte))
 
-    for attr_id in range(a
+    for attr_id in range(attr_count):
+        attr_array = par_data[attr_id]
+        attr_array.tofile('{}_{}.bin'.format(fpath, attr_names[attr_id]))
+
+    return data
+
+
+def read_pars(fil

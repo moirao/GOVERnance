@@ -69,4 +69,9 @@ def read_pars(file_path, caches, folder):
     offs = 0
 
     # particles format version
-    ve
+    ver = struct.unpack('I', data[offs : offs + 4])[0]
+    offs += 4
+
+    if ver != PARS_FMT_VER:
+        msg = 'Unsupported particles format version: {0}'.format(ver)
+        raise Bas

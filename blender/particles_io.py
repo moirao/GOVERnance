@@ -82,4 +82,10 @@ def read_pars(file_path, caches, folder):
 
     caches[folder] = {}
 
-    for attr_id in range(att
+    for attr_id in range(attr_count):
+        file_name_len = struct.unpack('I', data[offs : offs + 4])[0]
+        offs += 4
+
+        file_name_bytes = struct.unpack(
+            '{}s'.format(file_name_len),
+   

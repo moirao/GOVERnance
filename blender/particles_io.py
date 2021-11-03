@@ -88,4 +88,9 @@ def read_pars(file_path, caches, folder):
 
         file_name_bytes = struct.unpack(
             '{}s'.format(file_name_len),
-   
+            data[offs : offs + file_name_len]
+        )[0]
+        file_name = str(file_name_bytes, 'utf-8')
+        offs += file_name_len
+
+        file_p

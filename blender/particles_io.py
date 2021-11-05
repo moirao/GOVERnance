@@ -93,4 +93,8 @@ def read_pars(file_path, caches, folder):
         file_name = str(file_name_bytes, 'utf-8')
         offs += file_name_len
 
-        file_p
+        file_path = bpy.path.abspath(os.path.join(folder, file_name))
+        caches[folder][attr_id] = numpy.fromfile(
+            file_path,
+            dtype=attr_types[attr_id]
+        )

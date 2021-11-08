@@ -20,4 +20,12 @@ mpm.add_particles(particles=particles,
                   material=MPMSolver.material_elastic,
                   color=0xFFFF00)
 
-mpm.se
+mpm.set_gravity((0, -20, 0))
+
+for frame in range(1500):
+    mpm.step(3e-3)
+    particles = mpm.particle_info()
+    np_x = particles['position'] / 1.0
+
+    # simple camera transform
+    screen_x = 

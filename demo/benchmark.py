@@ -13,4 +13,11 @@ gui = ti.GUI("MPM Benchmark", res=256, background_color=0x112F41)
 mpm = MPMSolver(res=(256, 256, 256), size=1, unbounded=False)
 
 particles = np.fromfile('benchmark_particles.bin', dtype=np.float32)
-particles = particles.res
+particles = particles.reshape(len(particles) // 3, 3)
+print(len(particles))
+
+mpm.add_particles(particles=particles,
+                  material=MPMSolver.material_elastic,
+                  color=0xFFFF00)
+
+mpm.se

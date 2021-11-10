@@ -9,4 +9,14 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-o', '--out-dir',
+    parser.add_argument('-o', '--out-dir', type=str, help='Output folder')
+    args = parser.parse_args()
+    print(args)
+    return args
+
+
+args = parse_args()
+
+write_to_disk = args.out_dir is not None
+if write_to_disk:
+    os.mkdir(f'{arg

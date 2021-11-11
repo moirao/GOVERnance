@@ -33,4 +33,9 @@ for i in range(3):
                  material=MPMSolver.material_elastic)
 
 for frame in range(500):
-    mpm.step(
+    mpm.step(8e-3)
+    if frame < 500:
+        mpm.add_cube(lower_corner=[0.1, 0.8],
+                     cube_size=[0.01, 0.05],
+                     velocity=[1, 0],
+                     material=MPMSol

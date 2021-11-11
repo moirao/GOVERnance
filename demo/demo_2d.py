@@ -38,4 +38,8 @@ for frame in range(500):
         mpm.add_cube(lower_corner=[0.1, 0.8],
                      cube_size=[0.01, 0.05],
                      velocity=[1, 0],
-                     material=MPMSol
+                     material=MPMSolver.material_sand)
+    if 10 < frame < 100:
+        mpm.add_cube(lower_corner=[0.6, 0.7],
+                     cube_size=[0.2, 0.01],
+                     material=MPMSolver.material_w

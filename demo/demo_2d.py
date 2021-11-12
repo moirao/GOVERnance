@@ -55,4 +55,5 @@ for frame in range(500):
     particles = mpm.particle_info()
     gui.circles(particles['position'],
                 radius=1.5,
-                color=colors[particles['mater
+                color=colors[particles['material']])
+    gui.show(f'{args.out_dir}/{frame:06d}.png' if write_to_disk else None)

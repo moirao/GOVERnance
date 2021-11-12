@@ -42,4 +42,8 @@ for frame in range(500):
     if 10 < frame < 100:
         mpm.add_cube(lower_corner=[0.6, 0.7],
                      cube_size=[0.2, 0.01],
-                     material=MPMSolver.material_w
+                     material=MPMSolver.material_water,
+                     velocity=[math.sin(frame * 0.1), 0])
+    if 120 < frame < 200 and frame % 10 == 0:
+        mpm.add_cube(
+            lower_corner=[0.4 + frame * 0.001, 0.6 +

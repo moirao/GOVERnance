@@ -14,4 +14,10 @@ mpm.set_gravity([0, 0])
 
 mpm.add_ellipsoid(center=[0.25, 0.45],
                   radius=0.07,
-             
+                  velocity=[1, 0],
+                  color=0xAAAAFF,
+                  material=MPMSolver.material_snow)
+
+mpm.add_ellipsoid(center=[0.55, 0.52],
+                  radius=0.07,
+  

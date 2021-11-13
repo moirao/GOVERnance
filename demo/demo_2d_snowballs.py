@@ -20,4 +20,10 @@ mpm.add_ellipsoid(center=[0.25, 0.45],
 
 mpm.add_ellipsoid(center=[0.55, 0.52],
                   radius=0.07,
-  
+                  velocity=[-1, 0],
+                  color=0xFFAAAA,
+                  material=MPMSolver.material_snow)
+
+for frame in range(500):
+    mpm.step(8e-3)
+    particles

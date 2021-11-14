@@ -16,4 +16,11 @@ def parse_args():
 
 
 args = parse_args()
-write_to_disk = ar
+write_to_disk = args.out_dir is not None
+if write_to_disk:
+    os.mkdir(f'{args.out_dir}')
+
+ti.init(arch=ti.cuda)  # Try to run on GPU
+
+n = 256
+gui = ti.GUI("Taichi Elements", res=n, bac

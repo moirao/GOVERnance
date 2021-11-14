@@ -26,4 +26,6 @@ mpm.add_ellipsoid(center=[0.55, 0.52],
 
 for frame in range(500):
     mpm.step(8e-3)
-    particles
+    particles = mpm.particle_info()
+    gui.circles(particles['position'], radius=1.5, color=particles['color'])
+    gui.show(f'{frame:06d}.png' if write_to_disk else None)

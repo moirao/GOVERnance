@@ -29,4 +29,10 @@ activate_vis = ti.Vector.field(3, dtype=ti.f32, shape=[n, n])
 mpm = MPMSolver(res=(n, n))
 
 for i in range(3):
-    mpm.add_cube(lower_corner=[0.2 + i * 0.1, 0.3 + 
+    mpm.add_cube(lower_corner=[0.2 + i * 0.1, 0.3 + i * 0.1],
+                 cube_size=[0.1, 0.1],
+                 material=MPMSolver.material_elastic)
+
+
+@ti.kernel
+def block_active(vs_field: ti.template(), solver: ti.template()

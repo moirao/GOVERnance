@@ -35,4 +35,8 @@ for i in range(3):
 
 
 @ti.kernel
-def block_active(vs_field: ti.template(), solver: ti.template()
+def block_active(vs_field: ti.template(), solver: ti.template()):
+    for I in ti.grouped(vs_field):
+        blk_I = I // solver.leaf_block_size - solver.block_offset
+        if ti.is_active(solver.block,
+                        blk_I) and (I % sol

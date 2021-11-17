@@ -47,4 +47,8 @@ def block_active(vs_field: ti.template(), solver: ti.template()):
 
 for frame in range(500):
     mpm.step(8e-3)
-    if
+    if frame < 500:
+        mpm.add_cube(lower_corner=[0.1, 0.8],
+                     cube_size=[0.01, 0.05],
+                     velocity=[1, 0],
+                     material=MPMSolver.material_san

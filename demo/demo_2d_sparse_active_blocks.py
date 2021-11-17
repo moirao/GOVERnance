@@ -39,4 +39,12 @@ def block_active(vs_field: ti.template(), solver: ti.template()):
     for I in ti.grouped(vs_field):
         blk_I = I // solver.leaf_block_size - solver.block_offset
         if ti.is_active(solver.block,
-                        blk_I) and (I % sol
+                        blk_I) and (I % solver.leaf_block_size).min() != 0:
+            vs_field[I] = [0.11, 0.22, 0.25]
+        else:
+            vs_field[I] = [0.07, 0.125, 0.23]
+
+
+for frame in range(500):
+    mpm.step(8e-3)
+    if

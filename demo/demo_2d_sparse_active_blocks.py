@@ -60,4 +60,8 @@ for frame in range(500):
     if 120 < frame < 200 and frame % 10 == 0:
         mpm.add_cube(
             lower_corner=[0.4 + frame * 0.001, 0.6 + frame // 40 * 0.02],
- 
+            cube_size=[0.2, 0.1],
+            velocity=[-3, -1],
+            material=MPMSolver.material_snow)
+    colors = np.array([0x068587, 0xED553B, 0xEEEEF0, 0xFFFF00],
+  

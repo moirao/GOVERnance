@@ -64,4 +64,9 @@ for frame in range(500):
             velocity=[-3, -1],
             material=MPMSolver.material_snow)
     colors = np.array([0x068587, 0xED553B, 0xEEEEF0, 0xFFFF00],
-  
+                      dtype=np.uint32)
+    particles = mpm.particle_info()
+
+    block_active(activate_vis, mpm)
+    gui.set_image(activate_vis)
+    gui.circles(part

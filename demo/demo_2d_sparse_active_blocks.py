@@ -69,4 +69,7 @@ for frame in range(500):
 
     block_active(activate_vis, mpm)
     gui.set_image(activate_vis)
-    gui.circles(part
+    gui.circles(particles['position'],
+                radius=0.8,
+                color=colors[particles['material']])
+    gui.show(f'{args.out_dir}/{frame:06d}.png' if write_to_disk el

@@ -11,4 +11,9 @@ from engine.mesh_io import load_mesh
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_
+    parser.add_argument('-s',
+                        '--show',
+                        action='store_true',
+                        help='Run with gui')
+    parser.add_argument('-f',
+                        '--fr

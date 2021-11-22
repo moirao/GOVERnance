@@ -16,4 +16,9 @@ def parse_args():
                         action='store_true',
                         help='Run with gui')
     parser.add_argument('-f',
-                        '--fr
+                        '--frames',
+                        type=int,
+                        default=300,
+                        help='Number of frames')
+    parser.add_argument('-r', '--res', type=int, default=256, help='1 / dx')
+    parser.add

@@ -21,4 +21,13 @@ def parse_args():
                         default=300,
                         help='Number of frames')
     parser.add_argument('-r', '--res', type=int, default=256, help='1 / dx')
-    parser.add
+    parser.add_argument('-o', '--out-dir', type=str, help='Output folder')
+    args = parser.parse_args()
+    print(args)
+    return args
+
+
+args = parse_args()
+
+with_gui = True
+write_to

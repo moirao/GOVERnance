@@ -30,4 +30,12 @@ def parse_args():
 args = parse_args()
 
 with_gui = True
-write_to
+write_to_disk = args.out_dir is not None
+
+# Try to run on GPU
+ti.init(arch=ti.cuda,
+        kernel_profiler=True,
+        device_memory_GB=7)
+
+max_num_particles = 50000000
+stop_

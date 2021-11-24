@@ -38,4 +38,11 @@ ti.init(arch=ti.cuda,
         device_memory_GB=7)
 
 max_num_particles = 50000000
-stop_
+stop_seeding_at = 150
+frame_dt = 1e-2
+
+if with_gui:
+    gui = ti.GUI("MLS-MPM",
+                 res=1024,
+                 background_color=0x112F41,
+                 sh

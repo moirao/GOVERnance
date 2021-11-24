@@ -45,4 +45,11 @@ if with_gui:
     gui = ti.GUI("MLS-MPM",
                  res=1024,
                  background_color=0x112F41,
-                 sh
+                 show_gui=args.show)
+
+if write_to_disk:
+    for i in range(1000):
+        output_dir = f'{args.out_dir}_{i:03d}'
+        if not os.path.exists(output_dir):
+            break
+    os.makedirs(f'{outp

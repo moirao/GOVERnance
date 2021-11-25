@@ -56,3 +56,14 @@ if write_to_disk:
     os.makedirs(f'{output_dir}/previews')
     print("Writing 2D vis and binary particle data to folder", output_dir)
     tee = Tee(fn=f'{output_dir}/log.txt', mode='w')
+    print(args)
+else:
+    output_dir = None
+
+# Use 512 for final simulation/render
+R = args.res
+thickness = 2
+
+mpm = MPMSolver(res=(R, R, R),
+                size=1,
+     

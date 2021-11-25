@@ -52,4 +52,7 @@ if write_to_disk:
         output_dir = f'{args.out_dir}_{i:03d}'
         if not os.path.exists(output_dir):
             break
-    os.makedirs(f'{outp
+    os.makedirs(f'{output_dir}/particles')
+    os.makedirs(f'{output_dir}/previews')
+    print("Writing 2D vis and binary particle data to folder", output_dir)
+    tee = Tee(fn=f'{output_dir}/log.txt', mode='w')

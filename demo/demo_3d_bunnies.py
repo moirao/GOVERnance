@@ -66,4 +66,11 @@ thickness = 2
 
 mpm = MPMSolver(res=(R, R, R),
                 size=1,
-     
+                unbounded=True,
+                dt_scale=1,
+                quant=True,
+                use_g2p2g=False,
+                support_plasticity=True,
+                water_density=1.5)
+
+mpm.add_surface_collide

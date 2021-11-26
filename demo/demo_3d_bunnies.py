@@ -73,4 +73,9 @@ mpm = MPMSolver(res=(R, R, R),
                 support_plasticity=True,
                 water_density=1.5)
 
-mpm.add_surface_collide
+mpm.add_surface_collider(point=(0, 0, 0),
+                         normal=(0, 1, 0),
+                         surface=mpm.surface_slip,
+                         friction=0.5)
+
+mpm.add_sur

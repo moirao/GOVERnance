@@ -83,4 +83,15 @@ mpm.add_surface_collider(point=(0, 1.9, 0),
                          surface=mpm.surface_slip,
                          friction=0.5)
 
-bound = 
+bound = 1.9
+
+for d in [0, 2]:
+    point = [0, 0, 0]
+    normal = [0, 0, 0]
+    b = bound
+    if d == 2:
+        b /= 4
+        b *= thickness
+    point[d] = b
+    normal[d] = -1
+ 

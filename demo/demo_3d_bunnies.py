@@ -97,4 +97,10 @@ for d in [0, 2]:
     mpm.add_surface_collider(point=point,
                              normal=normal,
                              surface=mpm.surface_slip,
-                             frict
+                             friction=0.5)
+
+    point[d] = -b
+    normal[d] = 1
+    mpm.add_surface_collider(point=point,
+                             normal=normal,
+                           

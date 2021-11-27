@@ -78,4 +78,9 @@ mpm.add_surface_collider(point=(0, 0, 0),
                          surface=mpm.surface_slip,
                          friction=0.5)
 
-mpm.add_sur
+mpm.add_surface_collider(point=(0, 1.9, 0),
+                         normal=(0, -1, 0),
+                         surface=mpm.surface_slip,
+                         friction=0.5)
+
+bound = 

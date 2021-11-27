@@ -94,4 +94,7 @@ for d in [0, 2]:
         b *= thickness
     point[d] = b
     normal[d] = -1
- 
+    mpm.add_surface_collider(point=point,
+                             normal=normal,
+                             surface=mpm.surface_slip,
+                             frict

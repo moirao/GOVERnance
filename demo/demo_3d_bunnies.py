@@ -103,4 +103,9 @@ for d in [0, 2]:
     normal[d] = 1
     mpm.add_surface_collider(point=point,
                              normal=normal,
-                           
+                             surface=mpm.surface_slip,
+                             friction=0.5)
+
+scale = (0.06, 0.06, 0.06)
+
+quantized = load_mesh('bunny_low.ply', scale=scale, offset=(0.5, 0.

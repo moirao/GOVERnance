@@ -108,4 +108,11 @@ for d in [0, 2]:
 
 scale = (0.06, 0.06, 0.06)
 
-quantized = load_mesh('bunny_low.ply', scale=scale, offset=(0.5, 0.
+quantized = load_mesh('bunny_low.ply', scale=scale, offset=(0.5, 0.6, 0.5))
+simulation = load_mesh('bunny_low.ply', scale=scale, offset=(0.5, 0.6, 0.5))
+
+mpm.set_gravity((0, -25, 0))
+
+print(f'Per particle space: {mpm.particle._cell_size_bytes} B')
+
+mpm.

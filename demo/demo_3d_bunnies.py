@@ -115,4 +115,7 @@ mpm.set_gravity((0, -25, 0))
 
 print(f'Per particle space: {mpm.particle._cell_size_bytes} B')
 
-mpm.
+mpm.add_cube(lower_corner=(-bound, 0, -bound / 4 * thickness),
+             cube_size=(bound * 0.3, 0.35, bound / 2 * thickness),
+             material=mpm.material_water,
+             color=0x99

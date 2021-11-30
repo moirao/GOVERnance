@@ -143,4 +143,9 @@ start_t = time.time()
 
 
 def seed_letters(subframe):
-   
+    i = subframe % 2
+    j = subframe / 4 % 4 - 1
+
+    r = 255 if subframe // 2 % 3 == 0 else 128
+    g = 255 if subframe // 2 % 3 == 1 else 128
+    b = 255 if subframe // 2 % 3 == 2 el

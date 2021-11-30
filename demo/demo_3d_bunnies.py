@@ -118,4 +118,11 @@ print(f'Per particle space: {mpm.particle._cell_size_bytes} B')
 mpm.add_cube(lower_corner=(-bound, 0, -bound / 4 * thickness),
              cube_size=(bound * 0.3, 0.35, bound / 2 * thickness),
              material=mpm.material_water,
-             color=0x99
+             color=0x99aaff)
+print(f'Water particles: {mpm.n_particles[None] / 1e6:.4f} M')
+
+
+def visualize(particles, frame, output_dir=None):
+    np_x = particles['position'] / 1.0
+
+    scre

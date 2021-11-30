@@ -125,4 +125,9 @@ print(f'Water particles: {mpm.n_particles[None] / 1e6:.4f} M')
 def visualize(particles, frame, output_dir=None):
     np_x = particles['position'] / 1.0
 
-    scre
+    screen_x = np_x[:, 0] * 0.25 + 0.5
+    screen_y = np_x[:, 1] * 0.25 + 0.5
+
+    screen_pos = np.stack([screen_x, screen_y], axis=-1)
+
+    gui.circles(screen_pos, radius=1.0, color=particle

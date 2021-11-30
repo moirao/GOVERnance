@@ -130,4 +130,17 @@ def visualize(particles, frame, output_dir=None):
 
     screen_pos = np.stack([screen_x, screen_y], axis=-1)
 
-    gui.circles(screen_pos, radius=1.0, color=particle
+    gui.circles(screen_pos, radius=1.0, color=particles['color'])
+    if output_dir is None:
+        gui.show()
+    else:
+        gui.show(f'{output_dir}/previews/{frame:05d}.png')
+
+
+counter = 0
+
+start_t = time.time()
+
+
+def seed_letters(subframe):
+   

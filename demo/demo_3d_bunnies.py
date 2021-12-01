@@ -148,4 +148,8 @@ def seed_letters(subframe):
 
     r = 255 if subframe // 2 % 3 == 0 else 128
     g = 255 if subframe // 2 % 3 == 1 else 128
-    b = 255 if subframe // 2 % 3 == 2 el
+    b = 255 if subframe // 2 % 3 == 2 else 128
+    color = r * 65536 + g * 256 + b
+    triangles = quantized if subframe % 2 == 0 else simulation
+    mpm.add_mesh(triangles=triangles,
+                 material=

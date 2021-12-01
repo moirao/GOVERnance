@@ -158,4 +158,9 @@ def seed_letters(subframe):
                  translation=((i - 0.5) * 0.4, 0.2, (3 - j) * 0.1 - 0.8))
 
 
-for frame i
+for frame in range(args.frames):
+    print(f'frame {frame}')
+    t = time.time()
+    frame_split = 1
+    if frame < stop_seeding_at:
+        for subframe in range(frame * frame_split, (frame 

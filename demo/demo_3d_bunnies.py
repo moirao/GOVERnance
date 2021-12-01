@@ -152,4 +152,10 @@ def seed_letters(subframe):
     color = r * 65536 + g * 256 + b
     triangles = quantized if subframe % 2 == 0 else simulation
     mpm.add_mesh(triangles=triangles,
-                 material=
+                 material=MPMSolver.material_elastic,
+                 color=color,
+                 velocity=(0, -5, 0),
+                 translation=((i - 0.5) * 0.4, 0.2, (3 - j) * 0.1 - 0.8))
+
+
+for frame i

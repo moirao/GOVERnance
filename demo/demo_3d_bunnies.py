@@ -163,4 +163,9 @@ for frame in range(args.frames):
     t = time.time()
     frame_split = 1
     if frame < stop_seeding_at:
-        for subframe in range(frame * frame_split, (frame 
+        for subframe in range(frame * frame_split, (frame + 1) * frame_split):
+            if mpm.n_particles[None] < max_num_particles:
+                seed_letters(subframe)
+
+        mpm.step(frame_dt / frame_split, print_stat=True)
+ 

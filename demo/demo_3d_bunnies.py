@@ -174,4 +174,7 @@ for frame in range(args.frames):
         particles = mpm.particle_info()
         visualize(particles, frame, output_dir)
 
-  
+    if write_to_disk:
+        mpm.write_particles(f'{output_dir}/particles/{frame:05d}.npz')
+    print(f'Folder name {output_dir}')
+    print(f'Frame total time {time.time() - t:.3f}')

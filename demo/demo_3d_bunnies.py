@@ -168,4 +168,10 @@ for frame in range(args.frames):
                 seed_letters(subframe)
 
         mpm.step(frame_dt / frame_split, print_stat=True)
- 
+    else:
+        mpm.step(frame_dt, print_stat=True)
+    if with_gui:
+        particles = mpm.particle_info()
+        visualize(particles, frame, output_dir)
+
+  

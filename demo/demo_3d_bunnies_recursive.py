@@ -96,3 +96,94 @@ for d in [0, 2]:
     normal[d] = -1
     mpm.add_surface_collider(point=point,
                              normal=normal,
+                             surface=mpm.surface_separate,
+                             friction=0.5)
+
+    point[d] = -b
+    normal[d] = 1
+    mpm.add_surface_collider(point=point,
+                             normal=normal,
+                             surface=mpm.surface_separate,
+                             friction=0.5)
+
+bunnies = []
+LOD = args.lod
+h_start = 0.05
+total_bunnies = 0
+
+max_num_particles = args.max_num_particles * 1000000
+
+for l in range(LOD):
+    print(f"Generating LOD {l}")
+    scale = 1 / 2**l * 0.625
+    bunnies.append(
+        load_mesh('bunny_low.ply', scale=scale * 0.6, offset=(0.5, 0.5, 0.5)))
+    bb_size = scale
+    bb_count = 2**(l + 1)
+    layers = max(l - 1, 1)
+
+    r = 255 if l % 3 == 0 else 128
+    g = 255 if l % 3 == 1 else 128
+    b = 255 if l % 3 == 2 else 128
+    color = r * 65536 + g * 256 + b
+
+    for k in range(layers):
+        print(f"  Generating layer {k}, h_start {h_start}")
+        for i in range(bb_count):
+            for j in range(bb_count):
+                x, y, z = -1.1 + (
+                    i + 0.5) * bb_size, h_start + bb_size * k * 1.1, -1.1 + (
+                        j + 0.5) * bb_size
+                if mpm.n_particles[None] < max_num_particles:
+                    mpm.add_mesh(triangles=bunnies[l],
+                                 material=MPMSolver.material_elastic,
+                                 color=color,
+                                 velocity=(0, -5, 0),
+                                 translation=(x, y, z))
+                    print(
+                        f'Total particles: {mpm.n_particles[None] / 1e6:.4f} M'
+                    )
+                    total_bunnies += 1
+    h_start += bb_size * layers
+    h_start -= 0.05 * max(0, 2 - l)  # adjustments
+
+mpm.set_gravity((0, -25, 0))
+
+print(f'Per particle space: {mpm.particle._cell_size_bytes} B')
+print(f'Total bunnies: {total_bunnies}')
+print(f'Total particles: {mpm.n_particles[None] / 1e6:.4f} M')
+
+
+def visualize(particles, frame, output_dir=None):
+    np_x = particles['position'] / 1.0
+
+    screen_x = np_x[:, 0] * 0.5 + 0.5
+    screen_y = np_x[:, 1] * 0.5
+
+    screen_pos = np.stack([screen_x, screen_y], axis=-1)
+
+    gui.circles(screen_pos, radius=1.0, color=particles['color'])
+    if output_dir is None:
+        gui.show()
+    else:
+        gui.show(f'{output_dir}/previews/{frame:05d}.png')
+
+
+counter = 0
+
+start_t = time.time()
+
+for frame in range(args.frames):
+    print(f'frame {frame}')
+    t = time.time()
+    mpm.step(1e-2, print_stat=True)
+    if with_gui:
+        particles = mpm.particle_info()
+        visualize(particles, frame, output_dir)
+
+    if write_to_disk:
+        mpm.write_particles(f'{output_dir}/particles/{frame:05d}.npz')
+        if args.output_ply:
+            mpm.write_particles_ply(f'{output_dir}/particles/{frame:05d}.ply')
+    print(f'Frame total time {time.time() - t:.3f}')
+    print(f'Total running time {time.time() - start_t:.3f}')

@@ -178,3 +178,4 @@ for frame in range(args.frames):
         mpm.write_particles(f'{output_dir}/particles/{frame:05d}.npz')
     print(f'Folder name {output_dir}')
     print(f'Frame total time {time.time() - t:.3f}')
+    print(f'Total running time {time.time() - start_t:.3f}')

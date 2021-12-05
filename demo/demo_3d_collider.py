@@ -12,4 +12,10 @@ if write_to_disk:
 # Try to run on GPU
 ti.init(arch=ti.cuda, device_memory_GB=4.0)
 
-gui
+gui = ti.GUI("Taichi Elements", res=512, background_color=0x112F41)
+
+mpm = MPMSolver(res=(64, 64, 64), size=1)
+
+mpm.set_gravity((0, -20, 0))
+
+mpm.add_sphere_collider(center=(

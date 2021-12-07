@@ -37,4 +37,10 @@ for frame in range(1500):
                  color=0xFF8888)
     mpm.add_cube((0.7, 0.8, 0.45), (0.1, 0.03, 0.1),
                  mpm.material_water,
-           
+                 color=0xFFFFFF)
+    mpm.step(4e-3)
+    particles = mpm.particle_info()
+    np_x = particles['position'] / 1.0
+
+    # simple camera transform
+    screen_x = ((np_x[:, 0] + np_x[:, 2]) / 2**0.5) - 0

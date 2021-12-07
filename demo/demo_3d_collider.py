@@ -32,4 +32,9 @@ for frame in range(1500):
     mpm.add_cube((0.2, 0.8, 0.45), (0.1, 0.03, 0.1),
                  mpm.material_water,
                  color=0x8888FF)
-    mpm.add_cube((0.45, 0.8, 0.45)
+    mpm.add_cube((0.45, 0.8, 0.45), (0.1, 0.03, 0.1),
+                 mpm.material_water,
+                 color=0xFF8888)
+    mpm.add_cube((0.7, 0.8, 0.45), (0.1, 0.03, 0.1),
+                 mpm.material_water,
+           

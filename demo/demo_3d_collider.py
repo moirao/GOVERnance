@@ -49,4 +49,4 @@ for frame in range(1500):
     screen_pos = np.stack([screen_x, screen_y], axis=-1)
 
     gui.circles(screen_pos, radius=1.1, color=particles['color'])
-    gui.show(f'outputs/{frame:0
+    gui.show(f'outputs/{frame:06d}.png' if write_to_disk else None)

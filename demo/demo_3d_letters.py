@@ -1,4 +1,12 @@
 import taichi as ti
 import math
 import time
-impor
+import numpy as np
+from plyfile import PlyData, PlyElement
+import os
+import utils
+from utils import create_output_folder
+from engine.mpm_solver import MPMSolver
+
+with_gui = True
+write_to_disk = T

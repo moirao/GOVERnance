@@ -36,4 +36,6 @@ def load_mesh(fn, scale, offset):
     for i, face in enumerate(elements['vertex_indices']):
         assert len(face) == 3
         for d in range(3):
-            triangles[i, d
+            triangles[i, d * 3 + 0] = x[face[d]] * scale + offset[0]
+            triangles[i, d * 3 + 1] = y[face[d]] * scale + offset[1]
+            triangles[i, d * 3 + 2] = z[face[d]]

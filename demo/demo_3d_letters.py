@@ -53,4 +53,13 @@ mpm = MPMSolver(res=(R, R, R), size=1, unbounded=True, dt_scale=1)
 mpm.add_surface_collider(point=(0, 0, 0),
                          normal=(0, 1, 0),
                          surface=mpm.surface_slip,
-                         friction=
+                         friction=0.5)
+
+triangles = load_mesh('taichi.ply', scale=0.02, offset=(0.5, 0.6, 0.5))
+
+mpm.set_gravity((0, -25, 0))
+
+
+def visualize(particles):
+    np_x = particles['position'] / 1.0
+

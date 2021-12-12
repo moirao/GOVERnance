@@ -63,3 +63,8 @@ mpm.set_gravity((0, -25, 0))
 def visualize(particles):
     np_x = particles['position'] / 1.0
 
+    # simple camera transform
+    screen_x = ((np_x[:, 0] + np_x[:, 2]) / 2**0.5) - 0.2
+    screen_y = (np_x[:, 1])
+
+    screen_pos = np.stack([screen_x, screen_y], axis=-1

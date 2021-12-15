@@ -97,4 +97,9 @@ for frame in range(15000):
     mpm.step(2e-3, print_stat=True)
     if with_gui and frame % 3 == 0:
         particles = mpm.particle_info()
-        visualize(particl
+        visualize(particles)
+
+    if write_to_disk:
+        mpm.write_particles(f'{output_dir}/{frame:05d}.npz')
+    print(f'Frame total time {time.time() - t:.3f}')
+    print(f'Total runni

@@ -92,4 +92,9 @@ for frame in range(15000):
                      material=MPMSolver.material_elastic,
                      color=color,
                      velocity=(0, -2, 0),
-                     translation=((i +
+                     translation=((i + 0.5) * 0.25, 0, (2 - j) * 0.1))
+
+    mpm.step(2e-3, print_stat=True)
+    if with_gui and frame % 3 == 0:
+        particles = mpm.particle_info()
+        visualize(particl

@@ -102,4 +102,4 @@ for frame in range(15000):
     if write_to_disk:
         mpm.write_particles(f'{output_dir}/{frame:05d}.npz')
     print(f'Frame total time {time.time() - t:.3f}')
-    print(f'Total runni
+    print(f'Total running time {time.time() - start_t:.3f}')

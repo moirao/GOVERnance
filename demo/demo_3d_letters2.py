@@ -29,4 +29,8 @@ def load_mesh(fn, scale, offset):
     print(f'loading {fn}')
     plydata = PlyData.read(fn)
     x = plydata['vertex']['x']
-    y = ply
+    y = plydata['vertex']['y']
+    z = plydata['vertex']['z']
+    elements = plydata['face']
+    num_tris = len(elements['vertex_indices'])
+    triangles = np.zeros((num_tris, 9), dtype=

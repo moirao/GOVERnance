@@ -33,4 +33,9 @@ def load_mesh(fn, scale, offset):
     z = plydata['vertex']['z']
     elements = plydata['face']
     num_tris = len(elements['vertex_indices'])
-    triangles = np.zeros((num_tris, 9), dtype=
+    triangles = np.zeros((num_tris, 9), dtype=np.float32)
+
+    for i, face in enumerate(elements['vertex_indices']):
+        assert len(face) == 3
+        for d in range(3):
+            triangles[i, d * 3 + 0] = x[face

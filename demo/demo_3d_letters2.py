@@ -42,4 +42,12 @@ def load_mesh(fn, scale, offset):
             triangles[i, d * 3 + 1] = y[face[d]] * scale + offset[1]
             triangles[i, d * 3 + 2] = z[face[d]] * scale + offset[2]
 
-    pr
+    print('loaded')
+
+    return triangles
+
+
+# Use 512 for final simulation/render
+R = 256
+
+mpm = MPMSolver(res=(R, R, R), size=1, unbounded=True, dt_scale=0.5, E_scal

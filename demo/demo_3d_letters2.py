@@ -60,4 +60,14 @@ mpm.add_surface_collider(point=(0, 0, 0),
 triangles = load_mesh('taichi.ply', scale=0.04, offset=(0.5, 0.5, 0.5))
 triangles_small = load_mesh('taichi.ply', scale=0.0133, offset=(0.5, 0.5, 0.5))
 
-mpm.set_gravity
+mpm.set_gravity((0, -25, 0))
+
+
+def visualize(particles):
+    np_x = particles['position'] / 1.0
+
+    # simple camera transform
+    screen_x = np_x[:, 0]
+    screen_y = np_x[:, 1]
+
+ 

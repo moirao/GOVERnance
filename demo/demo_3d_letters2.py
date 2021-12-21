@@ -70,4 +70,14 @@ def visualize(particles):
     screen_x = np_x[:, 0]
     screen_y = np_x[:, 1]
 
- 
+    screen_pos = np.stack([screen_x, screen_y], axis=-1)
+
+    gui.circles(screen_pos, radius=0.8, color=particles['color'])
+    gui.show()
+
+
+counter = 0
+
+start_t = time.time()
+
+for f

@@ -86,4 +86,8 @@ for frame in range(15000):
 
     if frame % 50 == 0 and mpm.n_particles[None] < max_num_particles:
         F = frame // 50
-        r = 
+        r = 255 if F % 3 == 0 else 128
+        g = 255 if F % 3 == 1 else 128
+        b = 255 if F % 3 == 2 else 128
+        mpm.add_mesh(triangles=triangles,
+                     material=M

@@ -90,4 +90,7 @@ for frame in range(15000):
         g = 255 if F % 3 == 1 else 128
         b = 255 if F % 3 == 2 else 128
         mpm.add_mesh(triangles=triangles,
-                     material=M
+                     material=MPMSolver.material_elastic,
+                     color=r * 65536 + g * 256 + b,
+                     velocity=(0, -6, 0),
+                     translation=(0.0, 0.16, (F % 2) 

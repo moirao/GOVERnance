@@ -80,4 +80,10 @@ counter = 0
 
 start_t = time.time()
 
-for f
+for frame in range(15000):
+    print(f'frame {frame}')
+    t = time.time()
+
+    if frame % 50 == 0 and mpm.n_particles[None] < max_num_particles:
+        F = frame // 50
+        r = 

@@ -98,4 +98,9 @@ for frame in range(15000):
     if frame > 60 and mpm.n_particles[None] < max_num_particles:
         i = frame % 3 - 1.5
         j = 0  # frame / 4 % 4 - 1
-        colors = [0xFF8888, 0xEEEEFF, 0x
+        colors = [0xFF8888, 0xEEEEFF, 0xFFFF55]
+        materials = [
+            MPMSolver.material_elastic, MPMSolver.material_elastic,
+            MPMSolver.material_elastic
+        ]
+        mpm.add_mesh(triangles=triangles_small,

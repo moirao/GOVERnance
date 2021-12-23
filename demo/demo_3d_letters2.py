@@ -93,4 +93,9 @@ for frame in range(15000):
                      material=MPMSolver.material_elastic,
                      color=r * 65536 + g * 256 + b,
                      velocity=(0, -6, 0),
-                     translation=(0.0, 0.16, (F % 2) 
+                     translation=(0.0, 0.16, (F % 2) * 0.4))
+
+    if frame > 60 and mpm.n_particles[None] < max_num_particles:
+        i = frame % 3 - 1.5
+        j = 0  # frame / 4 % 4 - 1
+        colors = [0xFF8888, 0xEEEEFF, 0x

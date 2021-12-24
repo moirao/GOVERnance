@@ -104,3 +104,7 @@ for frame in range(15000):
             MPMSolver.material_elastic
         ]
         mpm.add_mesh(triangles=triangles_small,
+                     material=materials[frame % 3],
+                     color=colors[frame % 3],
+                     velocity=(0, -6, 0),
+                     translation=((i + 0.5) 

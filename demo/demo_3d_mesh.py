@@ -24,4 +24,10 @@ mpm.set_gravity((0, -20, 0))
 for frame in range(1500):
     mpm.step(4e-3)
     particles = mpm.particle_info()
-    np_x = particles['position'] / 1.
+    np_x = particles['position'] / 1.0
+
+    # simple camera transform
+    screen_x = ((np_x[:, 0] + np_x[:, 2]) / 2**0.5) - 0.2
+    screen_y = (np_x[:, 1])
+
+    screen_pos = np.stack([screen_x, scre

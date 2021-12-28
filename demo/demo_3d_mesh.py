@@ -13,4 +13,8 @@ gui = ti.GUI("Taichi Elements", res=512, background_color=0x112F41)
 mpm = MPMSolver(res=(64, 64, 64), size=1)
 
 triangles = np.fromfile('suzanne.npy', dtype=np.float32)
-triangles = np.reshape(triangle
+triangles = np.reshape(triangles, (len(triangles) // 9, 9)) * 0.306 + 0.501
+
+mpm.add_mesh(triangles=triangles,
+             material=MPMSolver.material_elastic,
+             color=0xFFFF

@@ -17,4 +17,11 @@ triangles = np.reshape(triangles, (len(triangles) // 9, 9)) * 0.306 + 0.501
 
 mpm.add_mesh(triangles=triangles,
              material=MPMSolver.material_elastic,
-             color=0xFFFF
+             color=0xFFFF00)
+
+mpm.set_gravity((0, -20, 0))
+
+for frame in range(1500):
+    mpm.step(4e-3)
+    particles = mpm.particle_info()
+    np_x = particles['position'] / 1.

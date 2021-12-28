@@ -30,4 +30,7 @@ for frame in range(1500):
     screen_x = ((np_x[:, 0] + np_x[:, 2]) / 2**0.5) - 0.2
     screen_y = (np_x[:, 1])
 
-    screen_pos = np.stack([screen_x, scre
+    screen_pos = np.stack([screen_x, screen_y], axis=-1)
+
+    gui.circles(screen_pos, radius=1.1, color=particles['color'])
+    gui.show(f'{frame:06d}.png' if write_to_disk else None)

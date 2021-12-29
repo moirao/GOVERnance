@@ -195,3 +195,18 @@ for frame in range(args.frames):
     else:
         frame_split = 1
     for subframe in range(frame * frame_split, (frame + 1) * frame_split):
+        if mpm.n_particles[None] < max_num_particles:
+            if args.thin:
+                seed_letters(subframe)
+            else:
+                seed_bars(subframe)
+
+        mpm.step(1e-2 / frame_split, print_stat=True)
+    if with_gui and frame % 3 == 0:
+        particles = mpm.particle_info()
+        visualize(particles, frame, output_dir)
+
+    if write_to_disk:
+        mpm.write_particles(f'{output_dir}/particles/{frame:05d}.npz')
+    print(f'Frame total time {time.time() - t:.3f}')
+    print(f'Total running time {time.time() - start_t:.3f}')

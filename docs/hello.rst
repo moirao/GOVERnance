@@ -9,4 +9,10 @@ We introduce the Python API through a basic 2D demo.
     import numpy as np
     from mpm_solver import MPMSolver
 
-    w
+    write_to_disk = False
+
+    ti.init(arch=ti.cuda)  # Try to run on GPU
+
+    gui = ti.GUI("Taichi Elements", res=512, background_color=0x112F41)
+
+    mpm = MPMSolver

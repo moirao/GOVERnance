@@ -20,4 +20,10 @@ We introduce the Python API through a basic 2D demo.
     for i in range(3):
         mpm.add_cube(lower_corner=[0.2 + i * 0.1, 0.3 + i * 0.1],
                      cube_size=[0.1, 0.1],
-                    
+                     material=MPMSolver.material_elastic)
+
+    for frame in range(500):
+        mpm.step(8e-3)
+        if frame < 100 and frame % 2 == 0:
+            mpm.add_cube(lower_corner=[0.1, 0.4],
+  

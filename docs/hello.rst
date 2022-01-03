@@ -39,4 +39,5 @@ We introduce the Python API through a basic 2D demo.
                 material=MPMSolver.material_snow)
         colors = np.array([0x068587, 0xED553B, 0xEEEEF0, 0xFFFF00], dtype=np.uint32)
         particles = mpm.particle_info()
-        gui.circles(particles['posi
+        gui.circles(particles['position'], radius=1.5, color=colors[particles['material']])
+        gui.show(f'{frame:06d}.png' if write_to_disk else None)

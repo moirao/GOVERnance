@@ -36,4 +36,7 @@ We introduce the Python API through a basic 2D demo.
             mpm.add_cube(
                 lower_corner=[0.4 + frame * 0.001, 0.6 + frame // 40 * 0.02],
                 cube_size=[0.2, 0.1],
-                material=MPMSo
+                material=MPMSolver.material_snow)
+        colors = np.array([0x068587, 0xED553B, 0xEEEEF0, 0xFFFF00], dtype=np.uint32)
+        particles = mpm.particle_info()
+        gui.circles(particles['posi

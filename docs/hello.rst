@@ -29,4 +29,7 @@ We introduce the Python API through a basic 2D demo.
                          cube_size=[0.05, 0.01],
                          material=MPMSolver.material_sand)
         if 10 < frame < 100 and frame % 2 == 0:
-            mpm
+            mpm.add_cube(lower_corner=[0.4, 0.7],
+                         cube_size=[0.2, 0.01],
+                         material=MPMSolver.material_water)
+        if 120 < frame < 300 and frame %

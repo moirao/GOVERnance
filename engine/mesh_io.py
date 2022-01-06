@@ -10,4 +10,9 @@ def load_mesh(fn, scale=1, offset=(0, 0, 0)):
     x = plydata['vertex']['x']
     y = plydata['vertex']['y']
     z = plydata['vertex']['z']
-    elements = plyda
+    elements = plydata['face']
+    num_tris = len(elements['vertex_indices'])
+    triangles = np.zeros((num_tris, 9), dtype=np.float32)
+
+    for i, face in enumerate(elements['vertex_indices']):
+        assert len(f

@@ -15,4 +15,8 @@ def load_mesh(fn, scale=1, offset=(0, 0, 0)):
     triangles = np.zeros((num_tris, 9), dtype=np.float32)
 
     for i, face in enumerate(elements['vertex_indices']):
-        assert len(f
+        assert len(face) == 3
+        for d in range(3):
+            triangles[i, d * 3 + 0] = x[face[d]] * scale[0] + offset[0]
+            triangles[i, d * 3 + 1] = y[face[d]] * scale[1] + offset[1]
+  

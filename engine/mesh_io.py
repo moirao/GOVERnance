@@ -34,4 +34,11 @@ element vertex {num_particles}
 property float x
 property float y
 property float z
-p
+property uchar red
+property uchar green
+property uchar blue
+property uchar placeholder
+end_header
+"""
+        f.write(str.encode(header))
+        f.write(pos_and_color.tobytes())

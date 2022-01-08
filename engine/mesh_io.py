@@ -26,4 +26,12 @@ def load_mesh(fn, scale=1, offset=(0, 0, 0)):
 
 def write_point_cloud(fn, pos_and_color):
     num_particles = len(pos_and_color)
-    with open(fn, 'wb
+    with open(fn, 'wb') as f:
+        header = f"""ply
+format binary_little_endian 1.0
+comment Created by taichi
+element vertex {num_particles}
+property float x
+property float y
+property float z
+p

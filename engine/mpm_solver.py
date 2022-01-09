@@ -11,4 +11,11 @@ USE_IN_BLENDER = False
 # TODO: water needs Jp - fix this.
 
 
-@ti
+@ti.data_oriented
+class MPMSolver:
+    material_water = 0
+    material_elastic = 1
+    material_snow = 2
+    material_sand = 3
+    material_stationary = 4
+    materials 

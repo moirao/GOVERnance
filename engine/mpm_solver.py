@@ -18,4 +18,12 @@ class MPMSolver:
     material_snow = 2
     material_sand = 3
     material_stationary = 4
-    materials 
+    materials = {
+        'WATER': material_water,
+        'ELASTIC': material_elastic,
+        'SNOW': material_snow,
+        'SAND': material_sand,
+        'STATIONARY': material_stationary,
+    }
+
+    #

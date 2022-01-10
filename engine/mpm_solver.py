@@ -33,4 +33,13 @@ class MPMSolver:
     # Slippy boundary
     surface_slip = 1
     # Slippy and free to separate
-    surface_se
+    surface_separate = 2
+
+    surfaces = {
+        'STICKY': surface_sticky,
+        'SLIP': surface_slip,
+        'SEPARATE': surface_separate
+    }
+
+    def __init__(
+           

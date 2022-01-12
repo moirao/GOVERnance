@@ -42,4 +42,10 @@ class MPMSolver:
     }
 
     def __init__(
-           
+            self,
+            res,
+            quant=False,
+            use_voxelizer=True,
+            size=1,
+            max_num_particles=2**30,
+            # Max 1 G par

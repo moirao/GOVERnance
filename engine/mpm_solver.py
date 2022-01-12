@@ -48,4 +48,10 @@ class MPMSolver:
             use_voxelizer=True,
             size=1,
             max_num_particles=2**30,
-            # Max 1 G par
+            # Max 1 G particles
+            padding=3,
+            unbounded=False,
+            dt_scale=1,
+            E_scale=1,
+            voxelizer_super_sample=2,
+            use_g2p2g=False,  #

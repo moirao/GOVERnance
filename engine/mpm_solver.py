@@ -54,4 +54,7 @@ class MPMSolver:
             dt_scale=1,
             E_scale=1,
             voxelizer_super_sample=2,
-            use_g2p2g=False,  #
+            use_g2p2g=False,  # Ref: A massively parallel and scalable multi-GPU material point method
+            v_clamp_g2p2g=True,
+            use_bls=True,
+            g2p2g_allowed_

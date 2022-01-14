@@ -57,4 +57,7 @@ class MPMSolver:
             use_g2p2g=False,  # Ref: A massively parallel and scalable multi-GPU material point method
             v_clamp_g2p2g=True,
             use_bls=True,
-            g2p2g_allowed_
+            g2p2g_allowed_cfl=0.9,  # 0.0 for no CFL limit
+            water_density=1.0,
+            support_plasticity=True,  # Support snow and sand materials
+            use_adaptive_

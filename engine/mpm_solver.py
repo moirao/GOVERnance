@@ -60,4 +60,11 @@ class MPMSolver:
             g2p2g_allowed_cfl=0.9,  # 0.0 for no CFL limit
             water_density=1.0,
             support_plasticity=True,  # Support snow and sand materials
-            use_adaptive_
+            use_adaptive_dt=False,
+            use_ggui=False,
+            use_emitter_id=False
+    ):
+        self.dim = len(res)
+        self.quant = quant
+        self.use_g2p2g = use_g2p2g
+        se

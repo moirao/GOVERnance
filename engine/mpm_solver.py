@@ -67,4 +67,8 @@ class MPMSolver:
         self.dim = len(res)
         self.quant = quant
         self.use_g2p2g = use_g2p2g
+        self.v_clamp_g2p2g = v_clamp_g2p2g
+        self.use_bls = use_bls
+        self.g2p2g_allowed_cfl = g2p2g_allowed_cfl
+        self.water_density = water_density
         se

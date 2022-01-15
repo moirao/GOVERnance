@@ -71,4 +71,11 @@ class MPMSolver:
         self.use_bls = use_bls
         self.g2p2g_allowed_cfl = g2p2g_allowed_cfl
         self.water_density = water_density
-        se
+        self.grid_size = 4096
+
+        assert self.dim in (
+            2, 3), "MPM solver supports only 2D and 3D simulations."
+
+        self.t = 0.0
+        self.res = res
+   

@@ -78,4 +78,8 @@ class MPMSolver:
 
         self.t = 0.0
         self.res = res
-   
+        self.n_particles = ti.field(ti.i32, shape=())
+        self.dx = size / res[0]
+        self.inv_dx = 1.0 / self.dx
+        self.default_dt = 2e-2 * self.dx / size * dt_scale
+        self.p

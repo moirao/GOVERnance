@@ -82,4 +82,8 @@ class MPMSolver:
         self.dx = size / res[0]
         self.inv_dx = 1.0 / self.dx
         self.default_dt = 2e-2 * self.dx / size * dt_scale
-        self.p
+        self.p_vol = self.dx**self.dim
+        self.p_rho = 1000
+        self.p_mass = self.p_vol * self.p_rho
+        self.max_num_particles = max_num_particles
+        self.gravity = ti.Vector

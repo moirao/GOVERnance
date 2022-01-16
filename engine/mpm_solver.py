@@ -86,4 +86,7 @@ class MPMSolver:
         self.p_rho = 1000
         self.p_mass = self.p_vol * self.p_rho
         self.max_num_particles = max_num_particles
-        self.gravity = ti.Vector
+        self.gravity = ti.Vector.field(self.dim, dtype=ti.f32, shape=())
+        self.source_bound = ti.Vector.field(self.dim, dtype=ti.f32, shape=2)
+        self.source_velocity = ti.Vector.field(self.dim,
+        

@@ -99,4 +99,9 @@ class MPMSolver:
         self.F_bound = 4.0
 
         # Affine velocity field
-        
+        if not self.use_g2p2g:
+            self.C = ti.Matrix.field(self.dim, self.dim, dtype=ti.f32)
+        # Deformation gradient
+
+        if quant:
+            qft = ti

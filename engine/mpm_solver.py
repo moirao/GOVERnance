@@ -89,4 +89,8 @@ class MPMSolver:
         self.gravity = ti.Vector.field(self.dim, dtype=ti.f32, shape=())
         self.source_bound = ti.Vector.field(self.dim, dtype=ti.f32, shape=2)
         self.source_velocity = ti.Vector.field(self.dim,
-        
+                                               dtype=ti.f32,
+                                               shape=())
+        self.input_grid = 0
+        self.all_time_max_velocity = 0
+        self.sup

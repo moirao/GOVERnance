@@ -93,4 +93,10 @@ class MPMSolver:
                                                shape=())
         self.input_grid = 0
         self.all_time_max_velocity = 0
-        self.sup
+        self.support_plasticity = support_plasticity
+        self.use_adaptive_dt = use_adaptive_dt
+        self.use_ggui = use_ggui
+        self.F_bound = 4.0
+
+        # Affine velocity field
+        

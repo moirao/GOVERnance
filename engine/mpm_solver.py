@@ -104,4 +104,8 @@ class MPMSolver:
         # Deformation gradient
 
         if quant:
-            qft = ti
+            qft = ti.types.quant.fixed(21, max_value=2.0)
+            self.x = ti.Vector.field(self.dim, dtype=qft)
+
+            qft = ti.types.quant.float(exp=7, frac=19)
+            self.v = ti.Vector.field(self.d

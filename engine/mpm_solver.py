@@ -117,4 +117,8 @@ class MPMSolver:
             self.x = ti.Vector.field(self.dim, dtype=ti.f32)
             self.F = ti.Matrix.field(self.dim, self.dim, dtype=ti.f32)
 
-        self.use_em
+        self.use_emitter_id = use_emitter_id
+        if self.use_emitter_id:
+            self.emitter_ids = ti.field(dtype=ti.i32)
+
+        self.last_time_final_particles = ti.field(dtype=ti.i32, 

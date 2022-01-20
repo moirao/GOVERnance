@@ -113,4 +113,8 @@ class MPMSolver:
             qft = ti.types.quant.fixed(16, max_value=(self.F_bound + 0.1))
             self.F = ti.Matrix.field(self.dim, self.dim, dtype=qft)
         else:
-            self.v = ti
+            self.v = ti.Vector.field(self.dim, dtype=ti.f32)
+            self.x = ti.Vector.field(self.dim, dtype=ti.f32)
+            self.F = ti.Matrix.field(self.dim, self.dim, dtype=ti.f32)
+
+        self.use_em

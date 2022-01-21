@@ -126,4 +126,8 @@ class MPMSolver:
         if quant and self.dim == 3:
             self.material = ti.field(dtype=ti.types.quant.int(16, False))
         else:
-            self.material = ti.field(dty
+            self.material = ti.field(dtype=ti.i32)
+        # Particle color
+        self.color = ti.field(dtype=ti.i32)
+        if self.use_ggui:
+            self.color_with_alpha = ti.Vector.field(4, dtype=ti.f32)

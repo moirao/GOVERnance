@@ -121,4 +121,9 @@ class MPMSolver:
         if self.use_emitter_id:
             self.emitter_ids = ti.field(dtype=ti.i32)
 
-        self.last_time_final_particles = ti.field(dtype=ti.i32, 
+        self.last_time_final_particles = ti.field(dtype=ti.i32, shape=())
+        # Material id
+        if quant and self.dim == 3:
+            self.material = ti.field(dtype=ti.types.quant.int(16, False))
+        else:
+            self.material = ti.field(dty

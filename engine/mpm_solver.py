@@ -142,4 +142,7 @@ class MPMSolver:
 
         if unbounded:
             # The maximum grid size must be larger than twice of
-            # simulation resolution in an unbo
+            # simulation resolution in an unbounded simulation,
+            # Otherwise the top and right sides will be bounded by grid size
+            while self.grid_size <= 2 * max(self.res):
+                self.grid_size *= 2  # keep i

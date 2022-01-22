@@ -131,3 +131,9 @@ class MPMSolver:
         self.color = ti.field(dtype=ti.i32)
         if self.use_ggui:
             self.color_with_alpha = ti.Vector.field(4, dtype=ti.f32)
+        # Plastic deformation volume ratio
+        if self.support_plasticity:
+            self.Jp = ti.field(dtype=ti.f32)
+
+        if self.dim == 2:
+           

@@ -136,4 +136,10 @@ class MPMSolver:
             self.Jp = ti.field(dtype=ti.f32)
 
         if self.dim == 2:
-           
+            indices = ti.ij
+        else:
+            indices = ti.ijk
+
+        if unbounded:
+            # The maximum grid size must be larger than twice of
+            # simulation resolution in an unbo

@@ -145,4 +145,10 @@ class MPMSolver:
             # simulation resolution in an unbounded simulation,
             # Otherwise the top and right sides will be bounded by grid size
             while self.grid_size <= 2 * max(self.res):
-                self.grid_size *= 2  # keep i
+                self.grid_size *= 2  # keep it power of two
+        offset = tuple(-self.grid_size // 2 for _ in range(self.dim))
+        self.offset = offset
+
+        self.num_grids = 2 if self.use_g2p2g else 1
+
+      

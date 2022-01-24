@@ -164,4 +164,9 @@ class MPMSolver:
         self.pid = []
 
         for g in range(self.num_grids):
-            # Grid node momentum/velocit
+            # Grid node momentum/velocity
+            grid_v = ti.Vector.field(self.dim, dtype=ti.f32)
+            grid_m = ti.field(dtype=ti.f32)
+            pid = ti.field(ti.i32)
+            self.grid_v.append(grid_v)
+  

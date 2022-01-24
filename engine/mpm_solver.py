@@ -151,4 +151,9 @@ class MPMSolver:
 
         self.num_grids = 2 if self.use_g2p2g else 1
 
-      
+        grid_block_size = 128
+        if self.dim == 2:
+            self.leaf_block_size = 16
+        else:
+            # TODO: use 8?
+            self.leaf_block_s

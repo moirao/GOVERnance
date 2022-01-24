@@ -156,4 +156,12 @@ class MPMSolver:
             self.leaf_block_size = 16
         else:
             # TODO: use 8?
-            self.leaf_block_s
+            self.leaf_block_size = 4
+
+        self.grid = []
+        self.grid_v = []
+        self.grid_m = []
+        self.pid = []
+
+        for g in range(self.num_grids):
+            # Grid node momentum/velocit

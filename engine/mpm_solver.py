@@ -169,4 +169,8 @@ class MPMSolver:
             grid_m = ti.field(dtype=ti.f32)
             pid = ti.field(ti.i32)
             self.grid_v.append(grid_v)
-  
+            # Grid node mass
+            self.grid_m.append(grid_m)
+            grid = ti.root.pointer(indices, self.grid_size // grid_block_size)
+            block = grid.pointer(indices,
+                                

@@ -178,4 +178,9 @@ class MPMSolver:
             self.grid.append(grid)
 
             def block_component(c):
-                block.dense(indices, s
+                block.dense(indices, self.leaf_block_size).place(c,
+                                                                 offset=offset)
+
+            block_component(grid_m)
+            for d in range(self.dim):
+                bloc

@@ -173,4 +173,9 @@ class MPMSolver:
             self.grid_m.append(grid_m)
             grid = ti.root.pointer(indices, self.grid_size // grid_block_size)
             block = grid.pointer(indices,
-                                
+                                 grid_block_size // self.leaf_block_size)
+            self.block = block
+            self.grid.append(grid)
+
+            def block_component(c):
+                block.dense(indices, s

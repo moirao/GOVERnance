@@ -183,4 +183,9 @@ class MPMSolver:
 
             block_component(grid_m)
             for d in range(self.dim):
-                bloc
+                block_component(grid_v.get_scalar_field(d))
+
+            self.pid.append(pid)
+
+            block_offset = tuple(o // self.leaf_block_size
+                                 for o in self.offset)

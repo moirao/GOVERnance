@@ -192,4 +192,10 @@ class MPMSolver:
             self.block_offset = block_offset
             block.dynamic(ti.axes(self.dim),
                           1024 * 1024,
-                          chunk_size=self.leaf_bloc
+                          chunk_size=self.leaf_block_size**self.dim * 8).place(
+                              pid, offset=block_offset + (0, ))
+
+        self.padding = padding
+
+        # Young's modulus and Poisson's ratio
+        sel

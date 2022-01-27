@@ -207,4 +207,7 @@ class MPMSolver:
         # Sand parameters
         friction_angle = math.radians(45)
         sin_phi = math.sin(friction_angle)
- 
+        self.alpha = math.sqrt(2 / 3) * 2 * sin_phi / (3 - sin_phi)
+
+        # An empirically optimal chunk size is 1/10 of the expected particle number
+        c

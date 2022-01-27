@@ -202,4 +202,9 @@ class MPMSolver:
         # Lame parameters
         self.mu_0, self.lambda_0 = self.E / (
             2 * (1 + self.nu)), self.E * self.nu / ((1 + self.nu) *
-             
+                                                    (1 - 2 * self.nu))
+
+        # Sand parameters
+        friction_angle = math.radians(45)
+        sin_phi = math.sin(friction_angle)
+ 

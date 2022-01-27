@@ -210,4 +210,9 @@ class MPMSolver:
         self.alpha = math.sqrt(2 / 3) * 2 * sin_phi / (3 - sin_phi)
 
         # An empirically optimal chunk size is 1/10 of the expected particle number
-        c
+        chunk_size = 2**20 if self.dim == 2 else 2**23
+        self.particle = ti.root.dynamic(ti.i, max_num_particles, chunk_size)
+
+        if self.quant:
+            if not self.use_g2p2g:
+             

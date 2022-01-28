@@ -215,4 +215,7 @@ class MPMSolver:
 
         if self.quant:
             if not self.use_g2p2g:
-             
+                self.particle.place(self.C)
+            if self.support_plasticity:
+                self.particle.place(self.Jp)
+            bitpack = ti.BitpackedFields(max_n

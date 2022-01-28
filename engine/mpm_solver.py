@@ -218,4 +218,8 @@ class MPMSolver:
                 self.particle.place(self.C)
             if self.support_plasticity:
                 self.particle.place(self.Jp)
-            bitpack = ti.BitpackedFields(max_n
+            bitpack = ti.BitpackedFields(max_num_bits=64)
+            bitpack.place(self.x)
+            self.particle.place(bitpack)
+            bitpack = ti.BitpackedFields(max_num_bits=64)
+            bitpack.place(self.v, shared_exponent=T

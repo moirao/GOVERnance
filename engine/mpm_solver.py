@@ -243,4 +243,8 @@ class MPMSolver:
                               self.F.get_scalar_field(2, 1))
                 self.particle.place(bitpack)
                 bitpack = ti.BitpackedFields(max_num_bits=32)
-                bitpack.place(self.F.get
+                bitpack.place(self.F.get_scalar_field(2, 2), self.material)
+                self.particle.place(bitpack)
+            else:
+                assert self.dim == 2
+                bitpack = t

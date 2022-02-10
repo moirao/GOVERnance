@@ -253,4 +253,7 @@ class MPMSolver:
                 self.particle.place(bitpack)
                 bitpack = ti.BitpackedFields(max_num_bits=32)
                 bitpack.place(self.F.get_scalar_field(1, 0),
-                          
+                              self.F.get_scalar_field(1, 1))
+                self.particle.place(bitpack)
+                # No quantization on particle material in 2D
+                self.particle.place(sel

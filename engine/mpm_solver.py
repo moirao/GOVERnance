@@ -256,4 +256,9 @@ class MPMSolver:
                               self.F.get_scalar_field(1, 1))
                 self.particle.place(bitpack)
                 # No quantization on particle material in 2D
-                self.particle.place(sel
+                self.particle.place(self.material)
+            self.particle.place(self.color)
+            if self.use_emitter_id:
+                self.particle.place(self.emitter_ids)
+        else:
+            if self.use_emitter_

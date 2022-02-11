@@ -265,4 +265,7 @@ class MPMSolver:
                 self.particle.place(self.x, self.v, self.F, self.material,
                                 self.color, self.emitter_ids)
             else:
-                self.parti
+                self.particle.place(self.x, self.v, self.F, self.material,
+                                self.color)
+            if self.support_plasticity:
+                self.partic

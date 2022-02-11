@@ -261,4 +261,8 @@ class MPMSolver:
             if self.use_emitter_id:
                 self.particle.place(self.emitter_ids)
         else:
-            if self.use_emitter_
+            if self.use_emitter_id:
+                self.particle.place(self.x, self.v, self.F, self.material,
+                                self.color, self.emitter_ids)
+            else:
+                self.parti

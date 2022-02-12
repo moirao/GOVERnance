@@ -268,4 +268,11 @@ class MPMSolver:
                 self.particle.place(self.x, self.v, self.F, self.material,
                                 self.color)
             if self.support_plasticity:
-                self.partic
+                self.particle.place(self.Jp)
+            if not self.use_g2p2g:
+                self.particle.place(self.C)
+
+        if self.use_ggui:
+            self.particle.place(self.color_with_alpha)
+
+        self.t

@@ -275,4 +275,11 @@ class MPMSolver:
         if self.use_ggui:
             self.particle.place(self.color_with_alpha)
 
-        self.t
+        self.total_substeps = 0
+        self.unbounded = unbounded
+
+        if self.dim == 2:
+            self.voxelizer = None
+            self.set_gravity((0, -9.8))
+        else:
+  

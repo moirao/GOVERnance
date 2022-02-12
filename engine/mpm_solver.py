@@ -286,4 +286,8 @@ class MPMSolver:
                 if USE_IN_BLENDER:
                     from .voxelizer import Voxelizer
                 else:
-                    from engine.voxelizer im
+                    from engine.voxelizer import Voxelizer
+                self.voxelizer = Voxelizer(res=self.res,
+                                           dx=self.dx,
+                                           padding=self.padding,
+             

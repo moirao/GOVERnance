@@ -294,3 +294,13 @@ class MPMSolver:
             else:
                 self.voxelizer = None
             self.set_gravity((0, -9.8, 0))
+
+        self.voxelizer_super_sample = voxelizer_super_sample
+
+        self.grid_postprocess = []
+
+        self.add_bounding_box(self.unbounded)
+
+        self.writers = []
+
+        i

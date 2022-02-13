@@ -290,4 +290,7 @@ class MPMSolver:
                 self.voxelizer = Voxelizer(res=self.res,
                                            dx=self.dx,
                                            padding=self.padding,
-             
+                                           super_sample=voxelizer_super_sample)
+            else:
+                self.voxelizer = None
+            self.set_gravity((0, -9.8, 0))

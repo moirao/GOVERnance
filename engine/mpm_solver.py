@@ -310,4 +310,10 @@ class MPMSolver:
             self.pid = self.pid[0]
 
     @ti.func
-    def st
+    def stencil_range(self):
+        return ti.ndrange(*((3, ) * self.dim))
+
+    def set_gravity(self, g):
+        assert isinstance(g, (tuple, list))
+        assert len(g) == self.dim
+        self.

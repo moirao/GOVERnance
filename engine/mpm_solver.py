@@ -303,4 +303,11 @@ class MPMSolver:
 
         self.writers = []
 
-        i
+        if not self.use_g2p2g:
+            self.grid = self.grid[0]
+            self.grid_v = self.grid_v[0]
+            self.grid_m = self.grid_m[0]
+            self.pid = self.pid[0]
+
+    @ti.func
+    def st

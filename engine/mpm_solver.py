@@ -316,4 +316,9 @@ class MPMSolver:
     def set_gravity(self, g):
         assert isinstance(g, (tuple, list))
         assert len(g) == self.dim
-        self.
+        self.gravity[None] = g
+
+    @ti.func
+    def sand_projection(self, sigma, p):
+        sigma_out = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+        epsilon = ti.Vector.zero(ti.f32, self.

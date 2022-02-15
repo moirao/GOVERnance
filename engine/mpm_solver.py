@@ -326,4 +326,9 @@ class MPMSolver:
             epsilon[i] = ti.log(max(abs(sigma[i, i]), 1e-4))
             sigma_out[i, i] = 1
         tr = epsilon.sum() + self.Jp[p]
-        ep
+        epsilon_hat = epsilon - tr / self.dim
+        epsilon_hat_norm = epsilon_hat.norm() + 1e-20
+        if tr >= 0.0:
+            self.Jp[p] = tr
+        else:
+            self.Jp[p] = 0.

@@ -321,4 +321,9 @@ class MPMSolver:
     @ti.func
     def sand_projection(self, sigma, p):
         sigma_out = ti.Matrix.zero(ti.f32, self.dim, self.dim)
-        epsilon = ti.Vector.zero(ti.f32, self.
+        epsilon = ti.Vector.zero(ti.f32, self.dim)
+        for i in ti.static(range(self.dim)):
+            epsilon[i] = ti.log(max(abs(sigma[i, i]), 1e-4))
+            sigma_out[i, i] = 1
+        tr = epsilon.sum() + self.Jp[p]
+        ep

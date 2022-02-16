@@ -331,4 +331,8 @@ class MPMSolver:
         if tr >= 0.0:
             self.Jp[p] = tr
         else:
-            self.Jp[p] = 0.
+            self.Jp[p] = 0.0
+            delta_gamma = epsilon_hat_norm + (
+                self.dim * self.lambda_0 +
+                2 * self.mu_0) / (2 * self.mu_0) * tr * self.alpha
+            for i in ti.stat

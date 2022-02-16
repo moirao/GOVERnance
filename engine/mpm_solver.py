@@ -337,4 +337,12 @@ class MPMSolver:
                 2 * self.mu_0) / (2 * self.mu_0) * tr * self.alpha
             for i in ti.static(range(self.dim)):
                 sigma_out[i, i] = ti.exp(epsilon[i] - max(0, delta_gamma) /
-                                         epsilon_hat_norm * epsilon_hat[i]
+                                         epsilon_hat_norm * epsilon_hat[i])
+
+        return sigma_out
+
+    @ti.kernel
+    def build_pid(self, pid: ti.template(), grid_m: ti.template(),
+                  offset: ti.template()):
+        """
+        grid has 

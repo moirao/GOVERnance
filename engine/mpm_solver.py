@@ -335,4 +335,6 @@ class MPMSolver:
             delta_gamma = epsilon_hat_norm + (
                 self.dim * self.lambda_0 +
                 2 * self.mu_0) / (2 * self.mu_0) * tr * self.alpha
-            for i in ti.stat
+            for i in ti.static(range(self.dim)):
+                sigma_out[i, i] = ti.exp(epsilon[i] - max(0, delta_gamma) /
+                                         epsilon_hat_norm * epsilon_hat[i]

@@ -345,4 +345,8 @@ class MPMSolver:
     def build_pid(self, pid: ti.template(), grid_m: ti.template(),
                   offset: ti.template()):
         """
-        grid has 
+        grid has blocking (e.g. 4x4x4), we wish to put the particles from each block into a GPU block,
+        then used shared memory (ti.block_local) to accelerate
+        :param pid:
+        :param grid_m:
+        :

@@ -355,4 +355,7 @@ class MPMSolver:
         ti.loop_config(block_dim=64)
         for p in self.x:
             base = int(ti.floor(self.x[p] * self.inv_dx - 0.5)) \
- 
+                   - ti.Vector(self.offset)
+            # Pid grandparent is `block`
+            base_pid = ti.rescale_index(grid_m, pid.parent(2), base)
+            ti.append

@@ -349,4 +349,10 @@ class MPMSolver:
         then used shared memory (ti.block_local) to accelerate
         :param pid:
         :param grid_m:
-        :
+        :param offset:
+        :return:
+        """
+        ti.loop_config(block_dim=64)
+        for p in self.x:
+            base = int(ti.floor(self.x[p] * self.inv_dx - 0.5)) \
+ 

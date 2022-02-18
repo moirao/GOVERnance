@@ -362,4 +362,9 @@ class MPMSolver:
 
     @ti.kernel
     def g2p2g(self, dt: ti.f32, pid: ti.template(), grid_v_in: ti.template(),
-              grid_v_out: ti.template(), grid_m_out
+              grid_v_out: ti.template(), grid_m_out: ti.template()):
+        ti.loop_config(block_dim=256)
+        ti.no_activate(self.particle)
+        if ti.static(self.use_bls):
+            ti.block_local(grid_m_out)
+ 

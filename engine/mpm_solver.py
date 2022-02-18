@@ -358,4 +358,8 @@ class MPMSolver:
                    - ti.Vector(self.offset)
             # Pid grandparent is `block`
             base_pid = ti.rescale_index(grid_m, pid.parent(2), base)
-            ti.append
+            ti.append(pid.parent(), base_pid, p)
+
+    @ti.kernel
+    def g2p2g(self, dt: ti.f32, pid: ti.template(), grid_v_in: ti.template(),
+              grid_v_out: ti.template(), grid_m_out

@@ -367,4 +367,6 @@ class MPMSolver:
         ti.no_activate(self.particle)
         if ti.static(self.use_bls):
             ti.block_local(grid_m_out)
- 
+            for d in ti.static(range(self.dim)):
+                ti.block_local(grid_v_in.get_scalar_field(d))
+                ti.block_local(grid_v_out.get_scalar_field(

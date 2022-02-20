@@ -369,4 +369,9 @@ class MPMSolver:
             ti.block_local(grid_m_out)
             for d in ti.static(range(self.dim)):
                 ti.block_local(grid_v_in.get_scalar_field(d))
-                ti.block_local(grid_v_out.get_scalar_field(
+                ti.block_local(grid_v_out.get_scalar_field(d))
+        for I in ti.grouped(pid):
+            p = pid[I]
+            # G2P
+            base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
+            Im = ti.rescale_index(pid, 

@@ -377,4 +377,9 @@ class MPMSolver:
             Im = ti.rescale_index(pid, grid_m_out, I)
             for D in ti.static(range(self.dim)):
                 base[D] = ti.assume_in_range(base[D], Im[D], 0, 1)
-            fx = self.x[p] * self.inv_dx - base.cast(floa
+            fx = self.x[p] * self.inv_dx - base.cast(float)
+            w = [
+                0.5 * (1.5 - fx)**2, 0.75 - (fx - 1.0)**2, 0.5 * (fx - 0.5)**2
+            ]
+            new_v = ti.Vector.zero(ti.f32, self.dim)
+            C = ti.Matrix.zero(ti

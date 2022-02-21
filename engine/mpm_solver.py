@@ -374,4 +374,7 @@ class MPMSolver:
             p = pid[I]
             # G2P
             base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
-            Im = ti.rescale_index(pid, 
+            Im = ti.rescale_index(pid, grid_m_out, I)
+            for D in ti.static(range(self.dim)):
+                base[D] = ti.assume_in_range(base[D], Im[D], 0, 1)
+            fx = self.x[p] * self.inv_dx - base.cast(floa

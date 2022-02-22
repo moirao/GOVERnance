@@ -382,4 +382,7 @@ class MPMSolver:
                 0.5 * (1.5 - fx)**2, 0.75 - (fx - 1.0)**2, 0.5 * (fx - 0.5)**2
             ]
             new_v = ti.Vector.zero(ti.f32, self.dim)
-            C = ti.Matrix.zero(ti
+            C = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+            # Loop over 3x3 grid node neighborhood
+            for offset in ti.static(ti.grouped(self.stencil_range())):
+                dp

@@ -389,4 +389,8 @@ class MPMSolver:
                 g_v = grid_v_in[base + offset]
                 weight = 1.0
                 for d in ti.static(range(self.dim)):
-                    weight *= 
+                    weight *= w[offset[d]][d]
+                new_v += weight * g_v
+                C += 4 * self.inv_dx * weight * g_v.outer_product(dpos)
+
+            if p >= self.last_time_fina

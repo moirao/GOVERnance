@@ -393,4 +393,9 @@ class MPMSolver:
                 new_v += weight * g_v
                 C += 4 * self.inv_dx * weight * g_v.outer_product(dpos)
 
-            if p >= self.last_time_fina
+            if p >= self.last_time_final_particles[None]:
+                # New particles. No G2P.
+                new_v = self.v[p]
+                C = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+
+            if self.m

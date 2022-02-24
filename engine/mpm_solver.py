@@ -403,4 +403,6 @@ class MPMSolver:
                 self.x[p] += dt * self.v[p]  # advection
 
             # P2G
-            base = ti
+            base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
+            for D in ti.static(range(self.dim)):
+                base[D] = ti.assume_in_range(base[D], Im[D], -1,

@@ -398,4 +398,9 @@ class MPMSolver:
                 new_v = self.v[p]
                 C = ti.Matrix.zero(ti.f32, self.dim, self.dim)
 
-            if self.m
+            if self.material[p] != self.material_stationary:
+                self.v[p] = new_v
+                self.x[p] += dt * self.v[p]  # advection
+
+            # P2G
+            base = ti

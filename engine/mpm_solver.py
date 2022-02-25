@@ -405,4 +405,8 @@ class MPMSolver:
             # P2G
             base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
             for D in ti.static(range(self.dim)):
-                base[D] = ti.assume_in_range(base[D], Im[D], -1,
+                base[D] = ti.assume_in_range(base[D], Im[D], -1, 2)
+
+            fx = self.x[p] * self.inv_dx - float(base)
+            # Quadratic kernels  [http://mpm.graphics   Eqn. 123, with x=fx, fx-1,fx-2]
+            w2 = [0.5 

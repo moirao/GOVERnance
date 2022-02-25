@@ -409,4 +409,6 @@ class MPMSolver:
 
             fx = self.x[p] * self.inv_dx - float(base)
             # Quadratic kernels  [http://mpm.graphics   Eqn. 123, with x=fx, fx-1,fx-2]
-            w2 = [0.5 
+            w2 = [0.5 * (1.5 - fx)**2, 0.75 - (fx - 1)**2, 0.5 * (fx - 0.5)**2]
+            # Deformation gradient update
+            new_F = (ti.Matrix.identity(ti.f32, self.dim) + dt * C) @ self.

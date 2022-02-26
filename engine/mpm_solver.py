@@ -423,4 +423,9 @@ class MPMSolver:
                     p] == self.material_elastic:  # Jelly, make it softer
                 h = 0.3
             mu, la = self.mu_0 * h, self.lambda_0 * h
-            if self.material[p] ==
+            if self.material[p] == self.material_water:  # Liquid
+                mu = 0.0
+            U, sig, V = ti.svd(self.F[p])
+            J = 1.0
+            if self.material[p] != self.material_sand:
+ 

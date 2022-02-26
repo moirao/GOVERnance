@@ -415,4 +415,8 @@ class MPMSolver:
             if ti.static(self.quant):
                 new_F = max(-self.F_bound, min(self.F_bound, new_F))
             self.F[p] = new_F
-            # Hardening coefficient: snow gets 
+            # Hardening coefficient: snow gets harder when compressed
+            h = 1.0
+            if ti.static(self.support_plasticity):
+                h = ti.exp(10 * (1.0 - self.Jp[p]))
+            if se

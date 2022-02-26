@@ -428,4 +428,7 @@ class MPMSolver:
             U, sig, V = ti.svd(self.F[p])
             J = 1.0
             if self.material[p] != self.material_sand:
- 
+                for d in ti.static(range(self.dim)):
+                    new_sig = sig[d, d]
+                    if self.material[p] == self.material_snow:  # Snow
+              

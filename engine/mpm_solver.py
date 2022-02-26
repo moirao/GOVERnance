@@ -419,4 +419,8 @@ class MPMSolver:
             h = 1.0
             if ti.static(self.support_plasticity):
                 h = ti.exp(10 * (1.0 - self.Jp[p]))
-            if se
+            if self.material[
+                    p] == self.material_elastic:  # Jelly, make it softer
+                h = 0.3
+            mu, la = self.mu_0 * h, self.lambda_0 * h
+            if self.material[p] ==

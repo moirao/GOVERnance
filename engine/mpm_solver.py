@@ -434,4 +434,8 @@ class MPMSolver:
                         new_sig = min(max(sig[d, d], 1 - 2.5e-2),
                                       1 + 4.5e-3)  # Plasticity
                     if ti.static(self.support_plasticity):
-                        self.Jp[
+                        self.Jp[p] *= sig[d, d] / new_sig
+                    sig[d, d] = new_sig
+                    J *= new_sig
+            if self.material[p] == self.material_water:
+                # Reset def

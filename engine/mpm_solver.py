@@ -446,4 +446,8 @@ class MPMSolver:
                 # Reconstruct elastic deformation gradient after plasticity
                 self.F[p] = U @ sig @ V.transpose()
 
-            stress = ti.Matrix.
+            stress = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+
+            if self.material[p] != self.material_sand:
+                stress = 2 * mu * (
+                    self.F[p] - U @ V.t

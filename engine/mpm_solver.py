@@ -453,4 +453,8 @@ class MPMSolver:
                     self.F[p] - U @ V.transpose()) @ self.F[p].transpose(
                     ) + ti.Matrix.identity(ti.f32, self.dim) * la * J * (J - 1)
             else:
-                if ti.static(self.suppor
+                if ti.static(self.support_plasticity):
+                    sig = self.sand_projection(sig, p)
+                    self.F[p] = U @ sig @ V.transpose()
+                    log_sig_sum = 0.0
+                    center = 

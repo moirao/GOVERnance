@@ -463,4 +463,7 @@ class MPMSolver:
                         center[i, i] = 2.0 * self.mu_0 * ti.log(
                             sig[i, i]) * (1 / sig[i, i])
                     for i in ti.static(range(self.dim)):
-                        
+                        center[i,
+                               i] += self.lambda_0 * log_sig_sum * (1 /
+                                                                    sig[i, i])
+                    stress = U @ 

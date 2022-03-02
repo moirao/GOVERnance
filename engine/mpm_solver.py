@@ -469,4 +469,9 @@ class MPMSolver:
                     stress = U @ center @ V.transpose() @ self.F[p].transpose()
 
             stress = (-dt * self.p_vol * 4 * self.inv_dx**2) * stress
-            affine = stress + self.p_mass * 
+            affine = stress + self.p_mass * C
+
+            # Loop over 3x3 grid node neighborhood
+            for offset in ti.static(ti.grouped(self.stencil_range())):
+                dpos = (offset.cast(float) - fx) * self.dx
+  

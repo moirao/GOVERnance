@@ -466,4 +466,7 @@ class MPMSolver:
                         center[i,
                                i] += self.lambda_0 * log_sig_sum * (1 /
                                                                     sig[i, i])
-                    stress = U @ 
+                    stress = U @ center @ V.transpose() @ self.F[p].transpose()
+
+            stress = (-dt * self.p_vol * 4 * self.inv_dx**2) * stress
+            affine = stress + self.p_mass * 

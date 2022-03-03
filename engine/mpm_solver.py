@@ -477,4 +477,7 @@ class MPMSolver:
                 weight = 1.0
                 for d in ti.static(range(self.dim)):
                     weight *= w2[offset[d]][d]
-                grid_v
+                grid_v_out[base +
+                           offset] += weight * (self.p_mass * self.v[p] +
+                                                affine @ dpos)
+               

@@ -480,4 +480,10 @@ class MPMSolver:
                 grid_v_out[base +
                            offset] += weight * (self.p_mass * self.v[p] +
                                                 affine @ dpos)
-               
+                grid_m_out[base + offset] += weight * self.p_mass
+
+        self.last_time_final_particles[None] = self.n_particles[None]
+
+    @ti.kernel
+    def p2g(self, dt: ti.f32):
+        ti.no_ac

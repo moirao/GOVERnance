@@ -486,4 +486,8 @@ class MPMSolver:
 
     @ti.kernel
     def p2g(self, dt: ti.f32):
-        ti.no_ac
+        ti.no_activate(self.particle)
+        ti.loop_config(block_dim=256)
+        if ti.static(self.use_bls):
+            for d in ti.static(range(self.dim)):
+                ti.block_local(self.grid_v.get_sca

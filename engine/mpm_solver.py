@@ -497,4 +497,8 @@ class MPMSolver:
             base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
             Im = ti.rescale_index(self.pid, self.grid_m, I)
             for D in ti.static(range(self.dim)):
-                # For block shared memory: hint compiler that there is a connection between `base` a
+                # For block shared memory: hint compiler that there is a connection between `base` and loop index `I`
+                base[D] = ti.assume_in_range(base[D], Im[D], 0, 1)
+
+            fx = self.x[p] * self.inv_dx - base.cast(float)
+            # Quadratic

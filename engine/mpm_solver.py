@@ -495,4 +495,6 @@ class MPMSolver:
         for I in ti.grouped(self.pid):
             p = self.pid[I]
             base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
-   
+            Im = ti.rescale_index(self.pid, self.grid_m, I)
+            for D in ti.static(range(self.dim)):
+                # For block shared memory: hint compiler that there is a connection between `base` a

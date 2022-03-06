@@ -507,4 +507,8 @@ class MPMSolver:
             F = self.F[p]
             if self.material[p] == self.material_water:  # liquid
                 F = ti.Matrix.identity(ti.f32, self.dim)
-                if ti.stati
+                if ti.static(self.support_plasticity):
+                    F[0, 0] = self.Jp[p]
+
+            F = (ti.Matrix.identity(ti.f32, self.dim) + dt * self.C[p]) @ F
+            # Hardening coefficient: s

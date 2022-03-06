@@ -511,4 +511,8 @@ class MPMSolver:
                     F[0, 0] = self.Jp[p]
 
             F = (ti.Matrix.identity(ti.f32, self.dim) + dt * self.C[p]) @ F
-            # Hardening coefficient: s
+            # Hardening coefficient: snow gets harder when compressed
+            h = 1.0
+            if ti.static(self.support_plasticity):
+                if self.material[p] != self.material_water:
+                    h = ti.exp(1

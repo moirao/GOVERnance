@@ -529,4 +529,7 @@ class MPMSolver:
                     new_sig = sig[d, d]
                     if self.material[p] == self.material_snow:  # Snow
                         new_sig = min(max(sig[d, d], 1 - 2.5e-2),
-                                      1 + 4.5e-3)  # Plasticit
+                                      1 + 4.5e-3)  # Plasticity
+                    if ti.static(self.support_plasticity):
+                        self.Jp[p] *= sig[d, d] / new_sig
+                    sig[d, d] = new_s

@@ -539,4 +539,7 @@ class MPMSolver:
                 F = ti.Matrix.identity(ti.f32, self.dim)
                 F[0, 0] = J
                 if ti.static(self.support_plasticity):
-       
+                    self.Jp[p] = J
+            elif self.material[p] == self.material_snow:
+                # Reconstruct elastic deformation gradient after plasticity
+      

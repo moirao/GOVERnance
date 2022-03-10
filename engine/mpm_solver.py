@@ -535,4 +535,8 @@ class MPMSolver:
                     sig[d, d] = new_sig
                     J *= new_sig
             if self.material[p] == self.material_water:
-                # Reset deformation gradient to a
+                # Reset deformation gradient to avoid numerical instability
+                F = ti.Matrix.identity(ti.f32, self.dim)
+                F[0, 0] = J
+                if ti.static(self.support_plasticity):
+       

@@ -542,4 +542,9 @@ class MPMSolver:
                     self.Jp[p] = J
             elif self.material[p] == self.material_snow:
                 # Reconstruct elastic deformation gradient after plasticity
-      
+                F = U @ sig @ V.transpose()
+
+            stress = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+
+            if self.material[p] != self.material_sand:
+  

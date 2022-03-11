@@ -547,4 +547,7 @@ class MPMSolver:
             stress = ti.Matrix.zero(ti.f32, self.dim, self.dim)
 
             if self.material[p] != self.material_sand:
-  
+                stress = 2 * mu * (F - U @ V.transpose()) @ F.transpose(
+                ) + ti.Matrix.identity(ti.f32, self.dim) * la * J * (J - 1)
+            else:
+                

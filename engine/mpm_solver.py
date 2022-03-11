@@ -550,4 +550,7 @@ class MPMSolver:
                 stress = 2 * mu * (F - U @ V.transpose()) @ F.transpose(
                 ) + ti.Matrix.identity(ti.f32, self.dim) * la * J * (J - 1)
             else:
-                
+                if ti.static(self.support_plasticity):
+                    sig = self.sand_projection(sig, p)
+                    F = U @ sig @ V.transpose()
+                    log_sig_sum = 

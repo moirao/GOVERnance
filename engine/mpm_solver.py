@@ -556,4 +556,7 @@ class MPMSolver:
                     log_sig_sum = 0.0
                     center = ti.Matrix.zero(ti.f32, self.dim, self.dim)
                     for i in ti.static(range(self.dim)):
-                        log_sig_sum += ti.l
+                        log_sig_sum += ti.log(sig[i, i])
+                        center[i, i] = 2.0 * self.mu_0 * ti.log(
+                            sig[i, i]) * (1 / sig[i, i])
+                    for i in ti.static(range(self.dim)):

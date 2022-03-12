@@ -553,4 +553,7 @@ class MPMSolver:
                 if ti.static(self.support_plasticity):
                     sig = self.sand_projection(sig, p)
                     F = U @ sig @ V.transpose()
-                    log_sig_sum = 
+                    log_sig_sum = 0.0
+                    center = ti.Matrix.zero(ti.f32, self.dim, self.dim)
+                    for i in ti.static(range(self.dim)):
+                        log_sig_sum += ti.l

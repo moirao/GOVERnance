@@ -567,4 +567,8 @@ class MPMSolver:
             self.F[p] = F
 
             stress = (-dt * self.p_vol * 4 * self.inv_dx**2) * stress
-            # TODO
+            # TODO: implement g2p2g pmass
+            mass = self.p_mass
+            if self.material[p] == self.material_water:
+                mass *= self.water_density
+            affine = stress + m

@@ -571,4 +571,8 @@ class MPMSolver:
             mass = self.p_mass
             if self.material[p] == self.material_water:
                 mass *= self.water_density
-            affine = stress + m
+            affine = stress + mass * self.C[p]
+
+            # Loop over 3x3 grid node neighborhood
+            for offset in ti.static(ti.grouped(self.stencil_range())):
+                dpos = (of

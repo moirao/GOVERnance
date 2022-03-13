@@ -562,4 +562,9 @@ class MPMSolver:
                     for i in ti.static(range(self.dim)):
                         center[i,
                                i] += self.lambda_0 * log_sig_sum * (1 /
-                                                                    sig[i, i
+                                                                    sig[i, i])
+                    stress = U @ center @ V.transpose() @ F.transpose()
+            self.F[p] = F
+
+            stress = (-dt * self.p_vol * 4 * self.inv_dx**2) * stress
+            # TODO

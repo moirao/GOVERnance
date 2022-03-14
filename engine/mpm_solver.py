@@ -575,4 +575,8 @@ class MPMSolver:
 
             # Loop over 3x3 grid node neighborhood
             for offset in ti.static(ti.grouped(self.stencil_range())):
-                dpos = (of
+                dpos = (offset.cast(float) - fx) * self.dx
+                weight = 1.0
+                for d in ti.static(range(self.dim)):
+                    weight *= w[offset[d]][d]
+                sel

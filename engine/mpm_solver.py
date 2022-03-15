@@ -586,4 +586,7 @@ class MPMSolver:
     @ti.kernel
     def grid_normalization_and_gravity(self, dt: ti.f32, grid_v: ti.template(),
                                        grid_m: ti.template()):
-        v_allowed = self.dx * self.g
+        v_allowed = self.dx * self.g2p2g_allowed_cfl / dt
+        for I in ti.grouped(grid_m):
+            if grid_m[I] > 0:  # No need for epsilon here
+                grid_v[I] = (1 / grid_m[I]) * grid_v[I]  # Momentum to

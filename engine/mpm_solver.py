@@ -583,4 +583,7 @@ class MPMSolver:
                                                         affine @ dpos)
                 self.grid_m[base + offset] += weight * mass
 
-    @t
+    @ti.kernel
+    def grid_normalization_and_gravity(self, dt: ti.f32, grid_v: ti.template(),
+                                       grid_m: ti.template()):
+        v_allowed = self.dx * self.g

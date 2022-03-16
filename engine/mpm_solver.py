@@ -589,4 +589,9 @@ class MPMSolver:
         v_allowed = self.dx * self.g2p2g_allowed_cfl / dt
         for I in ti.grouped(grid_m):
             if grid_m[I] > 0:  # No need for epsilon here
-                grid_v[I] = (1 / grid_m[I]) * grid_v[I]  # Momentum to
+                grid_v[I] = (1 / grid_m[I]) * grid_v[I]  # Momentum to velocity
+                grid_v[I] += dt * self.gravity[None]
+
+            # Grid velocity clamping
+            if ti.static(self.g2p2g_allowed_cfl > 0 and self.use_g2p2g
+      

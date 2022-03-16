@@ -594,4 +594,9 @@ class MPMSolver:
 
             # Grid velocity clamping
             if ti.static(self.g2p2g_allowed_cfl > 0 and self.use_g2p2g
-      
+                         and self.v_clamp_g2p2g):
+                grid_v[I] = min(max(grid_v[I], -v_allowed), v_allowed)
+
+    @ti.kernel
+    def grid_bounding_box(self, t: ti.f32, dt: ti.f32,
+                      

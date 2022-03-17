@@ -599,4 +599,8 @@ class MPMSolver:
 
     @ti.kernel
     def grid_bounding_box(self, t: ti.f32, dt: ti.f32,
-                      
+                          unbounded: ti.template(), grid_v: ti.template()):
+        for I in ti.grouped(grid_v):
+            for d in ti.static(range(self.dim)):
+                if ti.static(unbounded):
+            

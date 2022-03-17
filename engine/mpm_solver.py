@@ -603,4 +603,7 @@ class MPMSolver:
         for I in ti.grouped(grid_v):
             for d in ti.static(range(self.dim)):
                 if ti.static(unbounded):
-            
+                    if I[d] < -self.grid_size // 2 + self.padding and grid_v[
+                            I][d] < 0:
+                        grid_v[I][d] = 0  # Boundary conditions
+                    if I[d]

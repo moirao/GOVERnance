@@ -610,4 +610,6 @@ class MPMSolver:
                             I][d] > 0:
                         grid_v[I][d] = 0
                 else:
-           
+                    if I[d] < self.padding and grid_v[I][d] < 0:
+                        grid_v[I][d] = 0  # Boundary conditions
+                    if I[d] >= self.res[d] - self.padding and gri

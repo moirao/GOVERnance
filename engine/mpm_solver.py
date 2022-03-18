@@ -606,4 +606,8 @@ class MPMSolver:
                     if I[d] < -self.grid_size // 2 + self.padding and grid_v[
                             I][d] < 0:
                         grid_v[I][d] = 0  # Boundary conditions
-                    if I[d]
+                    if I[d] >= self.grid_size // 2 - self.padding and grid_v[
+                            I][d] > 0:
+                        grid_v[I][d] = 0
+                else:
+           

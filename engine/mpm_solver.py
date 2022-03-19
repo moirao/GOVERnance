@@ -612,4 +612,10 @@ class MPMSolver:
                 else:
                     if I[d] < self.padding and grid_v[I][d] < 0:
                         grid_v[I][d] = 0  # Boundary conditions
-                    if I[d] >= self.res[d] - self.padding and gri
+                    if I[d] >= self.res[d] - self.padding and grid_v[I][d] > 0:
+                        grid_v[I][d] = 0
+
+    def add_sphere_collider(self, center, radius, surface=surface_sticky):
+        center = list(center)
+
+        @ti.kern

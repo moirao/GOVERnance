@@ -618,4 +618,8 @@ class MPMSolver:
     def add_sphere_collider(self, center, radius, surface=surface_sticky):
         center = list(center)
 
-        @ti.kern
+        @ti.kernel
+        def collide(t: ti.f32, dt: ti.f32, grid_v: ti.template()):
+            for I in ti.grouped(grid_v):
+                offset = I * self.dx - ti.Vector(center)
+            

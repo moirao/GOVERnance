@@ -628,4 +628,8 @@ class MPMSolver:
                     else:
                         v = grid_v[I]
                         normal = offset.normalized(1e-5)
-                        normal_component = no
+                        normal_component = normal.dot(v)
+
+                        if ti.static(surface == self.surface_slip):
+                            # Project out all normal component
+                            v = v -

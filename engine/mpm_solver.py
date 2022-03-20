@@ -625,4 +625,7 @@ class MPMSolver:
                 if offset.norm_sqr() < radius * radius:
                     if ti.static(surface == self.surface_sticky):
                         grid_v[I] = ti.Vector.zero(ti.f32, self.dim)
-   
+                    else:
+                        v = grid_v[I]
+                        normal = offset.normalized(1e-5)
+                        normal_component = no

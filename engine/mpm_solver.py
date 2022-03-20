@@ -622,4 +622,7 @@ class MPMSolver:
         def collide(t: ti.f32, dt: ti.f32, grid_v: ti.template()):
             for I in ti.grouped(grid_v):
                 offset = I * self.dx - ti.Vector(center)
-            
+                if offset.norm_sqr() < radius * radius:
+                    if ti.static(surface == self.surface_sticky):
+                        grid_v[I] = ti.Vector.zero(ti.f32, self.dim)
+   

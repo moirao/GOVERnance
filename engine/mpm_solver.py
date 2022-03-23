@@ -654,4 +654,8 @@ class MPMSolver:
         normal_scale = 1.0 / math.sqrt(sum(x**2 for x in normal))
         normal = list(normal_scale * x for x in normal)
 
-        i
+        if surface == self.surface_sticky and friction != 0:
+            raise ValueError('friction must be 0 on sticky surfaces.')
+
+        @ti.kernel
+        def collide(t: ti.f3

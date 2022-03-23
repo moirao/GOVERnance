@@ -648,4 +648,10 @@ class MPMSolver:
                              point,
                              normal,
                              surface=surface_sticky,
-                         
+                             friction=0.0):
+        point = list(point)
+        # Normalize normal
+        normal_scale = 1.0 / math.sqrt(sum(x**2 for x in normal))
+        normal = list(normal_scale * x for x in normal)
+
+        i

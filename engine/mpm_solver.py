@@ -644,4 +644,8 @@ class MPMSolver:
     def clear_grid_postprocess(self):
         self.grid_postprocess.clear()
 
-    def
+    def add_surface_collider(self,
+                             point,
+                             normal,
+                             surface=surface_sticky,
+                         

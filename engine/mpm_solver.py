@@ -635,4 +635,13 @@ class MPMSolver:
                             v = v - normal * normal_component
                         else:
                             # Project out only inward normal component
-                            v = v - normal * min(normal
+                            v = v - normal * min(normal_component, 0)
+
+                        grid_v[I] = v
+
+        self.grid_postprocess.append(collide)
+
+    def clear_grid_postprocess(self):
+        self.grid_postprocess.clear()
+
+    def

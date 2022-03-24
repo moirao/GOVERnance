@@ -658,4 +658,8 @@ class MPMSolver:
             raise ValueError('friction must be 0 on sticky surfaces.')
 
         @ti.kernel
-        def collide(t: ti.f3
+        def collide(t: ti.f32, dt: ti.f32, grid_v: ti.template()):
+            for I in ti.grouped(grid_v):
+                offset = I * self.dx - ti.Vector(point)
+                n = ti.Vector(normal)
+        

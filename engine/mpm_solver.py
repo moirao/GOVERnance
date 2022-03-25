@@ -665,4 +665,9 @@ class MPMSolver:
                 if offset.dot(n) < 0:
                     if ti.static(surface == self.surface_sticky):
                         grid_v[I] = ti.Vector.zero(ti.f32, self.dim)
-       
+                    else:
+                        v = grid_v[I]
+                        normal_component = n.dot(v)
+
+                        if ti.static(surface == self.surface_slip):
+                 

@@ -662,4 +662,7 @@ class MPMSolver:
             for I in ti.grouped(grid_v):
                 offset = I * self.dx - ti.Vector(point)
                 n = ti.Vector(normal)
-        
+                if offset.dot(n) < 0:
+                    if ti.static(surface == self.surface_sticky):
+                        grid_v[I] = ti.Vector.zero(ti.f32, self.dim)
+       

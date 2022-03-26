@@ -670,4 +670,7 @@ class MPMSolver:
                         normal_component = n.dot(v)
 
                         if ti.static(surface == self.surface_slip):
-                 
+                            # Project out all normal component
+                            v = v - n * normal_component
+                        else:
+                            # Project out only inward normal comp

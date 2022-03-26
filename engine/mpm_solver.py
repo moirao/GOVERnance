@@ -673,4 +673,8 @@ class MPMSolver:
                             # Project out all normal component
                             v = v - n * normal_component
                         else:
-                            # Project out only inward normal comp
+                            # Project out only inward normal component
+                            v = v - n * min(normal_component, 0)
+
+                        if normal_component < 0 and v.norm() > 1e-30:
+                          

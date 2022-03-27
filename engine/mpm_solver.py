@@ -677,4 +677,7 @@ class MPMSolver:
                             v = v - n * min(normal_component, 0)
 
                         if normal_component < 0 and v.norm() > 1e-30:
-                          
+                            # Apply friction here
+                            v = v.normalized() * max(
+                                0,
+                                v.norm() + normal_compon

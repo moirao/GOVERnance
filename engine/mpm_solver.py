@@ -688,3 +688,9 @@ class MPMSolver:
 
     def add_bounding_box(self, unbounded):
         self.grid_postprocess.append(
+            lambda t, dt, grid_v: self.grid_bounding_box(
+                t, dt, unbounded, grid_v))
+
+    @ti.kernel
+    def g2p(self, dt: ti.f32):
+        ti.loop_config(block_dim=2

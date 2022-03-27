@@ -680,4 +680,11 @@ class MPMSolver:
                             # Apply friction here
                             v = v.normalized() * max(
                                 0,
-                                v.norm() + normal_compon
+                                v.norm() + normal_component * friction)
+
+                        grid_v[I] = v
+
+        self.grid_postprocess.append(collide)
+
+    def add_bounding_box(self, unbounded):
+        self.grid_postprocess.append(

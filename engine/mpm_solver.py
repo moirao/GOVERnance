@@ -693,4 +693,8 @@ class MPMSolver:
 
     @ti.kernel
     def g2p(self, dt: ti.f32):
-        ti.loop_config(block_dim=2
+        ti.loop_config(block_dim=256)
+        if ti.static(self.use_bls):
+            for d in ti.static(range(self.dim)):
+                ti.block_local(self.grid_v.get_scalar_field(d))
+        ti.no_activate(self.

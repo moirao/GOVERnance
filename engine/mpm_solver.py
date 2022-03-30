@@ -697,4 +697,8 @@ class MPMSolver:
         if ti.static(self.use_bls):
             for d in ti.static(range(self.dim)):
                 ti.block_local(self.grid_v.get_scalar_field(d))
-        ti.no_activate(self.
+        ti.no_activate(self.particle)
+        for I in ti.grouped(self.pid):
+            p = self.pid[I]
+            base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
+            Im = t

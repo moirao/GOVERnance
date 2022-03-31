@@ -701,4 +701,7 @@ class MPMSolver:
         for I in ti.grouped(self.pid):
             p = self.pid[I]
             base = ti.floor(self.x[p] * self.inv_dx - 0.5).cast(int)
-            Im = t
+            Im = ti.rescale_index(self.pid, self.grid_m, I)
+            for D in ti.static(range(self.dim)):
+                base[D] = ti.assume_in_range(base[D], Im[D], 0, 1)
+          

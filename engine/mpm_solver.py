@@ -715,4 +715,8 @@ class MPMSolver:
                 dpos = offset.cast(float) - fx
                 g_v = self.grid_v[base + offset]
                 weight = 1.0
-                for d in ti.static(range(self.dim)
+                for d in ti.static(range(self.dim)):
+                    weight *= w[offset[d]][d]
+                new_v += weight * g_v
+                new_C += 4 * self.inv_dx * weight * g_v.outer_product(dpos)
+         

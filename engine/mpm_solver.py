@@ -719,4 +719,9 @@ class MPMSolver:
                     weight *= w[offset[d]][d]
                 new_v += weight * g_v
                 new_C += 4 * self.inv_dx * weight * g_v.outer_product(dpos)
-         
+            if self.material[p] != self.material_stationary:
+                self.v[p], self.C[p] = new_v, new_C
+                self.x[p] += dt * self.v[p]  # advection
+
+    @ti.kernel
+  

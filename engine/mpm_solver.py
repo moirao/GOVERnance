@@ -724,4 +724,9 @@ class MPMSolver:
                 self.x[p] += dt * self.v[p]  # advection
 
     @ti.kernel
-  
+    def compute_max_velocity(self) -> ti.f32:
+        max_velocity = 0.0
+        for p in self.v:
+            v = self.v[p]
+            v_max = 0.0
+            for i in ti.stati

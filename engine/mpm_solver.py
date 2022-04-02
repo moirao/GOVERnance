@@ -729,4 +729,10 @@ class MPMSolver:
         for p in self.v:
             v = self.v[p]
             v_max = 0.0
-            for i in ti.stati
+            for i in ti.static(range(self.dim)):
+                v_max = max(v_max, abs(v[i]))
+            ti.atomic_max(max_velocity, v_max)
+        return max_velocity
+
+    @ti.kernel
+    def comput

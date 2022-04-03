@@ -735,4 +735,14 @@ class MPMSolver:
         return max_velocity
 
     @ti.kernel
-    def comput
+    def compute_max_grid_velocity(self, grid_v: ti.template()) -> ti.f32:
+        max_velocity = 0.0
+        for I in ti.grouped(grid_v):
+            v = grid_v[I]
+            v_max = 0.0
+            for i in ti.static(range(self.dim)):
+                v_max = max(v_max, abs(v[i]))
+            ti.atomic_max(max_velocity, v_max)
+        return max_velocity
+
+    def ste

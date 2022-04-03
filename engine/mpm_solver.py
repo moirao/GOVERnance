@@ -751,4 +751,10 @@ class MPMSolver:
 
         substeps = int(frame_dt / self.default_dt) + 1
 
-        dt =
+        dt = frame_dt / substeps
+        frame_time_left = frame_dt
+        if print_stat:
+            print(f'needed substeps: {substeps}')
+
+        while frame_time_left > 0:
+            print('.', end=''

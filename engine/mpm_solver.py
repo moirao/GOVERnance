@@ -745,4 +745,10 @@ class MPMSolver:
             ti.atomic_max(max_velocity, v_max)
         return max_velocity
 
-    def ste
+    def step(self, frame_dt, print_stat=False, smry_writer=None):
+        begin_t = time.time()
+        begin_substep = self.total_substeps
+
+        substeps = int(frame_dt / self.default_dt) + 1
+
+        dt =

@@ -757,4 +757,8 @@ class MPMSolver:
             print(f'needed substeps: {substeps}')
 
         while frame_time_left > 0:
-            print('.', end=''
+            print('.', end='', flush=True)
+            self.total_substeps += 1
+            if self.use_adaptive_dt:
+                if self.use_g2p2g:
+                    max_grid_v = self.co

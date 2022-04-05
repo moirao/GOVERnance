@@ -765,4 +765,7 @@ class MPMSolver:
                         self.grid_v[self.input_grid])
                 else:
                     max_grid_v = self.compute_max_grid_velocity(
- 
+                        self.grid_v)
+                cfl_dt = self.g2p2g_allowed_cfl * self.dx / (max_grid_v + 1e-6)
+                dt = min(dt, cfl_dt, frame_time_left)
+            frame

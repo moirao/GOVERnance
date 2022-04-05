@@ -768,4 +768,9 @@ class MPMSolver:
                         self.grid_v)
                 cfl_dt = self.g2p2g_allowed_cfl * self.dx / (max_grid_v + 1e-6)
                 dt = min(dt, cfl_dt, frame_time_left)
-            frame
+            frame_time_left -= dt
+
+            if self.use_g2p2g:
+                output_grid = 1 - self.input_grid
+                self.grid[output_grid].deactivate_all()
+              

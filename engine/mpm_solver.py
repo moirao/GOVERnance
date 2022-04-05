@@ -761,4 +761,8 @@ class MPMSolver:
             self.total_substeps += 1
             if self.use_adaptive_dt:
                 if self.use_g2p2g:
-                    max_grid_v = self.co
+                    max_grid_v = self.compute_max_grid_velocity(
+                        self.grid_v[self.input_grid])
+                else:
+                    max_grid_v = self.compute_max_grid_velocity(
+ 

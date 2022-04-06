@@ -773,4 +773,7 @@ class MPMSolver:
             if self.use_g2p2g:
                 output_grid = 1 - self.input_grid
                 self.grid[output_grid].deactivate_all()
-              
+                self.build_pid(self.pid[self.input_grid],
+                               self.grid_m[self.input_grid], 0.5)
+                self.g2p2g(dt, self.pid[self.input_grid],
+         

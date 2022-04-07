@@ -781,4 +781,9 @@ class MPMSolver:
                 self.grid_normalization_and_gravity(dt,
                                                     self.grid_v[output_grid],
                                                     self.grid_m[output_grid])
-             
+                for p in self.grid_postprocess:
+                    p(self.t, dt, self.grid_v[output_grid])
+                self.input_grid = output_grid
+                self.t += dt
+            else:
+               

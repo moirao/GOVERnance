@@ -778,4 +778,7 @@ class MPMSolver:
                 self.g2p2g(dt, self.pid[self.input_grid],
                            self.grid_v[self.input_grid],
                            self.grid_v[output_grid], self.grid_m[output_grid])
-                self.grid_normalization_and_gravi
+                self.grid_normalization_and_gravity(dt,
+                                                    self.grid_v[output_grid],
+                                                    self.grid_m[output_grid])
+             

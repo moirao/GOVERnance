@@ -786,4 +786,7 @@ class MPMSolver:
                 self.input_grid = output_grid
                 self.t += dt
             else:
-               
+                self.grid.deactivate_all()
+                self.build_pid(self.pid, self.grid_m, 0.5)
+                self.p2g(dt)
+                self.grid_normalization_and_gravity(dt, se

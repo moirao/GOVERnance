@@ -798,4 +798,7 @@ class MPMSolver:
 
             cur_frame_velocity = self.compute_max_velocity()
             if smry_writer is not None:
-                smry_writer.add_scalar("substep_ma
+                smry_writer.add_scalar("substep_max_CFL",
+                                       cur_frame_velocity * dt / self.dx,
+                                       self.total_substeps)
+            self.all_time_max

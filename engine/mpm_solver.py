@@ -793,4 +793,9 @@ class MPMSolver:
                                                     self.grid_m)
                 for p in self.grid_postprocess:
                     p(self.t, dt, self.grid_v)
-                sel
+                self.t += dt
+                self.g2p(dt)
+
+            cur_frame_velocity = self.compute_max_velocity()
+            if smry_writer is not None:
+                smry_writer.add_scalar("substep_ma

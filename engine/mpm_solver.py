@@ -789,4 +789,8 @@ class MPMSolver:
                 self.grid.deactivate_all()
                 self.build_pid(self.pid, self.grid_m, 0.5)
                 self.p2g(dt)
-                self.grid_normalization_and_gravity(dt, se
+                self.grid_normalization_and_gravity(dt, self.grid_v,
+                                                    self.grid_m)
+                for p in self.grid_postprocess:
+                    p(self.t, dt, self.grid_v)
+                sel

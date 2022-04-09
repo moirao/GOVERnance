@@ -807,4 +807,9 @@ class MPMSolver:
         print()
 
         if print_stat:
-            ti.profiler.p
+            ti.profiler.print_kernel_profiler_info()
+            try:
+                ti.profiler.print_memory_profiler_info()
+            except:
+                pass
+            cur_frame_velocity = self.comp

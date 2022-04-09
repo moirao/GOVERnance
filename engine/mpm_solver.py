@@ -815,4 +815,10 @@ class MPMSolver:
             cur_frame_velocity = self.compute_max_velocity()
             print(f'CFL: {cur_frame_velocity * dt / self.dx}')
             print(f'num particles={self.n_particles[None]}')
-            print(f'  frame time {time.time() -
+            print(f'  frame time {time.time() - begin_t:.3f} s')
+            print(
+                f'  substep time {1000 * (time.time() - begin_t) / (self.total_substeps - begin_substep):.3f} ms'
+            )
+
+    @ti.func
+    def see

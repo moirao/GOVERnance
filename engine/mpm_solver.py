@@ -801,4 +801,10 @@ class MPMSolver:
                 smry_writer.add_scalar("substep_max_CFL",
                                        cur_frame_velocity * dt / self.dx,
                                        self.total_substeps)
-            self.all_time_max
+            self.all_time_max_velocity = max(self.all_time_max_velocity,
+                                             cur_frame_velocity)
+
+        print()
+
+        if print_stat:
+            ti.profiler.p

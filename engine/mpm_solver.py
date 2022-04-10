@@ -825,4 +825,11 @@ class MPMSolver:
         self.x[i] = x
         self.v[i] = velocity
         self.F[i] = ti.Matrix.identity(ti.f32, self.dim)
-        self.color[
+        self.color[i] = color
+        self.material[i] = material
+
+        if ti.static(self.support_plasticity):
+            if material == self.material_sand:
+                self.Jp[i] = 0
+            else:
+   

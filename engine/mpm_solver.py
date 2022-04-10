@@ -838,4 +838,8 @@ class MPMSolver:
             self.emitter_ids[i] = emmiter_id
 
     @ti.kernel
-    def seed(self, new_particles: ti.i32, new_materia
+    def seed(self, new_particles: ti.i32, new_material: ti.i32, color: ti.i32):
+        for i in range(self.n_particles[None],
+                       self.n_particles[None] + new_particles):
+            self.material[i] = new_material
+   

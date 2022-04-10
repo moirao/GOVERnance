@@ -821,4 +821,8 @@ class MPMSolver:
             )
 
     @ti.func
-    def see
+    def seed_particle(self, i, x, material, color, velocity, emmiter_id):
+        self.x[i] = x
+        self.v[i] = velocity
+        self.F[i] = ti.Matrix.identity(ti.f32, self.dim)
+        self.color[

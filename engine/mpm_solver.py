@@ -832,4 +832,10 @@ class MPMSolver:
             if material == self.material_sand:
                 self.Jp[i] = 0
             else:
-   
+                self.Jp[i] = 1
+
+        if ti.static(self.use_emitter_id):
+            self.emitter_ids[i] = emmiter_id
+
+    @ti.kernel
+    def seed(self, new_particles: ti.i32, new_materia

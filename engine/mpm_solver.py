@@ -846,4 +846,8 @@ class MPMSolver:
             for k in ti.static(range(self.dim)):
                 x[k] = self.source_bound[0][k] + ti.random(
                 ) * self.source_bound[1][k]
-     
+            self.seed_particle(i, x, new_material, color,
+                               self.source_velocity[None], None)
+
+    def set_source_velocity(self, velocity):
+        i

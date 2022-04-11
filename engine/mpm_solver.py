@@ -842,4 +842,8 @@ class MPMSolver:
         for i in range(self.n_particles[None],
                        self.n_particles[None] + new_particles):
             self.material[i] = new_material
-   
+            x = ti.Vector.zero(ti.f32, self.dim)
+            for k in ti.static(range(self.dim)):
+                x[k] = self.source_bound[0][k] + ti.random(
+                ) * self.source_bound[1][k]
+     

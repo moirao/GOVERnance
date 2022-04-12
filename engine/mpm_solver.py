@@ -855,4 +855,12 @@ class MPMSolver:
             assert len(velocity) == self.dim
             self.source_velocity[None] = velocity
         else:
-            for i
+            for i in range(self.dim):
+                self.source_velocity[None][i] = 0
+
+    def add_cube(self,
+                 lower_corner,
+                 cube_size,
+                 material,
+                 color=0xFFFFFF,
+  

@@ -868,4 +868,8 @@ class MPMSolver:
         if sample_density is None:
             sample_density = 2**self.dim
         vol = 1
-        for i i
+        for i in range(self.dim):
+            vol = vol * cube_size[i]
+        num_new_particles = int(sample_density * vol / self.dx**self.dim + 1)
+        assert self.n_particles[
+   

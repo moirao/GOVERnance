@@ -850,4 +850,9 @@ class MPMSolver:
                                self.source_velocity[None], None)
 
     def set_source_velocity(self, velocity):
-        i
+        if velocity is not None:
+            velocity = list(velocity)
+            assert len(velocity) == self.dim
+            self.source_velocity[None] = velocity
+        else:
+            for i

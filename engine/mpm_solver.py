@@ -863,4 +863,9 @@ class MPMSolver:
                  cube_size,
                  material,
                  color=0xFFFFFF,
-  
+                 sample_density=None,
+                 velocity=None):
+        if sample_density is None:
+            sample_density = 2**self.dim
+        vol = 1
+        for i i

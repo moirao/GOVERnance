@@ -876,4 +876,11 @@ class MPMSolver:
 
         for i in range(self.dim):
             self.source_bound[0][i] = lower_corner[i]
-            
+            self.source_bound[1][i] = cube_size[i]
+
+        self.set_source_velocity(velocity=velocity)
+
+        self.seed(num_new_particles, material, color)
+        self.n_particles[None] += num_new_particles
+
+  

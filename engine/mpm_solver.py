@@ -883,4 +883,13 @@ class MPMSolver:
         self.seed(num_new_particles, material, color)
         self.n_particles[None] += num_new_particles
 
-  
+    def add_ngon(
+        self,
+        sides,
+        center,
+        radius,
+        angle,
+        material,
+        color=0xFFFFFF,
+        sample_density=None,
+        veloci

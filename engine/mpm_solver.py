@@ -872,4 +872,8 @@ class MPMSolver:
             vol = vol * cube_size[i]
         num_new_particles = int(sample_density * vol / self.dx**self.dim + 1)
         assert self.n_particles[
-   
+            None] + num_new_particles <= self.max_num_particles
+
+        for i in range(self.dim):
+            self.source_bound[0][i] = lower_corner[i]
+            

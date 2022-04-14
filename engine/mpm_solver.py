@@ -892,4 +892,10 @@ class MPMSolver:
         material,
         color=0xFFFFFF,
         sample_density=None,
-        veloci
+        velocity=None,
+    ):
+        if self.dim != 2:
+            raise ValueError("Add Ngon only works for 2D simulations")
+
+        if sample_density is None:
+            sample_density = 2**sel

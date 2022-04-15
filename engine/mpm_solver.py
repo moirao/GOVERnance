@@ -910,4 +910,7 @@ class MPMSolver:
 
         self.set_source_velocity(velocity=velocity)
 
-        assert s
+        assert self.n_particles[None] + num_particles <= self.max_num_particles
+
+        self.seed_polygon(num_particles, sides, angle, material, color)
+        self.n_particles[None] += num_part

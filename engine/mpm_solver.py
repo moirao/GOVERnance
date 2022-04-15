@@ -913,4 +913,10 @@ class MPMSolver:
         assert self.n_particles[None] + num_particles <= self.max_num_particles
 
         self.seed_polygon(num_particles, sides, angle, material, color)
-        self.n_particles[None] += num_part
+        self.n_particles[None] += num_particles
+
+    @ti.func
+    def random_point_in_unit_polygon(self, sides, angle):
+        point = ti.Vector.zero(ti.f32, 2)
+        central_angle = 2 * math.pi / sides
+        whil

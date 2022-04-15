@@ -903,4 +903,11 @@ class MPMSolver:
         num_particles = 0.5 * (radius * self.inv_dx)**2 * math.sin(
             2 * math.pi / sides) * sides
 
-        num_particles = int(math.ceil(num_particles 
+        num_particles = int(math.ceil(num_particles * sample_density))
+
+        self.source_bound[0] = center
+        self.source_bound[1] = [radius, radius]
+
+        self.set_source_velocity(velocity=velocity)
+
+        assert s

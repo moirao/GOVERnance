@@ -898,4 +898,9 @@ class MPMSolver:
             raise ValueError("Add Ngon only works for 2D simulations")
 
         if sample_density is None:
-            sample_density = 2**sel
+            sample_density = 2**self.dim
+
+        num_particles = 0.5 * (radius * self.inv_dx)**2 * math.sin(
+            2 * math.pi / sides) * sides
+
+        num_particles = int(math.ceil(num_particles 

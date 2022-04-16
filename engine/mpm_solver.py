@@ -923,4 +923,7 @@ class MPMSolver:
             point = ti.Vector([ti.random(), ti.random()]) * 2 - 1
             point_angle = ti.atan2(point.y, point.x)
             theta = (point_angle -
-            
+                     angle) % central_angle  # polygon angle is from +X axis
+            phi = central_angle / 2
+            dist = ti.sqrt((point**2).sum())
+            if dist < ti.cos(phi) / ti.cos(phi 

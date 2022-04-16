@@ -919,4 +919,8 @@ class MPMSolver:
     def random_point_in_unit_polygon(self, sides, angle):
         point = ti.Vector.zero(ti.f32, 2)
         central_angle = 2 * math.pi / sides
-        whil
+        while True:
+            point = ti.Vector([ti.random(), ti.random()]) * 2 - 1
+            point_angle = ti.atan2(point.y, point.x)
+            theta = (point_angle -
+            

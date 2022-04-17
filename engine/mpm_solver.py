@@ -926,4 +926,10 @@ class MPMSolver:
                      angle) % central_angle  # polygon angle is from +X axis
             phi = central_angle / 2
             dist = ti.sqrt((point**2).sum())
-            if dist < ti.cos(phi) / ti.cos(phi 
+            if dist < ti.cos(phi) / ti.cos(phi - theta):
+                break
+        return point
+
+    @ti.kernel
+    def seed_polygon(self, new_particles: ti.i32, sides: ti.i32, angle: ti.f32,
+                     new_material: ti.i32, c

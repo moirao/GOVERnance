@@ -936,4 +936,9 @@ class MPMSolver:
         for i in range(self.n_particles[None],
                        self.n_particles[None] + new_particles):
             x = self.random_point_in_unit_polygon(sides, angle)
-   
+            x = self.source_bound[0] + x * self.source_bound[1]
+            self.seed_particle(i, x, new_material, color,
+                               self.source_velocity[None], None)
+
+    @ti.kernel
+    def add_texture_2d

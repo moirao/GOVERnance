@@ -932,4 +932,8 @@ class MPMSolver:
 
     @ti.kernel
     def seed_polygon(self, new_particles: ti.i32, sides: ti.i32, angle: ti.f32,
-                     new_material: ti.i32, c
+                     new_material: ti.i32, color: ti.i32):
+        for i in range(self.n_particles[None],
+                       self.n_particles[None] + new_particles):
+            x = self.random_point_in_unit_polygon(sides, angle)
+   

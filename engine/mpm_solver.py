@@ -949,4 +949,7 @@ class MPMSolver:
             new_material: ti.i32,
             color: ti.i32,
     ):
-   
+        for i, j in ti.ndrange(texture.shape[0], texture.shape[1]):
+            if texture[i, j] > 0.1:
+                pid = ti.atomic_add(self.n_particles[None], 1)
+             

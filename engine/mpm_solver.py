@@ -941,4 +941,12 @@ class MPMSolver:
                                self.source_velocity[None], None)
 
     @ti.kernel
-    def add_texture_2d
+    def add_texture_2d(
+            self,
+            offset_x: ti.f32,
+            offset_y: ti.f32,
+            texture: ti.types.ndarray(),
+            new_material: ti.i32,
+            color: ti.i32,
+    ):
+   

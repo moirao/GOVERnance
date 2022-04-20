@@ -952,4 +952,6 @@ class MPMSolver:
         for i, j in ti.ndrange(texture.shape[0], texture.shape[1]):
             if texture[i, j] > 0.1:
                 pid = ti.atomic_add(self.n_particles[None], 1)
-             
+                x = ti.Vector([offset_x + i * self.dx, offset_y + j * self.dx])
+                self.seed_particle(pid, x, new_material, color,
+                                   self.source_velo

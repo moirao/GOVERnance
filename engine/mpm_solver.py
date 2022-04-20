@@ -960,4 +960,11 @@ class MPMSolver:
     def random_point_in_unit_sphere(self):
         ret = ti.Vector.zero(ti.f32, n=self.dim)
         while True:
-            for i in ti.static(range(sel
+            for i in ti.static(range(self.dim)):
+                ret[i] = ti.random(ti.f32) * 2 - 1
+            if ret.norm_sqr() <= 1:
+                break
+        return ret
+
+    @ti.kernel
+    def seed_ellipsoid(self, n

@@ -967,4 +967,8 @@ class MPMSolver:
         return ret
 
     @ti.kernel
-    def seed_ellipsoid(self, n
+    def seed_ellipsoid(self, new_particles: ti.i32, new_material: ti.i32,
+                       color: ti.i32):
+
+        for i in range(self.n_particles[None],
+                       self.n_particles[No

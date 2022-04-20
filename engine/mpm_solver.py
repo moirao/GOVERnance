@@ -954,4 +954,10 @@ class MPMSolver:
                 pid = ti.atomic_add(self.n_particles[None], 1)
                 x = ti.Vector([offset_x + i * self.dx, offset_y + j * self.dx])
                 self.seed_particle(pid, x, new_material, color,
-                                   self.source_velo
+                                   self.source_velocity[None], None)
+
+    @ti.func
+    def random_point_in_unit_sphere(self):
+        ret = ti.Vector.zero(ti.f32, n=self.dim)
+        while True:
+            for i in ti.static(range(sel

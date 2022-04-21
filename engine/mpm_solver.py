@@ -971,4 +971,7 @@ class MPMSolver:
                        color: ti.i32):
 
         for i in range(self.n_particles[None],
-                       self.n_particles[No
+                       self.n_particles[None] + new_particles):
+            x = self.source_bound[0] + self.random_point_in_unit_sphere(
+            ) * self.source_bound[1]
+            self.seed_particle(i, x, new_material, c

@@ -984,4 +984,12 @@ class MPMSolver:
                       color=0xFFFFFF,
                       sample_density=None,
                       velocity=None):
-        if sample_dens
+        if sample_density is None:
+            sample_density = 2**self.dim
+
+        if isinstance(radius, numbers.Number):
+            radius = [
+                radius,
+            ] * self.dim
+
+        

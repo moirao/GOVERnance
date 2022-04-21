@@ -980,4 +980,8 @@ class MPMSolver:
     def add_ellipsoid(self,
                       center,
                       radius,
-             
+                      material,
+                      color=0xFFFFFF,
+                      sample_density=None,
+                      velocity=None):
+        if sample_dens

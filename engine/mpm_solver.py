@@ -974,4 +974,10 @@ class MPMSolver:
                        self.n_particles[None] + new_particles):
             x = self.source_bound[0] + self.random_point_in_unit_sphere(
             ) * self.source_bound[1]
-            self.seed_particle(i, x, new_material, c
+            self.seed_particle(i, x, new_material, color,
+                               self.source_velocity[None], None)
+
+    def add_ellipsoid(self,
+                      center,
+                      radius,
+             

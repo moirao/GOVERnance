@@ -1011,4 +1011,11 @@ class MPMSolver:
 
         assert self.n_particles[None] + num_particles <= self.max_num_particles
 
-        self.seed_ellipsoid(num_particles, material, c
+        self.seed_ellipsoid(num_particles, material, color)
+        self.n_particles[None] += num_particles
+
+    @ti.kernel
+    def seed_from_voxels(
+            self,
+            material: ti.i32,
+            color: 

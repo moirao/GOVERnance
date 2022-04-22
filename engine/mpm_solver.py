@@ -1005,4 +1005,10 @@ class MPMSolver:
         num_particles = int(math.ceil(num_particles * sample_density))
 
         self.source_bound[0] = center
-        self.source_bound[1] = 
+        self.source_bound[1] = radius
+
+        self.set_source_velocity(velocity=velocity)
+
+        assert self.n_particles[None] + num_particles <= self.max_num_particles
+
+        self.seed_ellipsoid(num_particles, material, c

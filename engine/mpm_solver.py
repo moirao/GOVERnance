@@ -1000,4 +1000,9 @@ class MPMSolver:
             num_particles = 4 / 3 * math.pi
 
         for i in range(self.dim):
-  
+            num_particles *= radius[i] * self.inv_dx
+
+        num_particles = int(math.ceil(num_particles * sample_density))
+
+        self.source_bound[0] = center
+        self.source_bound[1] = 

@@ -992,4 +992,12 @@ class MPMSolver:
                 radius,
             ] * self.dim
 
-        
+        radius = list(radius)
+
+        if self.dim == 2:
+            num_particles = math.pi
+        else:
+            num_particles = 4 / 3 * math.pi
+
+        for i in range(self.dim):
+  

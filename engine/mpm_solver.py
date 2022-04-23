@@ -1018,4 +1018,9 @@ class MPMSolver:
     def seed_from_voxels(
             self,
             material: ti.i32,
-            color: 
+            color: ti.i32,
+            sample_density: ti.i32,
+            emmiter_id: ti.u16
+        ):
+        for i, j, k in self.voxelizer.voxels:
+        

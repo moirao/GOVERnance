@@ -1026,4 +1026,7 @@ class MPMSolver:
             inside = 1
             for d in ti.static(range(3)):
                 inside = inside and -self.grid_size // 2 + self.padding <= i and i < self.grid_size // 2 - self.padding
-            if inside and s
+            if inside and self.voxelizer.voxels[i, j, k] > 0:
+                s = sample_density / self.voxelizer_super_sample**self.dim
+                for l in range(sample_density + 1):
+                    if

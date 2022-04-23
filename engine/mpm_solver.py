@@ -1023,4 +1023,7 @@ class MPMSolver:
             emmiter_id: ti.u16
         ):
         for i, j, k in self.voxelizer.voxels:
-        
+            inside = 1
+            for d in ti.static(range(3)):
+                inside = inside and -self.grid_size // 2 + self.padding <= i and i < self.grid_size // 2 - self.padding
+            if inside and s

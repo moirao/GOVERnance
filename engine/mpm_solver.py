@@ -1029,4 +1029,8 @@ class MPMSolver:
             if inside and self.voxelizer.voxels[i, j, k] > 0:
                 s = sample_density / self.voxelizer_super_sample**self.dim
                 for l in range(sample_density + 1):
-                    if
+                    if ti.random() + l < s:
+                        x = ti.Vector([
+                            ti.random() + i,
+                            ti.random() + j,
+                   

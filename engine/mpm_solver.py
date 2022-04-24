@@ -1033,4 +1033,7 @@ class MPMSolver:
                         x = ti.Vector([
                             ti.random() + i,
                             ti.random() + j,
-                   
+                            ti.random() + k
+                        ]) * (self.dx / self.voxelizer_super_sample
+                              ) + self.source_bound[0]
+                        p = ti.atomic_add(self.n_particle

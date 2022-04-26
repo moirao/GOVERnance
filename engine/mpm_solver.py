@@ -1041,4 +1041,9 @@ class MPMSolver:
                             p,
                             x,
                             material,
-        
+                            color,
+                            self.source_velocity[None],
+                            emmiter_id
+                        )
+
+   

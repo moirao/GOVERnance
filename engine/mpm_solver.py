@@ -1036,4 +1036,9 @@ class MPMSolver:
                             ti.random() + k
                         ]) * (self.dx / self.voxelizer_super_sample
                               ) + self.source_bound[0]
-                        p = ti.atomic_add(self.n_particle
+                        p = ti.atomic_add(self.n_particles[None], 1)
+                        self.seed_particle(
+                            p,
+                            x,
+                            material,
+        

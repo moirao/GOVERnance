@@ -1046,4 +1046,10 @@ class MPMSolver:
                             emmiter_id
                         )
 
-   
+    def add_mesh(self,
+                 triangles,
+                 material,
+                 color=0xFFFFFF,
+                 sample_density=None,
+                 velocity=None,
+     

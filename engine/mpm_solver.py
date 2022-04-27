@@ -1052,4 +1052,9 @@ class MPMSolver:
                  color=0xFFFFFF,
                  sample_density=None,
                  velocity=None,
-     
+                 translation=None,
+                 emmiter_id=0
+        ):
+        assert self.dim == 3
+        if sample_density is None:
+            sample_dens

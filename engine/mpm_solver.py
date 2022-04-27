@@ -1064,4 +1064,12 @@ class MPMSolver:
         for i in range(self.dim):
             if translation:
                 self.source_bound[0][i] = translation[i]
-      
+            else:
+                self.source_bound[0][i] = 0
+
+        self.voxelizer.voxelize(triangles)
+        t = time.time()
+        self.seed_from_voxels(
+            material,
+            color,
+  

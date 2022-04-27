@@ -1057,4 +1057,11 @@ class MPMSolver:
         ):
         assert self.dim == 3
         if sample_density is None:
-            sample_dens
+            sample_density = 2**self.dim
+
+        self.set_source_velocity(velocity=velocity)
+
+        for i in range(self.dim):
+            if translation:
+                self.source_bound[0][i] = translation[i]
+      

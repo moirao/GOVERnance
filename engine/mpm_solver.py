@@ -1072,4 +1072,11 @@ class MPMSolver:
         self.seed_from_voxels(
             material,
             color,
-  
+            sample_density,
+            emmiter_id
+        )
+        ti.sync()
+        # print('Voxelization time:', (time.time() - t) * 1000, 'ms')
+
+    @ti.kernel
+    def seed_fro

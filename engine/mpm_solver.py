@@ -1083,4 +1083,7 @@ class MPMSolver:
                                  pos: ti.types.ndarray(), new_material: ti.i32,
                                  color: ti.i32):
 
-        
+        for i in range(num_particles):
+            x = ti.Vector.zero(ti.f32, n=self.dim)
+            if ti.static(self.dim == 3):
+                x = ti.Vector([pos[i, 0], pos[i, 1], pos[i

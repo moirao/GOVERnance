@@ -1079,4 +1079,8 @@ class MPMSolver:
         # print('Voxelization time:', (time.time() - t) * 1000, 'ms')
 
     @ti.kernel
-    def seed_fro
+    def seed_from_external_array(self, num_particles: ti.i32,
+                                 pos: ti.types.ndarray(), new_material: ti.i32,
+                                 color: ti.i32):
+
+        

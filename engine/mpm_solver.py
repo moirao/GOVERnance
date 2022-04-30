@@ -1086,4 +1086,8 @@ class MPMSolver:
         for i in range(num_particles):
             x = ti.Vector.zero(ti.f32, n=self.dim)
             if ti.static(self.dim == 3):
-                x = ti.Vector([pos[i, 0], pos[i, 1], pos[i
+                x = ti.Vector([pos[i, 0], pos[i, 1], pos[i, 2]])
+            else:
+                x = ti.Vector([pos[i, 0], pos[i, 1]])
+            self.seed_particle(self.n_particles[None] + i, x, new_material,
+      

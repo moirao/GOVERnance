@@ -1106,4 +1106,8 @@ class MPMSolver:
     @ti.kernel
     def recover_from_external_array(
             self,
-            n
+            num_particles: ti.i32,
+            pos: ti.types.ndarray(),
+            vel: ti.types.ndarray(),
+            material: ti.types.ndarray(),
+            color: ti.

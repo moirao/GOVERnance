@@ -1090,4 +1090,10 @@ class MPMSolver:
             else:
                 x = ti.Vector([pos[i, 0], pos[i, 1]])
             self.seed_particle(self.n_particles[None] + i, x, new_material,
-      
+                               color, self.source_velocity[None], None)
+
+        self.n_particles[None] += num_particles
+
+    def add_particles(self,
+                      particles,
+       

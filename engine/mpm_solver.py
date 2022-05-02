@@ -1096,4 +1096,8 @@ class MPMSolver:
 
     def add_particles(self,
                       particles,
-       
+                      material,
+                      color=0xFFFFFF,
+                      velocity=None):
+        self.set_source_velocity(velocity=velocity)
+        self.seed_fr

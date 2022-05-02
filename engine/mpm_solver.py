@@ -1100,4 +1100,10 @@ class MPMSolver:
                       color=0xFFFFFF,
                       velocity=None):
         self.set_source_velocity(velocity=velocity)
-        self.seed_fr
+        self.seed_from_external_array(len(particles), particles, material,
+                                      color)
+
+    @ti.kernel
+    def recover_from_external_array(
+            self,
+            n

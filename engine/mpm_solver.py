@@ -1115,4 +1115,6 @@ class MPMSolver:
         for i in range(num_particles):
             x = ti.Vector.zero(ti.f32, n=self.dim)
             v = ti.Vector.zero(ti.f32, n=self.dim)
-            if
+            if ti.static(self.dim == 3):
+                x = ti.Vector([pos[i, 0], pos[i, 1], pos[i, 2]])
+                v = ti.Vector([vel[i, 0], vel[i, 1], vel[i, 2]])

@@ -1136,4 +1136,7 @@ class MPMSolver:
         slice_size = 50000
         num_slices = (num_particles + slice_size - 1) // slice_size
         for s in range(num_slices):
-            beg
+            begin = slice_size * s
+            end = min(slice_size * (s + 1), num_particles)
+            self.recover_from_external_array(end - begin, pos[begin:end],
+                                    

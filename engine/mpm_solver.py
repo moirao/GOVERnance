@@ -1130,4 +1130,10 @@ class MPMSolver:
         num_particles,
         pos,
         vel,
-        materi
+        material,
+        color,
+    ):
+        slice_size = 50000
+        num_slices = (num_particles + slice_size - 1) // slice_size
+        for s in range(num_slices):
+            beg

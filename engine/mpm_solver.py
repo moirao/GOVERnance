@@ -1118,3 +1118,8 @@ class MPMSolver:
             if ti.static(self.dim == 3):
                 x = ti.Vector([pos[i, 0], pos[i, 1], pos[i, 2]])
                 v = ti.Vector([vel[i, 0], vel[i, 1], vel[i, 2]])
+            else:
+                x = ti.Vector([pos[i, 0], pos[i, 1]])
+                v = ti.Vector([vel[i, 0], vel[i, 1]])
+            self.seed_particle(self.n_particles[None] + i, x, material[i],
+    

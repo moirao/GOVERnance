@@ -1139,4 +1139,9 @@ class MPMSolver:
             begin = slice_size * s
             end = min(slice_size * (s + 1), num_particles)
             self.recover_from_external_array(end - begin, pos[begin:end],
-                                    
+                                             vel[begin:end],
+                                             material[begin:end],
+                                             color[begin:end])
+
+    @ti.kernel
+    

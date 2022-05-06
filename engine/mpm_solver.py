@@ -1154,4 +1154,8 @@ class MPMSolver:
         for i in self.x:
             np_x[i] = input_x[i]
 
-    @ti
+    @ti.kernel
+    def copy_ranged(self, np_x: ti.types.ndarray(), input_x: ti.template(),
+                    begin: ti.i32, end: ti.i32):
+        ti.no_activate(self.particle)
+      

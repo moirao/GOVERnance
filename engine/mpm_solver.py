@@ -1144,4 +1144,7 @@ class MPMSolver:
                                              color[begin:end])
 
     @ti.kernel
-    
+    def copy_dynamic_nd(self, np_x: ti.types.ndarray(), input_x: ti.template()):
+        for i in self.x:
+            for j in ti.static(range(self.dim)):
+                np_x[i, j] = input_

@@ -1174,4 +1174,7 @@ class MPMSolver:
         self.copy_dynamic_nd(np_x, self.x)
         np_v = np.ndarray((self.n_particles[None], self.dim), dtype=np.float32)
         self.copy_dynamic_nd(np_v, self.v)
-        np_material = np.ndarray((self.n_particles[None
+        np_material = np.ndarray((self.n_particles[None], ), dtype=np.int32)
+        self.copy_dynamic(np_material, self.material)
+        np_color = np.ndarray((self.n_particles[None], ), dtype=np.int32)
+        self.copy_dynamic(

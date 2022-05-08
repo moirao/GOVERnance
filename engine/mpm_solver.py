@@ -1167,4 +1167,9 @@ class MPMSolver:
         ti.no_activate(self.particle)
         for i in range(begin, end):
             for j in ti.static(range(self.dim)):
-                np_x[i - begin, j] = inpu
+                np_x[i - begin, j] = input_x[i, j]
+
+    def particle_info(self):
+        np_x = np.ndarray((self.n_particles[None], self.dim), dtype=np.float32)
+        self.copy_dynamic_nd(np_x, self.x)
+        np_v = np.nda

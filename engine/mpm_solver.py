@@ -1163,4 +1163,8 @@ class MPMSolver:
 
     @ti.kernel
     def copy_ranged_nd(self, np_x: ti.types.ndarray(), input_x: ti.template(),
-                       
+                       begin: ti.i32, end: ti.i32):
+        ti.no_activate(self.particle)
+        for i in range(begin, end):
+            for j in ti.static(range(self.dim)):
+                np_x[i - begin, j] = inpu

@@ -1183,4 +1183,7 @@ class MPMSolver:
             'velocity': np_v,
             'material': np_material,
             'color': np_color
-    
+        }
+        if self.use_emitter_id:
+            np_emitters = np.ndarray((self.n_particles[None], ), dtype=np.int32)
+            self.copy_dynamic(np_emitters, self.

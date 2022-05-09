@@ -1186,4 +1186,10 @@ class MPMSolver:
         }
         if self.use_emitter_id:
             np_emitters = np.ndarray((self.n_particles[None], ), dtype=np.int32)
-            self.copy_dynamic(np_emitters, self.
+            self.copy_dynamic(np_emitters, self.emitter_ids)
+            particles_data['emitter_ids'] = np_emitters
+        return particles_data
+
+    @ti.kernel
+    def clear_particles(self):
+        self.n

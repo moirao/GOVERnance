@@ -1192,4 +1192,8 @@ class MPMSolver:
 
     @ti.kernel
     def clear_particles(self):
-        self.n
+        self.n_particles[None] = 0
+        ti.deactivate(self.x.loop_range().parent().snode(), [])
+
+    def write_particles(self, fn, slice_size=1000000):
+        f

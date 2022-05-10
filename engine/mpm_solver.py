@@ -1196,4 +1196,8 @@ class MPMSolver:
         ti.deactivate(self.x.loop_range().parent().snode(), [])
 
     def write_particles(self, fn, slice_size=1000000):
-        f
+        from .particle_io import ParticleIO
+        ParticleIO.write_particles(self, fn, slice_size)
+
+    def write_particles_ply(self, fn):
+        np_x = np.ndarray((self.n_particles[None], self.dim), dtype=np

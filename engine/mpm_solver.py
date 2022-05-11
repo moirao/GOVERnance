@@ -1200,4 +1200,7 @@ class MPMSolver:
         ParticleIO.write_particles(self, fn, slice_size)
 
     def write_particles_ply(self, fn):
-        np_x = np.ndarray((self.n_particles[None], self.dim), dtype=np
+        np_x = np.ndarray((self.n_particles[None], self.dim), dtype=np.float32)
+        self.copy_dynamic_nd(np_x, self.x)
+        np_color = np.ndarray((self.n_particles[None]), dtype=np.uint32)
+        self.copy_dynamic(np

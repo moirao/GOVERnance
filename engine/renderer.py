@@ -23,4 +23,10 @@ light_direction_noise = 0.03
 light_color = [1.0, 1.0, 1.0]
 
 
-@ti.data_or
+@ti.data_oriented
+class Renderer:
+    def __init__(self,
+                 dx=1 / 1024,
+                 sphere_radius=0.3 / 1024,
+                 render_voxel=False,
+               

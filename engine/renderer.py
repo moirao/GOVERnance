@@ -29,4 +29,8 @@ class Renderer:
                  dx=1 / 1024,
                  sphere_radius=0.3 / 1024,
                  render_voxel=False,
-               
+                 shutter_time=1e-3,
+                 taichi_logo=True,
+                 max_num_particles_million=128):
+        self.vignette_strength = 0.9
+        self.vignette_radius = 0.0

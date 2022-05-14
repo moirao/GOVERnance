@@ -34,3 +34,7 @@ class Renderer:
                  max_num_particles_million=128):
         self.vignette_strength = 0.9
         self.vignette_radius = 0.0
+        self.vignette_center = [0.5, 0.5]
+        self.taichi_logo = taichi_logo
+        self.shutter_time = shutter_time  # usually half the frame time
+        self.enable

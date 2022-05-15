@@ -37,4 +37,8 @@ class Renderer:
         self.vignette_center = [0.5, 0.5]
         self.taichi_logo = taichi_logo
         self.shutter_time = shutter_time  # usually half the frame time
-        self.enable
+        self.enable_motion_blur = self.shutter_time != 0.0
+
+        self.color_buffer = ti.Vector.field(3, dtype=ti.f32)
+        self.bbox = ti.Vector.field(3, dtype=ti.f32, shape=2)
+     

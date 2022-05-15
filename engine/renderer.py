@@ -45,4 +45,7 @@ class Renderer:
         self.voxel_has_particle = ti.field(dtype=ti.i32)
         self.fov = ti.field(dtype=ti.f32, shape=())
 
-        self.particle_x = ti.Vecto
+        self.particle_x = ti.Vector.field(3, dtype=ti.f32)
+        if self.enable_motion_blur:
+            self.particle_v = ti.Vector.field(3, dtype=ti.f32)
+        self.particle_

@@ -41,4 +41,8 @@ class Renderer:
 
         self.color_buffer = ti.Vector.field(3, dtype=ti.f32)
         self.bbox = ti.Vector.field(3, dtype=ti.f32, shape=2)
-     
+        self.voxel_grid_density = ti.field(dtype=ti.f32)
+        self.voxel_has_particle = ti.field(dtype=ti.i32)
+        self.fov = ti.field(dtype=ti.f32, shape=())
+
+        self.particle_x = ti.Vecto

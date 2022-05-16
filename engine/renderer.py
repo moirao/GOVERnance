@@ -53,3 +53,12 @@ class Renderer:
         self.num_particles = ti.field(ti.i32, shape=())
 
         self.render_voxel = render_voxel
+
+        self.voxel_edges = 0.1
+
+        self.particle_grid_res = 2048
+
+        self.dx = dx
+        self.inv_dx = 1 / self.dx
+
+        self.camera_pos = ti.Vector.field(3, dtype=ti.f32, sha

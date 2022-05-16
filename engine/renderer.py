@@ -61,4 +61,8 @@ class Renderer:
         self.dx = dx
         self.inv_dx = 1 / self.dx
 
-        self.camera_pos = ti.Vector.field(3, dtype=ti.f32, sha
+        self.camera_pos = ti.Vector.field(3, dtype=ti.f32, shape=())
+        self.look_at = ti.Vector.field(3, dtype=ti.f32, shape=())
+        self.up = ti.Vector.field(3, dtype=ti.f32, shape=())
+
+        self.floor_height = ti.field(dtype=ti.f32,

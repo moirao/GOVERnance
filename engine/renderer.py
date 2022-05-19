@@ -65,4 +65,10 @@ class Renderer:
         self.look_at = ti.Vector.field(3, dtype=ti.f32, shape=())
         self.up = ti.Vector.field(3, dtype=ti.f32, shape=())
 
-        self.floor_height = ti.field(dtype=ti.f32,
+        self.floor_height = ti.field(dtype=ti.f32, shape=())
+
+        self.supporter = 2
+        self.sphere_radius = sphere_radius
+        self.particle_grid_offset = [
+            -self.particle_grid_res // 2 for _ in range(3)
+   

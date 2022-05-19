@@ -71,4 +71,8 @@ class Renderer:
         self.sphere_radius = sphere_radius
         self.particle_grid_offset = [
             -self.particle_grid_res // 2 for _ in range(3)
-   
+        ]
+
+        self.voxel_grid_res = self.particle_grid_res
+        voxel_grid_offset = [-self.voxel_grid_res // 2 for _ in range(3)]
+        self.max_num_particles_per_cell = 8192 * 1024

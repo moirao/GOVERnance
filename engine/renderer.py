@@ -81,4 +81,10 @@ class Renderer:
         self.voxel_dx = self.dx
         self.voxel_inv_dx = 1 / self.voxel_dx
 
-        assert se
+        assert self.sphere_radius * 2 < self.dx
+
+        ti.root.dense(ti.ij, res).place(self.color_buffer)
+
+        self.block_size = 8
+        self.block_offset = [
+            o // self.

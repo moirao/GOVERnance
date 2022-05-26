@@ -87,4 +87,9 @@ class Renderer:
 
         self.block_size = 8
         self.block_offset = [
-            o // self.
+            o // self.block_size for o in self.particle_grid_offset
+        ]
+        self.particle_bucket = ti.root.pointer(
+            ti.ijk, self.particle_grid_res // self.block_size)
+
+        self.particle_buck

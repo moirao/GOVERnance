@@ -92,4 +92,7 @@ class Renderer:
         self.particle_bucket = ti.root.pointer(
             ti.ijk, self.particle_grid_res // self.block_size)
 
-        self.particle_buck
+        self.particle_bucket.dense(ti.ijk, self.block_size).dynamic(
+            ti.l, self.max_num_particles_per_cell,
+            chunk_size=32).place(self.pid,
+                                 offset=self.p

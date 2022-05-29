@@ -95,4 +95,9 @@ class Renderer:
         self.particle_bucket.dense(ti.ijk, self.block_size).dynamic(
             ti.l, self.max_num_particles_per_cell,
             chunk_size=32).place(self.pid,
-                                 offset=self.p
+                                 offset=self.particle_grid_offset + [0])
+
+        self.voxel_block_offset = [
+            o // self.block_size for o in voxel_grid_offset
+        ]
+        ti.root.point

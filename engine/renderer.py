@@ -100,4 +100,7 @@ class Renderer:
         self.voxel_block_offset = [
             o // self.block_size for o in voxel_grid_offset
         ]
-        ti.root.point
+        ti.root.pointer(ti.ijk,
+                        self.particle_grid_res // self.block_size).dense(
+                            ti.ijk,
+                            self.block_size).place(self.voxel_has

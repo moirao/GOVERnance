@@ -110,4 +110,10 @@ class Renderer:
 
         voxel_block.dense(ti.ijk,
                           self.block_size).place(self.voxel_grid_density,
-                                             
+                                                 offset=voxel_grid_offset)
+
+        particle = ti.root.dense(ti.l, self.max_num_particles)
+
+        particle.place(self.particle_x)
+        if self.enable_motion_blur:
+           

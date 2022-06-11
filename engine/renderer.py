@@ -132,4 +132,11 @@ class Renderer:
     @ti.func
     def inside_grid_loose(self, ipos):
         return ipos.min() >= -self.voxel_grid_res // 2 - 1 and ipos.max(
-        ) <= self.vox
+        ) <= self.voxel_grid_res // 2
+
+    @ti.func
+    def query_density(self, ipos):
+        inside = self.inside_grid(ipos)
+        ret = 0.0
+        if inside:
+            ret = self.v

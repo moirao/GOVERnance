@@ -128,4 +128,8 @@ class Renderer:
         ) < self.voxel_grid_res // 2
 
     # The dda algorithm requires the voxel grid to have one surrounding layer of void region
-    # to corre
+    # to correctly render the outmost voxel faces
+    @ti.func
+    def inside_grid_loose(self, ipos):
+        return ipos.min() >= -self.voxel_grid_res // 2 - 1 and ipos.max(
+        ) <= self.vox

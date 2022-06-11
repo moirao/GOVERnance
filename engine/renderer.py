@@ -116,4 +116,12 @@ class Renderer:
 
         particle.place(self.particle_x)
         if self.enable_motion_blur:
-           
+            particle.place(self.particle_v)
+        particle.place(self.particle_color)
+
+        self.set_up(0, 1, 0)
+        self.set_fov(0.23)
+
+    @ti.func
+    def inside_grid(self, ipos):
+      

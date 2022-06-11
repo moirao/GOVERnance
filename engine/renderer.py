@@ -124,4 +124,8 @@ class Renderer:
 
     @ti.func
     def inside_grid(self, ipos):
-      
+        return ipos.min() >= -self.voxel_grid_res // 2 and ipos.max(
+        ) < self.voxel_grid_res // 2
+
+    # The dda algorithm requires the voxel grid to have one surrounding layer of void region
+    # to corre

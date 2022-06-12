@@ -139,4 +139,13 @@ class Renderer:
         inside = self.inside_grid(ipos)
         ret = 0.0
         if inside:
-            ret = self.v
+            ret = self.voxel_grid_density[ipos]
+        else:
+            ret = 0.0
+        return ret
+
+    @ti.func
+    def voxel_color(self, pos):
+        p = pos * self.inv_dx
+
+        p -= t

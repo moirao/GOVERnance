@@ -148,4 +148,10 @@ class Renderer:
     def voxel_color(self, pos):
         p = pos * self.inv_dx
 
-        p -= t
+        p -= ti.floor(p)
+
+        boundary = self.voxel_edges
+        count = 0
+        for i in ti.static(range(3)):
+            if p[i] < boundary or p[i] > 1 - boundary:
+               

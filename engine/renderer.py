@@ -154,4 +154,13 @@ class Renderer:
         count = 0
         for i in ti.static(range(3)):
             if p[i] < boundary or p[i] > 1 - boundary:
-               
+                count += 1
+        f = 0.0
+        if count >= 2:
+            f = 1.0
+        return ti.Vector([0.9, 0.8, 1.0]) * (1.3 - 1.2 * f)
+
+    @ti.func
+    def sdf(self, o):
+        dist = 0.0
+        if ti.static(

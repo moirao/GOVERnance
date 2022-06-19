@@ -163,4 +163,10 @@ class Renderer:
     @ti.func
     def sdf(self, o):
         dist = 0.0
-        if ti.static(
+        if ti.static(self.supporter == 0):
+            o -= ti.Vector([0.5, 0.002, 0.5])
+            p = o
+            h = 0.02
+            ra = 0.29
+            rb = 0.005
+            d = (ti.Vector([p[0], p[2]]).n

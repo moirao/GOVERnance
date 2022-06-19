@@ -169,4 +169,7 @@ class Renderer:
             h = 0.02
             ra = 0.29
             rb = 0.005
-            d = (ti.Vector([p[0], p[2]]).n
+            d = (ti.Vector([p[0], p[2]]).norm() - 2.0 * ra + rb, abs(p[1]) - h)
+            dist = min(max(d[0], d[1]), 0.0) + ti.Vector(
+                [max(d[0], 0.0), max(d[1], 0)]).norm() - rb
+        elif ti.static(self.suppor

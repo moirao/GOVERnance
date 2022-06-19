@@ -177,3 +177,13 @@ class Renderer:
             dist = (o.abs() - ti.Vector([0.5, 0.02, 0.5])).max()
         else:
             dist = o[1] - self.floor_height[None]
+
+        return dist
+
+    @ti.func
+    def ray_march(self, p, d):
+        j = 0
+        dist = 0.0
+        limit = 200
+        while j < limit and self.sdf(p +
+             

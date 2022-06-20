@@ -190,4 +190,13 @@ class Renderer:
             dist += self.sdf(p + dist * d)
             j += 1
         if dist > dist_limit:
-            dist = i
+            dist = inf
+        return dist
+
+    @ti.func
+    def sdf_normal(self, p):
+        d = 1e-3
+        n = ti.Vector([0.0, 0.0, 0.0])
+        for i in ti.static(range(3)):
+            inc = p
+      

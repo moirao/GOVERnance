@@ -186,4 +186,8 @@ class Renderer:
         dist = 0.0
         limit = 200
         while j < limit and self.sdf(p +
-             
+                                     dist * d) > 1e-8 and dist < dist_limit:
+            dist += self.sdf(p + dist * d)
+            j += 1
+        if dist > dist_limit:
+            dist = i

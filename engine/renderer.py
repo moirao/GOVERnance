@@ -199,4 +199,8 @@ class Renderer:
         n = ti.Vector([0.0, 0.0, 0.0])
         for i in ti.static(range(3)):
             inc = p
-      
+            dec = p
+            inc[i] += d
+            dec[i] -= d
+            n[i] = (0.5 / d) * (self.sdf(inc) - self.sdf(dec))
+        return n.normalized()

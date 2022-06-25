@@ -204,3 +204,12 @@ class Renderer:
             dec[i] -= d
             n[i] = (0.5 / d) * (self.sdf(inc) - self.sdf(dec))
         return n.normalized()
+
+    @ti.func
+    def sdf_color(self, p):
+        scale = 0.0
+        if ti.static(self.taichi_logo):
+            scale = 0.4
+            if inside_taichi(ti.Vector([p[0], p[2]])):
+                scale = 1
+   

@@ -218,4 +218,9 @@ class Renderer:
 
     # Digital differential analyzer for the grid visualization (render_voxels=True)
     @ti.func
-    def dda
+    def dda_voxel(self, eye_pos, d):
+        for i in ti.static(range(3)):
+            if abs(d[i]) < 1e-6:
+                d[i] = 1e-6
+        rinv = 1.0 / d
+        rsign = ti.Vector([0, 0, 

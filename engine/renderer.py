@@ -212,4 +212,10 @@ class Renderer:
             scale = 0.4
             if inside_taichi(ti.Vector([p[0], p[2]])):
                 scale = 1
-   
+        else:
+            scale = 1.0
+        return ti.Vector([0.3, 0.5, 0.7]) * scale
+
+    # Digital differential analyzer for the grid visualization (render_voxels=True)
+    @ti.func
+    def dda

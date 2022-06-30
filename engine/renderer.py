@@ -223,4 +223,12 @@ class Renderer:
             if abs(d[i]) < 1e-6:
                 d[i] = 1e-6
         rinv = 1.0 / d
-        rsign = ti.Vector([0, 0, 
+        rsign = ti.Vector([0, 0, 0])
+        for i in ti.static(range(3)):
+            if d[i] > 0:
+                rsign[i] = 1
+            else:
+                rsign[i] = -1
+
+        bbox_min = self.bbox[0]
+    

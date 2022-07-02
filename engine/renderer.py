@@ -234,4 +234,10 @@ class Renderer:
         bbox_max = self.bbox[1]
         inter, near, far = ray_aabb_intersection(bbox_min, bbox_max, eye_pos,
                                                  d)
-        hit_d
+        hit_distance = inf
+        normal = ti.Vector([0.0, 0.0, 0.0])
+        c = ti.Vector([0.0, 0.0, 0.0])
+        if inter:
+            near = max(0, near)
+
+            pos = eye_

@@ -240,4 +240,8 @@ class Renderer:
         if inter:
             near = max(0, near)
 
-            pos = eye_
+            pos = eye_pos + d * (near + 5 * eps)
+
+            o = self.voxel_inv_dx * pos
+            ipos = int(ti.floor(o))
+            dis = (ipos - o + 0.5 + rsign * 0.5) * r

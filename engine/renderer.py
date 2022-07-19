@@ -254,4 +254,7 @@ class Renderer:
                     running = 0
 
                 if last_sample:
-      
+                    mini = (ipos - o + ti.Vector([0.5, 0.5, 0.5]) -
+                            rsign * 0.5) * rinv
+                    hit_distance = mini.max() * self.voxel_dx + near
+         

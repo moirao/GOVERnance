@@ -249,4 +249,9 @@ class Renderer:
             i = 0
             hit_pos = ti.Vector([0.0, 0.0, 0.0])
             while running:
-                last_sampl
+                last_sample = int(self.query_density(ipos))
+                if not self.inside_particle_grid(ipos):
+                    running = 0
+
+                if last_sample:
+      

@@ -244,4 +244,9 @@ class Renderer:
 
             o = self.voxel_inv_dx * pos
             ipos = int(ti.floor(o))
-            dis = (ipos - o + 0.5 + rsign * 0.5) * r
+            dis = (ipos - o + 0.5 + rsign * 0.5) * rinv
+            running = 1
+            i = 0
+            hit_pos = ti.Vector([0.0, 0.0, 0.0])
+            while running:
+                last_sampl

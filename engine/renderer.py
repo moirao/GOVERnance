@@ -257,4 +257,8 @@ class Renderer:
                     mini = (ipos - o + ti.Vector([0.5, 0.5, 0.5]) -
                             rsign * 0.5) * rinv
                     hit_distance = mini.max() * self.voxel_dx + near
-         
+                    hit_pos = eye_pos + hit_distance * d
+                    c = self.voxel_color(hit_pos)
+                    running = 0
+                else:
+                    mm = ti.Vec

@@ -261,4 +261,8 @@ class Renderer:
                     c = self.voxel_color(hit_pos)
                     running = 0
                 else:
-                    mm = ti.Vec
+                    mm = ti.Vector([0, 0, 0])
+                    if dis[0] <= dis[1] and dis[0] < dis[2]:
+                        mm[0] = 1
+                    elif dis[1] <= dis[0] and dis[1] <= dis[2]:
+   

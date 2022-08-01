@@ -270,3 +270,11 @@ class Renderer:
                         mm[2] = 1
                     dis += mm * rsign * rinv
                     ipos += mm * rsign
+                    normal = -mm * rsign
+                i += 1
+        return hit_distance, normal, c
+
+    @ti.func
+    def inside_particle_grid(self, ipos):
+        pos = ipos * self.dx
+    

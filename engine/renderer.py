@@ -277,4 +277,6 @@ class Renderer:
     @ti.func
     def inside_particle_grid(self, ipos):
         pos = ipos * self.dx
-    
+        return self.bbox[0][0] <= pos[0] and pos[0] < self.bbox[1][
+            0] and self.bbox[0][1] <= pos[1] and pos[1] < self.bbox[1][
+                1] and self.bbox[0][2]

@@ -265,4 +265,8 @@ class Renderer:
                     if dis[0] <= dis[1] and dis[0] < dis[2]:
                         mm[0] = 1
                     elif dis[1] <= dis[0] and dis[1] <= dis[2]:
-   
+                        mm[1] = 1
+                    else:
+                        mm[2] = 1
+                    dis += mm * rsign * rinv
+                    ipos += mm * rsign

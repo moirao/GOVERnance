@@ -279,4 +279,9 @@ class Renderer:
         pos = ipos * self.dx
         return self.bbox[0][0] <= pos[0] and pos[0] < self.bbox[1][
             0] and self.bbox[0][1] <= pos[1] and pos[1] < self.bbox[1][
-                1] and self.bbox[0][2]
+                1] and self.bbox[0][2] <= pos[2] and pos[2] < self.bbox[1][2]
+
+    # DDA for the particle visualization (render_voxels=False)
+    @ti.func
+    def dda_particle(self, eye_pos, d, t):
+        # bo

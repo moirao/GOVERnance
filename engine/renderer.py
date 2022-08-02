@@ -284,4 +284,10 @@ class Renderer:
     # DDA for the particle visualization (render_voxels=False)
     @ti.func
     def dda_particle(self, eye_pos, d, t):
-        # bo
+        # bounding box
+        bbox_min = self.bbox[0]
+        bbox_max = self.bbox[1]
+
+        hit_pos = ti.Vector([0.0, 0.0, 0.0])
+        normal = ti.Vector([0.0, 0.0, 0.0])
+        c = ti.

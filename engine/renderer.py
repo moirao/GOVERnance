@@ -290,4 +290,9 @@ class Renderer:
 
         hit_pos = ti.Vector([0.0, 0.0, 0.0])
         normal = ti.Vector([0.0, 0.0, 0.0])
-        c = ti.
+        c = ti.Vector([0.0, 0.0, 0.0])
+        for i in ti.static(range(3)):
+            if abs(d[i]) < 1e-6:
+                d[i] = 1e-6
+
+        inter, near, far = ray_aabb_inter

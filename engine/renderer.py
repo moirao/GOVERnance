@@ -295,4 +295,10 @@ class Renderer:
             if abs(d[i]) < 1e-6:
                 d[i] = 1e-6
 
-        inter, near, far = ray_aabb_inter
+        inter, near, far = ray_aabb_intersection(bbox_min, bbox_max, eye_pos,
+                                                 d)
+        near = max(0, near)
+
+        closest_intersection = inf
+
+        if inter:

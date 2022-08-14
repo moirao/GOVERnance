@@ -302,3 +302,9 @@ class Renderer:
         closest_intersection = inf
 
         if inter:
+            pos = eye_pos + d * (near + eps)
+
+            rinv = 1.0 / d
+            rsign = ti.Vector([0, 0, 0])
+            for i in ti.static(range(3)):
+                if d[

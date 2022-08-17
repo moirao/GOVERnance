@@ -307,4 +307,11 @@ class Renderer:
             rinv = 1.0 / d
             rsign = ti.Vector([0, 0, 0])
             for i in ti.static(range(3)):
-                if d[
+                if d[i] > 0:
+                    rsign[i] = 1
+                else:
+                    rsign[i] = -1
+
+            o = self.inv_dx * pos
+            ipos = ti.floor(o).cast(int)
+            dis =

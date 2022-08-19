@@ -318,4 +318,8 @@ class Renderer:
             running = 1
             # DDA for voxels with at least one particle
             while running:
-                inside = self.inside_particle_gri
+                inside = self.inside_particle_grid(ipos)
+
+                if inside:
+                    # once we actually intersect with a voxel that contains at least one particle, loop over the particle list
+                   

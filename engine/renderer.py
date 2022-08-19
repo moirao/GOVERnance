@@ -314,4 +314,8 @@ class Renderer:
 
             o = self.inv_dx * pos
             ipos = ti.floor(o).cast(int)
-            dis =
+            dis = (ipos - o + 0.5 + rsign * 0.5) * rinv
+            running = 1
+            # DDA for voxels with at least one particle
+            while running:
+                inside = self.inside_particle_gri

@@ -322,4 +322,7 @@ class Renderer:
 
                 if inside:
                     # once we actually intersect with a voxel that contains at least one particle, loop over the particle list
-                   
+                    num_particles = self.voxel_has_particle[ipos]
+                    if num_particles != 0:
+                        num_particles = ti.length(
+                            self.pid.paren

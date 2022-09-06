@@ -329,3 +329,7 @@ class Renderer:
                             ipos - ti.Vector(self.particle_grid_offset))
                     for k in range(num_particles):
                         p = self.pid[ipos, k]
+                        v = ti.Vector([0.0, 0.0, 0.0])
+                        if ti.static(self.enable_motion_blur):
+                            v = self.particle_v[p]
+    

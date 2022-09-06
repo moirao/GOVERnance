@@ -325,4 +325,7 @@ class Renderer:
                     num_particles = self.voxel_has_particle[ipos]
                     if num_particles != 0:
                         num_particles = ti.length(
-                            self.pid.paren
+                            self.pid.parent(),
+                            ipos - ti.Vector(self.particle_grid_offset))
+                    for k in range(num_particles):
+                        p = self.pid[ipos, k]

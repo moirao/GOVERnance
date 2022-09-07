@@ -332,4 +332,7 @@ class Renderer:
                         v = ti.Vector([0.0, 0.0, 0.0])
                         if ti.static(self.enable_motion_blur):
                             v = self.particle_v[p]
-    
+                        x = self.particle_x[p] + t * v
+                        color = ti.cast(self.particle_color[p],
+                                        ti.u32) * (1 / 255.0)
+     

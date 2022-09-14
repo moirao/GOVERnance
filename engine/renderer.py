@@ -344,4 +344,10 @@ class Renderer:
                             closest_intersection = dist
                             normal = (hit_pos - x).normalized()
                             c = color
-               
+                else:
+                    running = 0
+                    normal = [0, 0, 0]
+
+                if closest_intersection < inf:
+                    running = 0
+         

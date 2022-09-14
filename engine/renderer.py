@@ -340,4 +340,8 @@ class Renderer:
                                                       self.sphere_radius)
                         hit_pos = poss
                         if dist < closest_intersection and dist > 0:
-                            hit_pos = eye_pos + dist *
+                            hit_pos = eye_pos + dist * d
+                            closest_intersection = dist
+                            normal = (hit_pos - x).normalized()
+                            c = color
+               

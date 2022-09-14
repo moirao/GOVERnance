@@ -350,4 +350,8 @@ class Renderer:
 
                 if closest_intersection < inf:
                     running = 0
-         
+                else:
+                    # hits nothing. Continue ray marching
+                    mm = ti.Vector([0, 0, 0])
+                    if dis[0] <= dis[1] and dis[0] <= dis[2]:
+    

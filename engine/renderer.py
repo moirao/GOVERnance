@@ -337,4 +337,7 @@ class Renderer:
                                         ti.u32) * (1 / 255.0)
                         # ray-sphere intersection
                         dist, poss = intersect_sphere(eye_pos, d, x,
-                                         
+                                                      self.sphere_radius)
+                        hit_pos = poss
+                        if dist < closest_intersection and dist > 0:
+                            hit_pos = eye_pos + dist *

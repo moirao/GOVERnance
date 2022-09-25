@@ -370,4 +370,9 @@ class Renderer:
         normal = ti.Vector([0.0, 0.0, 0.0])
         c = ti.Vector([0.0, 0.0, 0.0])
         if ti.static(self.render_voxel):
-            closest,
+            closest, normal, c = self.dda_voxel(pos, d)
+        else:
+            closest, normal, c = self.dda_particle(pos, d, t)
+
+        if d[2] != 0:
+            ray_closest = -(pos[2] + 5.5) / d[2]

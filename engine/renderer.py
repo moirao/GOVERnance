@@ -354,4 +354,8 @@ class Renderer:
                     # hits nothing. Continue ray marching
                     mm = ti.Vector([0, 0, 0])
                     if dis[0] <= dis[1] and dis[0] <= dis[2]:
-    
+                        mm[0] = 1
+                    elif dis[1] <= dis[0] and dis[1] <= dis[2]:
+                        mm[1] = 1
+                    else:
+                      

@@ -365,3 +365,9 @@ class Renderer:
         return closest_intersection, normal, c
 
     @ti.func
+    def next_hit(self, pos, d, t):
+        closest = inf
+        normal = ti.Vector([0.0, 0.0, 0.0])
+        c = ti.Vector([0.0, 0.0, 0.0])
+        if ti.static(self.render_voxel):
+            closest,

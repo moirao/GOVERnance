@@ -358,4 +358,10 @@ class Renderer:
                     elif dis[1] <= dis[0] and dis[1] <= dis[2]:
                         mm[1] = 1
                     else:
-                      
+                        mm[2] = 1
+                    dis += mm * rsign * rinv
+                    ipos += mm * rsign
+
+        return closest_intersection, normal, c
+
+    @ti.func

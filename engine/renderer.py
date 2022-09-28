@@ -376,3 +376,8 @@ class Renderer:
 
         if d[2] != 0:
             ray_closest = -(pos[2] + 5.5) / d[2]
+            if ray_closest > 0 and ray_closest < closest:
+                closest = ray_closest
+                normal = ti.Vector([0.0, 0.0, 1.0])
+                c = ti.Vector([0.6, 0.7, 0.7])
+

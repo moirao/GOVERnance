@@ -391,4 +391,10 @@ class Renderer:
 
     @ti.kernel
     def set_camera_pos(self, x: ti.f32, y: ti.f32, z: ti.f32):
-  
+        self.camera_pos[None] = ti.Vector([x, y, z])
+
+    @ti.kernel
+    def set_up(self, x: ti.f32, y: ti.f32, z: ti.f32):
+        self.up[None] = ti.Vector([x, y, z]).normalized()
+
+    @ti

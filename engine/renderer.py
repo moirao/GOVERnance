@@ -397,4 +397,10 @@ class Renderer:
     def set_up(self, x: ti.f32, y: ti.f32, z: ti.f32):
         self.up[None] = ti.Vector([x, y, z]).normalized()
 
-    @ti
+    @ti.kernel
+    def look_at(self, x: ti.f32, y: ti.f32, z: ti.f32):
+        self.look_at[None] = ti.Vector([x, y, z])
+
+    @ti.kernel
+    def set_fov(self, fov: ti.f32):
+        self.fov[N

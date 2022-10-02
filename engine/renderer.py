@@ -384,4 +384,11 @@ class Renderer:
         ray_march_dist = self.ray_march(pos, d)
         if ray_march_dist < dist_limit and ray_march_dist < closest:
             closest = ray_march_dist
-            normal = self.sdf_
+            normal = self.sdf_normal(pos + d * closest)
+            c = self.sdf_color(pos + d * closest)
+
+        return closest, normal, c
+
+    @ti.kernel
+    def set_camera_pos(self, x: ti.f32, y: ti.f32, z: ti.f32):
+  

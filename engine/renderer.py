@@ -381,3 +381,7 @@ class Renderer:
                 normal = ti.Vector([0.0, 0.0, 1.0])
                 c = ti.Vector([0.6, 0.7, 0.7])
 
+        ray_march_dist = self.ray_march(pos, d)
+        if ray_march_dist < dist_limit and ray_march_dist < closest:
+            closest = ray_march_dist
+            normal = self.sdf_

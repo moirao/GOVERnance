@@ -403,4 +403,12 @@ class Renderer:
 
     @ti.kernel
     def set_fov(self, fov: ti.f32):
-        self.fov[N
+        self.fov[None] = fov
+
+    @ti.kernel
+    def render(self):
+        ti.loop_config(block_dim=256)
+        for u, v in self.color_buffer:
+            fov = self.fov[None]
+            pos = self.camera_pos[None]
+          

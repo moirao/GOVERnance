@@ -417,4 +417,10 @@ class Renderer:
             fv = 2 * fov * (v + ti.random(ti.f32)) / res[1] - fov - 1e-5
             du = d.cross(self.up[None]).normalized()
             dv = du.cross(d).normalized()
-            d = (d + fu * du + fv * dv).
+            d = (d + fu * du + fv * dv).normalized()
+            t = (ti.random() + shutter_begin) * self.shutter_time
+
+            contrib = ti.Vector([0.0, 0.0, 0.0])
+            throughput = ti.Vector([1.0, 1.0, 1.0])
+
+            depth

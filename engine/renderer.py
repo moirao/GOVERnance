@@ -414,4 +414,7 @@ class Renderer:
             d = (self.look_at[None] - self.camera_pos[None]).normalized()
             fu = (2 * fov * (u + ti.random(ti.f32)) / res[1] -
                   fov * aspect_ratio - 1e-5)
-            fv = 2 * f
+            fv = 2 * fov * (v + ti.random(ti.f32)) / res[1] - fov - 1e-5
+            du = d.cross(self.up[None]).normalized()
+            dv = du.cross(d).normalized()
+            d = (d + fu * du + fv * dv).

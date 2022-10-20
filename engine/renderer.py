@@ -429,4 +429,9 @@ class Renderer:
 
             while depth < max_ray_depth:
                 closest, normal, c = self.next_hit(pos, d, t)
-                h
+                hit_pos = pos + closest * d
+                depth += 1
+                ray_depth = depth
+                if normal.norm() != 0:
+                    d = out_dir(normal)
+                    pos =

@@ -434,4 +434,9 @@ class Renderer:
                 ray_depth = depth
                 if normal.norm() != 0:
                     d = out_dir(normal)
-                    pos =
+                    pos = hit_pos + 1e-4 * d
+                    throughput *= c
+
+                    if ti.static(use_directional_light):
+                        dir_noise = ti.Vector([
+            

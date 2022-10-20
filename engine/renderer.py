@@ -423,4 +423,10 @@ class Renderer:
             contrib = ti.Vector([0.0, 0.0, 0.0])
             throughput = ti.Vector([1.0, 1.0, 1.0])
 
-            depth
+            depth = 0
+            hit_sky = 1
+            ray_depth = 0
+
+            while depth < max_ray_depth:
+                closest, normal, c = self.next_hit(pos, d, t)
+                h

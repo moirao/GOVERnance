@@ -439,4 +439,7 @@ class Renderer:
 
                     if ti.static(use_directional_light):
                         dir_noise = ti.Vector([
-            
+                            ti.random() - 0.5,
+                            ti.random() - 0.5,
+                            ti.random() - 0.5
+                        ]) * light_direction_noise

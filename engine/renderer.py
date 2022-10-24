@@ -443,3 +443,7 @@ class Renderer:
                             ti.random() - 0.5,
                             ti.random() - 0.5
                         ]) * light_direction_noise
+                        direct = (ti.Vector(light_direction) +
+                                  dir_noise).normalized()
+                        dot = direct.dot(normal)
+ 

@@ -446,4 +446,7 @@ class Renderer:
                         direct = (ti.Vector(light_direction) +
                                   dir_noise).normalized()
                         dot = direct.dot(normal)
- 
+                        if dot > 0:
+                            dist, _, _ = self.next_hit(pos, direct, t)
+                            if dist > dist_limit:
+        

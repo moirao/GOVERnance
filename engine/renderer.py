@@ -452,4 +452,10 @@ class Renderer:
                                 contrib += throughput * ti.Vector(
                                     light_color) * dot
                 else:  # hit sky
-                    hi
+                    hit_sky = 1
+                    depth = max_ray_depth
+
+                max_c = throughput.max()
+                if ti.random() > max_c:
+                    depth = max_ray_depth
+                

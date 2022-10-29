@@ -458,4 +458,10 @@ class Renderer:
                 max_c = throughput.max()
                 if ti.random() > max_c:
                     depth = max_ray_depth
-                
+                    throughput = [0, 0, 0]
+                else:
+                    throughput /= max_c
+
+            if hit_sky:
+                if ray_depth != 1:
+           

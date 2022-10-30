@@ -464,4 +464,9 @@ class Renderer:
 
             if hit_sky:
                 if ray_depth != 1:
-           
+                    # contrib *= max(d[1], 0.05)
+                    pass
+                else:
+                    # directly hit sky
+                    pass
+            else:

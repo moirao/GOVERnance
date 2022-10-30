@@ -470,3 +470,11 @@ class Renderer:
                     # directly hit sky
                     pass
             else:
+                throughput *= 0
+
+            # contrib += throughput
+            self.color_buffer[u, v] += contrib
+
+    @ti.kernel
+    def initialize_particle_grid(self):
+        fo

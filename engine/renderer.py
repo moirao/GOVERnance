@@ -477,4 +477,8 @@ class Renderer:
 
     @ti.kernel
     def initialize_particle_grid(self):
-        fo
+        for p in range(self.num_particles[None]):
+            v = ti.Vector([0.0, 0.0, 0.0])
+            if ti.static(self.enable_motion_blur):
+                v = self.particle_v[p]
+ 

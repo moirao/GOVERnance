@@ -481,4 +481,8 @@ class Renderer:
             v = ti.Vector([0.0, 0.0, 0.0])
             if ti.static(self.enable_motion_blur):
                 v = self.particle_v[p]
- 
+            x = self.particle_x[p]
+            ipos = ti.floor(x * self.inv_dx).cast(ti.i32)
+
+            offset_begin = shutter_begin * self.shutter_time * v
+  

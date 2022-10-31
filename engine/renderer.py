@@ -485,4 +485,8 @@ class Renderer:
             ipos = ti.floor(x * self.inv_dx).cast(ti.i32)
 
             offset_begin = shutter_begin * self.shutter_time * v
-  
+            offset_end = (shutter_begin + 1.0) * self.shutter_time * v
+            offset_begin_grid = offset_begin
+            offset_end_grid = offset_end
+
+           

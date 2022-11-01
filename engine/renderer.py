@@ -492,4 +492,8 @@ class Renderer:
             for k in ti.static(range(3)):
                 if offset_end_grid[k] < offset_begin_grid[k]:
                     t = offset_end_grid[k]
-                    offset_end_g
+                    offset_end_grid[k] = offset_begin_grid[k]
+                    offset_begin_grid[k] = t
+
+            offset_begin_grid = int(ti.floor(
+                offset_begin_grid * self

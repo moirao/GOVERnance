@@ -496,4 +496,8 @@ class Renderer:
                     offset_begin_grid[k] = t
 
             offset_begin_grid = int(ti.floor(
-                offset_begin_grid * self
+                offset_begin_grid * self.inv_dx)) - 1
+            offset_end_grid = int(ti.ceil(offset_end_grid * self.inv_dx)) + 2
+
+            for i in range(offset_begin_grid[0], offset_end_grid[0]):
+         

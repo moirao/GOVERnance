@@ -502,4 +502,7 @@ class Renderer:
             for i in range(offset_begin_grid[0], offset_end_grid[0]):
                 for j in range(offset_begin_grid[1], offset_end_grid[1]):
                     for k in range(offset_begin_grid[2], offset_end_grid[2]):
-                        offset = ti.Vec
+                        offset = ti.Vector([i, j, k])
+                        box_ipos = ipos + offset
+                        if self.inside_particle_grid(box_ipos):
+                            box_min = box_ip

@@ -505,4 +505,7 @@ class Renderer:
                         offset = ti.Vector([i, j, k])
                         box_ipos = ipos + offset
                         if self.inside_particle_grid(box_ipos):
-                            box_min = box_ip
+                            box_min = box_ipos * self.dx
+                            box_max = (box_ipos +
+                                       ti.Vector([1, 1, 1])) * self.dx
+                            if sphere_aabb

@@ -508,4 +508,7 @@ class Renderer:
                             box_min = box_ipos * self.dx
                             box_max = (box_ipos +
                                        ti.Vector([1, 1, 1])) * self.dx
-                            if sphere_aabb
+                            if sphere_aabb_intersect_motion(
+                                    box_min, box_max, x + offset_begin,
+                                    x + offset_end, self.sphere_radius):
+                 

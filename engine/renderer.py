@@ -511,4 +511,7 @@ class Renderer:
                             if sphere_aabb_intersect_motion(
                                     box_min, box_max, x + offset_begin,
                                     x + offset_end, self.sphere_radius):
-                 
+                                self.voxel_has_particle[box_ipos] = 1
+                                self.voxel_grid_density[box_ipos] = 1
+                                ti.append(
+                                    

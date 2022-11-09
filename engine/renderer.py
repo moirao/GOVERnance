@@ -514,4 +514,8 @@ class Renderer:
                                 self.voxel_has_particle[box_ipos] = 1
                                 self.voxel_grid_density[box_ipos] = 1
                                 ti.append(
-                                    
+                                    self.pid.parent(), box_ipos -
+                                    ti.Vector(self.particle_grid_offset), p)
+
+    @ti.kernel
+    def copy(self, img: ti.types.ndarray(), samples: ti.

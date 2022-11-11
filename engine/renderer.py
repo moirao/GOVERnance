@@ -518,4 +518,10 @@ class Renderer:
                                     ti.Vector(self.particle_grid_offset), p)
 
     @ti.kernel
-    def copy(self, img: ti.types.ndarray(), samples: ti.
+    def copy(self, img: ti.types.ndarray(), samples: ti.i32):
+        for i, j in self.color_buffer:
+            u = 1.0 * i / res[0]
+            v = 1.0 * j / res[1]
+
+            darken = 1.0 - self.vignette_strength * max((ti.sqrt(
+  

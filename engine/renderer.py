@@ -524,4 +524,8 @@ class Renderer:
             v = 1.0 * j / res[1]
 
             darken = 1.0 - self.vignette_strength * max((ti.sqrt(
-  
+                (u - self.vignette_center[0])**2 +
+                (v - self.vignette_center[1])**2) - self.vignette_radius), 0)
+
+            for c in ti.static(range(3)):
+                i

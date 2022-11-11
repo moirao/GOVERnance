@@ -528,4 +528,8 @@ class Renderer:
                 (v - self.vignette_center[1])**2) - self.vignette_radius), 0)
 
             for c in ti.static(range(3)):
-                i
+                img[i, j, c] = ti.sqrt(self.color_buffer[i, j][c] * darken *
+                                       exposure / samples)
+
+    @ti.kernel
+    def initialize_particle(self, x: ti.types.ndarr

@@ -532,4 +532,7 @@ class Renderer:
                                        exposure / samples)
 
     @ti.kernel
-    def initialize_particle(self, x: ti.types.ndarr
+    def initialize_particle(self, x: ti.types.ndarray(), v: ti.types.ndarray(),
+                            color: ti.types.ndarray(), begin: ti.i32, end: ti.i32):
+        for i in range(begin, end):
+            for c in ti.static(r

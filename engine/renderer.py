@@ -539,4 +539,11 @@ class Renderer:
                 self.particle_x[i][c] = x[i - begin, c]
                 if ti.static(self.enable_motion_blur):
                     self.particle_v[i][c] = v[i - begin, c]
-             
+                self.particle_color[i][c] = color[i - begin, c]
+
+    @ti.kernel
+    def total_non_empty_voxels(self) -> ti.i32:
+        counter = 0
+
+        for I in ti.grouped(self.voxel_has_particle):
+            if self.voxel_has

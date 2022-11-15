@@ -535,4 +535,8 @@ class Renderer:
     def initialize_particle(self, x: ti.types.ndarray(), v: ti.types.ndarray(),
                             color: ti.types.ndarray(), begin: ti.i32, end: ti.i32):
         for i in range(begin, end):
-            for c in ti.static(r
+            for c in ti.static(range(3)):
+                self.particle_x[i][c] = x[i - begin, c]
+                if ti.static(self.enable_motion_blur):
+                    self.particle_v[i][c] = v[i - begin, c]
+             

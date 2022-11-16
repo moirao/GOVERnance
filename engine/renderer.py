@@ -555,4 +555,8 @@ class Renderer:
     def total_inserted_particles(self) -> ti.i32:
         counter = 0
 
-        for I in ti.grouped(se
+        for I in ti.grouped(self.voxel_has_particle):
+            if self.voxel_has_particle[I]:
+                num_particles = ti.length(
+                    self.pid.parent(),
+                  

@@ -559,4 +559,11 @@ class Renderer:
             if self.voxel_has_particle[I]:
                 num_particles = ti.length(
                     self.pid.parent(),
-                  
+                    I - ti.Vector(self.particle_grid_offset))
+                counter += num_particles
+
+        return counter
+
+    def reset(self):
+        self.particle_bucket.deactivate_all()
+        

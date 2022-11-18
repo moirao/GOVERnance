@@ -570,4 +570,8 @@ class Renderer:
         self.voxel_has_particle.snode.parent(n=2).deactivate_all()
         self.color_buffer.fill(0)
 
-    d
+    def initialize_particles_from_taichi_elements(self, particle_fn):
+        self.reset()
+
+        np_x, np_v, np_color = ParticleIO.read_particles_3d(particle_fn)
+        num_part = len(np

@@ -566,4 +566,8 @@ class Renderer:
 
     def reset(self):
         self.particle_bucket.deactivate_all()
-        
+        self.voxel_grid_density.snode.parent(n=2).deactivate_all()
+        self.voxel_has_particle.snode.parent(n=2).deactivate_all()
+        self.color_buffer.fill(0)
+
+    d

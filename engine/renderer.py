@@ -574,4 +574,10 @@ class Renderer:
         self.reset()
 
         np_x, np_v, np_color = ParticleIO.read_particles_3d(particle_fn)
-        num_part = len(np
+        num_part = len(np_x)
+
+        assert num_part <= self.max_num_particles
+
+        for i in range(3):
+            # bbox values must be multiples of self.dx
+            # bbox values are the min and ma

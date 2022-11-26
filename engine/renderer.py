@@ -580,4 +580,7 @@ class Renderer:
 
         for i in range(3):
             # bbox values must be multiples of self.dx
-            # bbox values are the min and ma
+            # bbox values are the min and max particle coordinates, with 3 self.dx margin
+            self.bbox[0][i] = (math.floor(np_x[:, i].min() * self.inv_dx) -
+                               3.0) * self.dx
+            self

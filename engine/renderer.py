@@ -587,4 +587,10 @@ class Renderer:
                                3.0) * self.dx
             print(f'Bounding box dim {i}: {self.bbox[0][i]} {self.bbox[1][i]}')
 
-        # TODO: as
+        # TODO: assert bounds
+
+        self.num_particles[None] = num_part
+        print('num_input_particles =', num_part)
+
+        slice_size = 1000000
+        num_slices = (num_part + slice_size - 1) // 

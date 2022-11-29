@@ -583,4 +583,8 @@ class Renderer:
             # bbox values are the min and max particle coordinates, with 3 self.dx margin
             self.bbox[0][i] = (math.floor(np_x[:, i].min() * self.inv_dx) -
                                3.0) * self.dx
-            self
+            self.bbox[1][i] = (math.floor(np_x[:, i].max() * self.inv_dx) +
+                               3.0) * self.dx
+            print(f'Bounding box dim {i}: {self.bbox[0][i]} {self.bbox[1][i]}')
+
+        # TODO: as

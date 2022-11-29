@@ -593,4 +593,8 @@ class Renderer:
         print('num_input_particles =', num_part)
 
         slice_size = 1000000
-        num_slices = (num_part + slice_size - 1) // 
+        num_slices = (num_part + slice_size - 1) // slice_size
+        for i in range(num_slices):
+            begin = slice_size * i
+            end = min(num_part, begin + slice_size)
+            self.initialize_particle(np_x[beg

@@ -597,4 +597,8 @@ class Renderer:
         for i in range(num_slices):
             begin = slice_size * i
             end = min(num_part, begin + slice_size)
-            self.initialize_particle(np_x[beg
+            self.initialize_particle(np_x[begin:end], np_v[begin:end],
+                                     np_color[begin:end], begin, end)
+        self.initialize_particle_grid()
+
+    def render_frame(self, spp

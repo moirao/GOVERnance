@@ -609,4 +609,7 @@ class Renderer:
             interval = 20
             if i % interval == 0:
                 if last_t != 0:
-     
+                    ti.sync()
+                    print("time per spp = {:.2f} ms".format(
+                        (time.time() - last_t) * 1000 / interval))
+                l

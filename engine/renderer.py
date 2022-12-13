@@ -601,4 +601,12 @@ class Renderer:
                                      np_color[begin:end], begin, end)
         self.initialize_particle_grid()
 
-    def render_frame(self, spp
+    def render_frame(self, spp):
+        last_t = 0
+        for i in range(1, 1 + spp):
+            self.render()
+
+            interval = 20
+            if i % interval == 0:
+                if last_t != 0:
+     

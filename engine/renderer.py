@@ -612,4 +612,8 @@ class Renderer:
                     ti.sync()
                     print("time per spp = {:.2f} ms".format(
                         (time.time() - last_t) * 1000 / interval))
-                l
+                last_t = time.time()
+
+        img = np.zeros((res[0], res[1], 3), dtype=np.float32)
+        self.copy(img, spp)
+        return img

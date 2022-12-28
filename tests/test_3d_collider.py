@@ -12,4 +12,8 @@ mpm.set_gravity((0, -20, 0))
 mpm.add_sphere_collider(center=(0.25, 0.5, 0.5),
                         radius=0.1,
                         surface=mpm.surface_slip)
-m
+mpm.add_sphere_collider(center=(0.5, 0.5, 0.5),
+                        radius=0.1,
+                        surface=mpm.surface_sticky)
+mpm.add_sphere_collider(center=(0.75, 0.5, 0.5),
+        

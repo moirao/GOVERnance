@@ -21,4 +21,9 @@ mpm.add_sphere_collider(center=(0.75, 0.5, 0.5),
 
 for frame in range(5):
     mpm.add_cube((0.2, 0.8, 0.45), (0.1, 0.03, 0.1),
-                 mpm.material
+                 mpm.material_water,
+                 color=0x8888FF)
+    mpm.add_cube((0.45, 0.8, 0.45), (0.1, 0.03, 0.1),
+                 mpm.material_water,
+                 color=0xFF8888)
+    mpm.add_cu

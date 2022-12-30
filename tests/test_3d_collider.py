@@ -26,4 +26,9 @@ for frame in range(5):
     mpm.add_cube((0.45, 0.8, 0.45), (0.1, 0.03, 0.1),
                  mpm.material_water,
                  color=0xFF8888)
-    mpm.add_cu
+    mpm.add_cube((0.7, 0.8, 0.45), (0.1, 0.03, 0.1),
+                 mpm.material_water,
+                 color=0xFFFFFF)
+    mpm.step(4e-3)
+    particles = mpm.particle_info()
+    np_x = particles['positio

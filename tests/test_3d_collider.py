@@ -31,4 +31,4 @@ for frame in range(5):
                  color=0xFFFFFF)
     mpm.step(4e-3)
     particles = mpm.particle_info()
-    np_x = particles['positio
+    np_x = particles['position'] / 1.0

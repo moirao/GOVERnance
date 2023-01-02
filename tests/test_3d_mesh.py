@@ -23,4 +23,10 @@ ti.init(arch=ti.cuda)
 mpm = mpm_solver.MPMSolver(res=(24, 24, 24), size=1)
 
 triangles = np.fromfile(os.path.join(folder, 'suzanne.npy'), dtype=np.float32)
-triangles = np.reshape(triangles, (len(triangles) //
+triangles = np.reshape(triangles, (len(triangles) // 9, 9)) * 0.306 + 0.501
+
+os.remove(zip_file_path)
+os.remove(os.path.join(folder, 'suzanne.npy'))
+
+mpm.add_mesh(triangles=triangles,
+             material=mpm_solver.MPMSolver.mate

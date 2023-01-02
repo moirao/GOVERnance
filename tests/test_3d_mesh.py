@@ -20,4 +20,7 @@ z.close()
 # Try to run on GPU
 ti.init(arch=ti.cuda)
 
-mpm = mpm_solver
+mpm = mpm_solver.MPMSolver(res=(24, 24, 24), size=1)
+
+triangles = np.fromfile(os.path.join(folder, 'suzanne.npy'), dtype=np.float32)
+triangles = np.reshape(triangles, (len(triangles) //

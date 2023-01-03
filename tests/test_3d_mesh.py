@@ -29,4 +29,12 @@ os.remove(zip_file_path)
 os.remove(os.path.join(folder, 'suzanne.npy'))
 
 mpm.add_mesh(triangles=triangles,
-             material=mpm_solver.MPMSolver.mate
+             material=mpm_solver.MPMSolver.material_elastic,
+             color=0xFFFF00)
+
+mpm.set_gravity((0, -20, 0))
+
+for frame in range(5):
+    mpm.step(4e-3)
+    particles = mpm.particle_info()
+    np_x = particles['

@@ -37,4 +37,4 @@ mpm.set_gravity((0, -20, 0))
 for frame in range(5):
     mpm.step(4e-3)
     particles = mpm.particle_info()
-    np_x = particles['
+    np_x = particles['position'] / 1.0

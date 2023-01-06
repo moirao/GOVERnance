@@ -19,4 +19,10 @@ def copy_files(src_dir, out_dir):
         if os.path.isdir(os.path.join(src_dir, file)):
             src_subdir = os.path.join(src_dir, file)
             out_subdir = os.path.join(out_dir, file)
-            
+            copy_files(src_subdir, out_subdir)
+        elif file.endswith('.py'):
+            copy_file(src_dir, out_dir, file)
+
+
+def get_addons_path():
+    addons_var = 'BLEND

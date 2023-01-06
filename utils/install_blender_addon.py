@@ -8,4 +8,11 @@ ADDON_NAME = 'taichi_elements'
 
 
 def copy_file(src_dir, out_dir, file):
-    if not os.path.ex
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    source_file_path = os.path.join(src_dir, file)
+    shutil.copy(source_file_path, os.path.join(out_dir, file))
+
+
+def copy_files(src_dir, out_dir):
+    for file in

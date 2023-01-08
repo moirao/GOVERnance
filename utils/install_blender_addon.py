@@ -37,4 +37,13 @@ def get_addons_path():
             print('Incorrect environment variable: "{}"'.format(addons_var))
             print('Path must end with "scripts\\addons"')
 
-   
+    else:
+        print('Missing environment variable: "{}"'.format(addons_var))
+
+
+def install():
+    print("Installing...")
+
+    addons_path = get_addons_path()
+    if not addons_path:
+     

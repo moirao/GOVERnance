@@ -31,4 +31,10 @@ def get_addons_path():
     if addons_path:
         path_tail = os.path.join('scripts', 'addons')
 
-        if addons_path.endswith
+        if addons_path.endswith(path_tail):
+            return addons_path
+        else:
+            print('Incorrect environment variable: "{}"'.format(addons_var))
+            print('Path must end with "scripts\\addons"')
+
+   

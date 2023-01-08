@@ -46,4 +46,9 @@ def install():
 
     addons_path = get_addons_path()
     if not addons_path:
-     
+        return
+
+    addon_out_path = os.path.join(addons_path, ADDON_NAME)
+    engine_out_path = os.path.join(addon_out_path, 'engine')
+
+    if os.path.exists(addon_out_path):   

@@ -25,4 +25,10 @@ def copy_files(src_dir, out_dir):
 
 
 def get_addons_path():
-    addons_var = 'BLEND
+    addons_var = 'BLENDER_USER_ADDON_PATH'
+    addons_path = os.environ.get(addons_var)
+
+    if addons_path:
+        path_tail = os.path.join('scripts', 'addons')
+
+        if addons_path.endswith

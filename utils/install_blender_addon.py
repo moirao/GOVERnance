@@ -60,4 +60,12 @@ def install():
     engine_input_path = os.path.join(taichi_elements_path, 'engine')
 
     out_dirs = (addon_out_path, engine_out_path)
-    input_dirs = (addon_input_path, engine_i
+    input_dirs = (addon_input_path, engine_input_path)
+
+    for input_dir, out_dir in zip(input_dirs, out_dirs):
+        copy_files(input_dir, out_dir)
+
+    print("Done.")
+
+
+install_desc = 'Install the current Blender addon.'

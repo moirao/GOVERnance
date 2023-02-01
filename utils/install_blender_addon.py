@@ -51,4 +51,9 @@ def install():
     addon_out_path = os.path.join(addons_path, ADDON_NAME)
     engine_out_path = os.path.join(addon_out_path, 'engine')
 
-    if os.path.exists(addon_out_path):   
+    if os.path.exists(addon_out_path):    # delete the old addon
+        shutil.rmtree(addon_out_path)
+
+    taichi_elements_path = os.path.dirname(os.path.abspath(os.curdir))
+
+    addon_input_path = os.path.join(taichi

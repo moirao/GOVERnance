@@ -56,4 +56,8 @@ def install():
 
     taichi_elements_path = os.path.dirname(os.path.abspath(os.curdir))
 
-    addon_input_path = os.path.join(taichi
+    addon_input_path = os.path.join(taichi_elements_path, 'blender')
+    engine_input_path = os.path.join(taichi_elements_path, 'engine')
+
+    out_dirs = (addon_out_path, engine_out_path)
+    input_dirs = (addon_input_path, engine_i

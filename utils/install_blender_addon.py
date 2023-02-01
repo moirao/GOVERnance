@@ -69,3 +69,8 @@ def install():
 
 
 install_desc = 'Install the current Blender addon.'
+parser = argparse.ArgumentParser(description=install_desc)
+parser.add_argument('-k', action='store_true', help='keep refreshing')
+args = parser.parse_args()
+
+addons_path = get_ad

@@ -81,4 +81,10 @@ if args.k:
         time.sleep(1)
         install()
 else:
-    print(f"This will remove everything unde
+    print(f"This will remove everything under {addon_path}.")
+    print("Are you sure? [y/N]")
+    if input() != 'y':
+        print("exiting")
+        exit()
+    else:
+        install()

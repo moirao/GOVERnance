@@ -73,4 +73,12 @@ parser = argparse.ArgumentParser(description=install_desc)
 parser.add_argument('-k', action='store_true', help='keep refreshing')
 args = parser.parse_args()
 
-addons_path = get_ad
+addons_path = get_addons_path()
+addon_path = os.path.join(addons_path, ADDON_NAME)
+
+if args.k:
+    while True:
+        time.sleep(1)
+        install()
+else:
+    print(f"This will remove everything unde

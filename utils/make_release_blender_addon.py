@@ -22,3 +22,10 @@ from blender import bl_info
 
 addon_ver = bl_info['version']
 # release zip file name
+fname = 'taichi_elements-' + '.'.join(map(str, addon_ver)) + '.zip'
+# release dir name
+dname = 'utils'
+# release path
+rpath = os.path.join(dname, fname)
+# compress type
+cmprss

@@ -14,4 +14,11 @@ ENGINE_FOLDER = 'engine'
 OUT_FOLDER = 'taichi_elements'
 # blender addon path
 blend_path = os.path.join(repo_path, BLEND_FOLDER)
-# taichi e
+# taichi elements engine path
+engine_path = os.path.join(repo_path, ENGINE_FOLDER)
+sys.path.append(repo_path)
+
+from blender import bl_info
+
+addon_ver = bl_info['version']
+# release zip file name

@@ -28,4 +28,11 @@ dname = 'utils'
 # release path
 rpath = os.path.join(dname, fname)
 # compress type
-cmprss
+cmprss = zipfile.ZIP_DEFLATED
+
+
+def write_files(zip_file, out_folder):
+    for root, _, files in os.walk('.'):
+        for file in files:
+            if not file.endswith('.py'):
+ 

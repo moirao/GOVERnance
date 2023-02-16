@@ -39,4 +39,9 @@ def write_files(zip_file, out_folder):
             # input file path
             in_path = os.path.join(root, file)[2:]
             # output file path
-            out_path = os.path.join(ou
+            out_path = os.path.join(out_folder, in_path)
+            zip_file.write(in_path, out_path, compress_type=cmprss)
+
+
+with zipfile.ZipFile(rpath, 'w') as z:
+    z.write('LICENSE', '{0}/LICENSE'.forma

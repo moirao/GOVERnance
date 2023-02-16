@@ -35,4 +35,8 @@ def write_files(zip_file, out_folder):
     for root, _, files in os.walk('.'):
         for file in files:
             if not file.endswith('.py'):
- 
+                continue
+            # input file path
+            in_path = os.path.join(root, file)[2:]
+            # output file path
+            out_path = os.path.join(ou

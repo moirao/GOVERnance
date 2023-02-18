@@ -49,4 +49,7 @@ with zipfile.ZipFile(rpath, 'w') as z:
     os.chdir(os.path.join(repo_path, BLEND_FOLDER))
     write_files(z, OUT_FOLDER)
 
-    os.chdir(os.path.join(repo_path, E
+    os.chdir(os.path.join(repo_path, ENGINE_FOLDER))
+    write_files(z, os.path.join(OUT_FOLDER, ENGINE_FOLDER))
+
+input('Done. Press Enter...')

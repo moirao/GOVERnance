@@ -44,4 +44,9 @@ def write_files(zip_file, out_folder):
 
 
 with zipfile.ZipFile(rpath, 'w') as z:
-    z.write('LICENSE', '{0}/LICENSE'.forma
+    z.write('LICENSE', '{0}/LICENSE'.format(OUT_FOLDER), compress_type=cmprss)
+
+    os.chdir(os.path.join(repo_path, BLEND_FOLDER))
+    write_files(z, OUT_FOLDER)
+
+    os.chdir(os.path.join(repo_path, E
